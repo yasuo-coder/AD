@@ -571,9 +571,35 @@
           "decoder_normalization": "centered_layernorm"
         },
         "pretrain_dropout": 0.0
+      },
+      "P2_finetune_no_dropout_pair_best": {
+        "stage": "supervised",
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "pair",
+          "consistency_weight": 0,
+          "decoder_normalization": "centered_layernorm"
+        },
+        "training_mode": "finetune"
+      },
+      "P2_finetune_no_dropout_pair_last40": {
+        "stage": "supervised",
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "pair",
+          "consistency_weight": 0,
+          "decoder_normalization": "centered_layernorm"
+        },
+        "training_mode": "finetune"
       }
     },
-    "finite_scope": "A0-A7 all3seeds; historical legacy/M2/M3v3/no_metadata; P5 fixed and no_reliability; P2 TRAIN-only 40epoch seed42 mask/consistency/decoder explorations then freeze recipe by validation before3seeds; P3 random/no-semantic learned queries/parameter-matched mean MLP controls; after observed saturation/mean collapse, two centered decoder diagnostics at mask.10 seed42 only (40 epochs), retain original negative results; P2 required classification controls: joint reconstruction-only, joint consistency-only, fixed40 pretraining rec10/cons10 then finetune; seed42 first, test sealed; one normalized-pair TRAIN-only dropout0 pretraining diagnostic after measured train/eval mismatch,40epochs seed42; supervised dropout unchanged",
+    "finite_scope": "A0-A7 all3seeds; historical legacy/M2/M3v3/no_metadata; P5 fixed and no_reliability; P2 TRAIN-only 40epoch seed42 mask/consistency/decoder explorations then freeze recipe by validation before3seeds; P3 random/no-semantic learned queries/parameter-matched mean MLP controls; after observed saturation/mean collapse, two centered decoder diagnostics at mask.10 seed42 only (40 epochs), retain original negative results; P2 required classification controls: joint reconstruction-only, joint consistency-only, fixed40 pretraining rec10/cons10 then finetune; seed42 first, test sealed; one normalized-pair TRAIN-only dropout0 pretraining diagnostic after measured train/eval mismatch,40epochs seed42; supervised dropout unchanged; validation reconstruction motivates paired best-training vs fixed-last40 finetuning for no-dropout normalized-pair pretraining,seed42 only; preserve both, no test use",
     "selection": "validation macro-F1, historical fixed composite, lower classification loss; test deferred",
     "p2_pretrain_budget": "40 epochs TRAIN only; one seed explorations then same selected recipe across3 seeds; report extra cost",
     "output_root": "/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010"

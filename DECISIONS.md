@@ -66,3 +66,6 @@ STATE 用最新快照，详细决策/实验按 ID 追加，避免无限追加聊
 
 ## D017 / 2026-10-10 / 仅预训练Dropout诊断
 归一化pair验证MSE .111547；TRAIN-only四模式探针：eval .114435、train .049894、固定BN统计但开启Dropout .050739、batch统计且关闭Dropout .219797。Dropout状态变化具有明显影响，BN也可能交互，不能只怪验证过拟合。新增一个受限候选normalized pair / mask.10 / TRAIN dropout0 / 40轮 / seed42，原始结果保留；监督训练dropout仍.5。证据N/probes/pretrain_modes_normalized_pair.json。候选尚未证明有效，不能把关闭Dropout推为全模型最优配置。
+
+## D018 / 2026-10-10 / 预训练checkpoint敏感性对照
+no-dropout normalized-pair的验证重建：best_training MSE .036301，固定第40轮last MSE .028170，TRAIN边均值 .035461；last相关性 .75434，高于均值 .61381。两checkpoint均由既有探针预先计算，未使用test。不能只报告较好last并隐去best失败；登记best/last两个下游微调对照，原best规则的在跑任务不改。分类益处尚未证明。新增排队依赖，仅在Phase3全部正常退出后使用GPU4/6运行此两项，防止与既有队列争用或重复启动。

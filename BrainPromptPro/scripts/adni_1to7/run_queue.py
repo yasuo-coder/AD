@@ -23,7 +23,7 @@ def completed(entry):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--jobs',type=Path,required=True);p.add_argument('--state',type=Path,required=True);p.add_argument('--gpus',default='0,3,5,7');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--jobs',type=Path,required=True);p.add_argument('--state',type=Path,required=True);p.add_argument('--gpus',default='0,3,5,7');p.add_argument('--after-state',type=Path,help='Wait for this queue to finish successfully before using its GPU slots');a=p.parse_args()
     a.state.parent.mkdir(parents=True,exist_ok=True)
     lock=a.state.with_suffix('.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     jobs=json.loads(a.jobs.read_text());pending=[];finished=[];active={};failed=False
@@ -35,6 +35,17 @@ def main():
         # Existing partial output is resumed only by explicit job declaration.
         if out.exists() and not entry.get('resume',False):raise FileExistsError('Partial output requires reviewed resume job')
         pending.append(entry)
+    if a.after_state:
+        if a.after_state.resolve()==a.state.resolve():raise ValueError('Queue cannot depend on itself')
+        while True:
+            dependency=json.loads(a.after_state.read_text())
+            if dependency['failed']:
+                write_json(a.state,dict(queue_pid=os.getpid(),waiting_for=str(a.after_state),running=[],pending=pending,finished=finished,failed=True,error='dependency_failed'))
+                raise RuntimeError('Dependency queue failed; inspect before continuing')
+            if not dependency['running'] and not dependency['pending']:break
+            temporary=a.state.with_suffix('.tmp.json')
+            write_json(temporary,dict(queue_pid=os.getpid(),waiting_for=str(a.after_state),running=[],pending=pending,finished=finished,failed=False))
+            temporary.replace(a.state);time.sleep(10)
     gpus=[int(x) for x in a.gpus.split(',')];start=time.time()
     if len(set(gpus))!=len(gpus):raise ValueError('Duplicate GPU slots')
     while pending or active:
@@ -62,6 +73,9 @@ def main():
         temporary.replace(a.state)
         if failed and not active:break
         if active:time.sleep(3)
+    temporary=a.state.with_suffix('.tmp.json')
+    write_json(temporary,dict(queue_pid=os.getpid(),running=[],pending=pending,finished=finished,failed=failed,phase='FAILED' if failed else 'COMPLETE'))
+    temporary.replace(a.state)
     if failed:raise RuntimeError('Job failed; review evidence before resume')
     print('QUEUE_COMPLETE',flush=True)
 
