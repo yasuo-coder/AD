@@ -31,3 +31,8 @@
 
 ## 下一里程碑验收
 M8先运行A0三seed；P2探索同时执行7个40轮TRAIN-only任务。冻结代码副本运行，保存commit/source/config/split/checkpoint hash；所有结果明确validation或TRAIN reconstruction，不访问test。P2若不优于TRAIN均值基线先诊断，不直接扩大到完整组合。M4–M6尚未勾选表示机制对照仍未完成，不表示缺少实现。
+
+## Phase1 实际执行
+初版实现已提交、推送，PR1草稿；M12首次发布完成，最终交接持续更新。controller1153238在GPU0/3/5/7运行A0三seed及P2七项预训练，产物路径见STATE。P3三个对照和P2两个基于饱和证据的数值候选已实现；20单测、CPU8组合以及新增5个CPU单轮smoke通过。下一步先核验完整phase1指标与重建对照，再固定下一批不可变代码。
+
+Phase1的10项正式任务已完成；A0三seed独立指标核验通过。M8仍需Legacy/M2/M3对照，不能因A0完成就勾选全部基线。新一批将包含两个P2数值诊断、历史基线和P3/P5对照，先seed42；三seed最终消融和test未完成。

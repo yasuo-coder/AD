@@ -4,7 +4,7 @@ import unittest
 import torch
 from BrainPromptPro.layers.masked_connectome import (symmetric_fc_mask,masked_topology,
     SymmetricConnectionDecoder,reconstruction_loss,symmetric_kl)
-from BrainPromptPro.layers.task_token_fusion import TaskSpecificROIFusion
+from BrainPromptPro.layers.task_token_fusion import TaskSpecificROIFusion,ParameterMatchedROIFusion
 from BrainPromptPro.layers.reliability_population import ReliabilityReferencePopulation,stability_reliability
 
 
@@ -41,6 +41,16 @@ class Modules(unittest.TestCase):
             h=torch.randn(4,16,20,requires_grad=True);decoder=SymmetricConnectionDecoder(20,mode,8)
             p=decoder(h);self.assertTrue(torch.allclose(p,p.transpose(-1,-2),atol=1e-6))
             _,m=self.mask();reconstruction_loss(p,self.fc,m).backward();self.assertGreater(float(h.grad.abs().sum()),0)
+    def test_normalized_decoder_large_common_component(self):
+        h=(100*torch.randn(2,1,20)+torch.randn(2,16,20)).requires_grad_()
+        for mode in ['dot','pair']:
+            decoder=SymmetricConnectionDecoder(20,mode,8,normalization='centered_layernorm')
+            prediction=decoder(h)
+            self.assertTrue(torch.isfinite(prediction).all())
+            torch.testing.assert_close(prediction,prediction.transpose(-1,-2))
+            self.assertLess(float((prediction.abs()>.99).float().mean()),.01)
+            prediction.square().mean().backward(retain_graph=True)
+            self.assertGreater(float(decoder.project.weight.grad.abs().sum()),0)
     def test_no_mask_loss(self):
         p=self.fc.clone().requires_grad_();loss=reconstruction_loss(p,self.fc,torch.ones_like(p,dtype=torch.bool));loss.backward();self.assertEqual(float(loss),0)
     def test_consistency_stability(self):
@@ -61,6 +71,22 @@ class Modules(unittest.TestCase):
         m=TaskSpecificROIFusion(20,30);x=torch.randn(2,5,20);y=x.clone();y[:,2]+=1
         delta=m.class_logits(y)-m.class_logits(x)
         self.assertTrue(torch.equal(delta[:,[0,1,3,4]],torch.zeros(2,4)));self.assertTrue((delta[:,2]!=0).all())
+    def test_random_semantic_control(self):
+        m=TaskSpecificROIFusion(116,2048,mode='random');h=torch.randn(3,16,116);a=torch.randn(5,2048)
+        torch.testing.assert_close(m(h,a)['logits'],m(h,a.flip(0))['logits'])
+        baseline=TaskSpecificROIFusion(116,2048)
+        self.assertEqual(sum(p.numel() for p in m.parameters()),sum(p.numel() for p in baseline.parameters()))
+    def test_learned_queries_without_disease_input(self):
+        m=TaskSpecificROIFusion(116,2048,mode='learned_query');h=torch.randn(3,16,116);a=torch.randn(5,2048)
+        o=m(h,a);torch.testing.assert_close(o['logits'],m(h,torch.zeros_like(a))['logits'])
+        o['logits'].square().sum().backward();self.assertGreater(float(m.queries.grad.abs().sum()),0)
+    def test_parameter_matched_pool_control(self):
+        m=ParameterMatchedROIFusion(116,2048);baseline=TaskSpecificROIFusion(116,2048)
+        b=sum(p.numel() for p in baseline.parameters());c=sum(p.numel() for p in m.parameters())
+        self.assertLess(abs(c-b)/b,.001)
+        x=m(torch.randn(3,16,116),torch.randn(5,2048));self.assertIsNone(x['attention'])
+        self.assertEqual(x['logits'].shape,(3,5));x['logits'].square().sum().backward()
+        self.assertGreater(float(m.hidden.weight.grad.abs().sum()),0)
     def test_population_reference_isolation(self):
         with self.assertRaises(ValueError):ReliabilityReferencePopulation(torch.randn(3,8),torch.ones(3),['a','b','test'],['a','b','c'],'v',16,topk=2)
         m=self.population();out=m(torch.randn(2,8),torch.ones(2),['synthetic-0','unseen'],'synthetic-v1')

@@ -15,3 +15,8 @@ R/S定义见复现文档。bundle和split标识见数据协议。最后队列las
 
 ## ADNI1–7 / 2026-10-10
 数据审计与独立版本构建完成；[匿名汇总](docs/research/adni_1to7/DATA_AUDIT.md)。16模块单测、CPU/CUDA各8组合及TRAIN真实小样本梯度检查PASSED；8份真实数据smoke入口结果通过；CPU A0两轮断点恢复与连续训练模型/RNG完全一致。A0–A7正式指标PENDING，尚无七批测试结果。受控输出位于/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010。
+
+### 七批 phase1 实际启动
+队列 N/queues/phase1_baseline_p2，PID1153238；A0三seed和7个P2 seed42/40轮TRAIN-only探索，GPU0/3/5/7。不可变运行commit074d2e0，公开等价tree commit4ad8ec1，PR1。具体完成进度以queue/result为准；尚未汇总完整三seed，不提前填性能均值。P2首个mask.05验证重建MSE .056895、TRAIN边均值 .035413、相关性 .063031，未证明重建有效；probes/P2_pretrain_rec_05.json。新增P3三对照/P2两数值候选的5个CPU单轮smoke均通过，20单测和修订CPU8组合通过；这些单独归类为验证入口。
+
+Phase1后续核对：10项训练均退出0，无残留running/pending。A0三seed原始payload指标独立复算通过，公开白名单汇总位于docs/research/adni_1to7/phase1；只含匿名标量/哈希，不含私有预测和split明细。其他模型正式结果仍未运行，不填写比较收益。

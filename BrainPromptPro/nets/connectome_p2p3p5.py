@@ -9,7 +9,7 @@ from torch.nn import functional as F
 from .original_adapter import OriginalBrainPromptAdapter
 from ..layers.gcn_layer import legacy_brain_adjacency
 from ..layers.masked_connectome import masked_topology,SymmetricConnectionDecoder
-from ..layers.task_token_fusion import TaskSpecificROIFusion
+from ..layers.task_token_fusion import TaskSpecificROIFusion,ParameterMatchedROIFusion
 from ..layers.reliability_population import ReliabilityReferencePopulation,stability_reliability
 
 
@@ -48,8 +48,10 @@ class ConnectomeBrainPrompt(nn.Module):
             if self.use_p2:
                 self.visibility_projection=nn.Linear(116,d,bias=False)
                 nn.init.zeros_(self.visibility_projection.weight)
-                self.decoder=SymmetricConnectionDecoder(d,self.options.get('decoder','dot'))
-            if self.use_p3:self.task_fusion=TaskSpecificROIFusion(d,disease_prompt.shape[-1])
+                self.decoder=SymmetricConnectionDecoder(d,self.options.get('decoder','dot'),normalization=self.options.get('decoder_normalization','none'))
+            if self.use_p3:
+                mode=self.options.get('task_token_mode','semantic')
+                self.task_fusion=ParameterMatchedROIFusion(d,disease_prompt.shape[-1]) if mode=='parameter_matched' else TaskSpecificROIFusion(d,disease_prompt.shape[-1],mode=mode)
             if self.use_p5:
                 if bank is None or reference_encoder is None:raise ValueError('P5 needs sealed TRAIN bank and corresponding frozen encoder')
                 self.reference_encoder=reference_encoder.eval()

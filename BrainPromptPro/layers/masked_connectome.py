@@ -47,15 +47,23 @@ def masked_topology(masked_fc, visible, edge_ratio=.2):
 
 
 class SymmetricConnectionDecoder(nn.Module):
-    def __init__(self, hidden_dim, decoder='dot', rank=32):
+    def __init__(self, hidden_dim, decoder='dot', rank=32, normalization='none'):
         super().__init__();self.decoder=decoder
+        if normalization not in ('none','centered_layernorm'):raise ValueError(normalization)
+        self.normalization=normalization
+        if normalization=='centered_layernorm' and decoder=='dot':self.log_scale=nn.Parameter(torch.tensor(math.log(.1)))
         if decoder not in ('dot','pair'):raise ValueError(decoder)
         self.project=nn.Linear(hidden_dim,rank,bias=False)
         if decoder=='pair':self.pair=nn.Sequential(nn.Linear(rank*3,rank),nn.GELU(),nn.Linear(rank,1))
         else:self.bias=nn.Parameter(torch.zeros(()))
     def forward(self,h):
+        if self.normalization=='centered_layernorm':
+            h=F.layer_norm(h,(h.shape[-1],));h=h-h.mean(1,keepdim=True)
         x=self.project(h)
-        if self.decoder=='dot':score=x@x.transpose(-1,-2)/math.sqrt(x.shape[-1])+self.bias
+        if self.decoder=='dot':
+            if self.normalization=='centered_layernorm':
+                x=F.normalize(x,dim=-1);score=self.log_scale.exp().clamp(max=10)*(x@x.transpose(-1,-2))+self.bias
+            else:score=x@x.transpose(-1,-2)/math.sqrt(x.shape[-1])+self.bias
         else:
             a=x[:,:,None];b=x[:,None,:]
             score=self.pair(torch.cat((a+b,(a-b).abs(),a*b),-1)).squeeze(-1)

@@ -1,0 +1,242 @@
+{
+  "evaluation": "validation only; test not evaluated",
+  "verification": "PASSED",
+  "aggregation": "mean and sample SD over completed training seeds; partial groups are not final evidence",
+  "runs": [
+    {
+      "experiment": "A0",
+      "seed": 2026,
+      "metrics": {
+        "accuracy": 0.6165413533834586,
+        "f1_macro": 0.37094943700206856,
+        "precision_macro": 0.4028904428904429,
+        "recall_macro": 0.4099149787446862,
+        "balanced_accuracy": 0.4099149787446862,
+        "roc_auc_macro": 0.6933498850504216
+      },
+      "best_epoch": 119,
+      "stopped_epoch": 219,
+      "stop_reason": "validation_patience",
+      "training_seconds": 383.6380739060114,
+      "parameters": 818095,
+      "trainable_parameters": 818095,
+      "checkpoint_sha256": "83f9d7d6060d23c3a56c30fa7e19d5cbc526a6d105227ed605b70736cb04ecac",
+      "common_training_hash": "a1f4c50d9980d531f3dc14b973cdc688f15b398712871380965120e49787cdbb",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "per_class_recall": {
+        "CN": 0.8372093023255814,
+        "AD": 0.5,
+        "SMC": 0.25,
+        "EMCI": 0.3333333333333333,
+        "LMCI": 0.12903225806451613
+      },
+      "collapsed": false,
+      "code": {
+        "commit": "074d2e00302463219edc370f73db42bbde29f81d",
+        "dirty": false
+      }
+    },
+    {
+      "experiment": "A0",
+      "seed": 3407,
+      "metrics": {
+        "accuracy": 0.6165413533834586,
+        "f1_macro": 0.3394259831592211,
+        "precision_macro": 0.3623885918003565,
+        "recall_macro": 0.3561515378844712,
+        "balanced_accuracy": 0.3561515378844712,
+        "roc_auc_macro": 0.6724434186951831
+      },
+      "best_epoch": 165,
+      "stopped_epoch": 236,
+      "stop_reason": "lr_floor",
+      "training_seconds": 423.94146008000826,
+      "parameters": 818095,
+      "trainable_parameters": 818095,
+      "checkpoint_sha256": "f144ccbaadcee5f918d32c5367136c64543a0850f009f1ec0291241d28d7dddd",
+      "common_training_hash": "a1f4c50d9980d531f3dc14b973cdc688f15b398712871380965120e49787cdbb",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "per_class_recall": {
+        "CN": 0.8372093023255814,
+        "AD": 0.5,
+        "SMC": 0.25,
+        "EMCI": 0.0,
+        "LMCI": 0.1935483870967742
+      },
+      "collapsed": false,
+      "code": {
+        "commit": "074d2e00302463219edc370f73db42bbde29f81d",
+        "dirty": false
+      }
+    },
+    {
+      "experiment": "A0",
+      "seed": 42,
+      "metrics": {
+        "accuracy": 0.5037593984962406,
+        "f1_macro": 0.3586151055836248,
+        "precision_macro": 0.38319159335288366,
+        "recall_macro": 0.40407601900475115,
+        "balanced_accuracy": 0.40407601900475115,
+        "roc_auc_macro": 0.6654825743381634
+      },
+      "best_epoch": 121,
+      "stopped_epoch": 221,
+      "stop_reason": "validation_patience",
+      "training_seconds": 392.888026827015,
+      "parameters": 818095,
+      "trainable_parameters": 818095,
+      "checkpoint_sha256": "912fe999b8413f27dd44016af9ca7272b3075c4876f1f5df6c70f23a37117503",
+      "common_training_hash": "a1f4c50d9980d531f3dc14b973cdc688f15b398712871380965120e49787cdbb",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "per_class_recall": {
+        "CN": 0.627906976744186,
+        "AD": 0.5,
+        "SMC": 0.5,
+        "EMCI": 0.16666666666666666,
+        "LMCI": 0.22580645161290322
+      },
+      "collapsed": false,
+      "code": {
+        "commit": "074d2e00302463219edc370f73db42bbde29f81d",
+        "dirty": false
+      }
+    }
+  ],
+  "groups": [
+    {
+      "experiment": "A0",
+      "status": "COMPLETE",
+      "seeds": [
+        42,
+        2026,
+        3407
+      ],
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5789473684210527,
+          "sample_sd": 0.06511469201386753
+        },
+        "f1_macro": {
+          "mean": 0.35633017524830485,
+          "sample_sd": 0.01588545610058088
+        },
+        "precision_macro": {
+          "mean": 0.38282354268122765,
+          "sample_sd": 0.020253433817591607
+        },
+        "recall_macro": {
+          "mean": 0.39004751187796954,
+          "sample_sd": 0.029499595801249237
+        },
+        "balanced_accuracy": {
+          "mean": 0.39004751187796954,
+          "sample_sd": 0.029499595801249237
+        },
+        "roc_auc_macro": {
+          "mean": 0.6770919593612561,
+          "sample_sd": 0.014503566779467937
+        }
+      }
+    },
+    {
+      "experiment": "LegacyPro",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "HistoricalM2",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "HistoricalM3v3",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "HistoricalM3v3_no_metadata",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "A1",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "A2",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "A3",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "A4",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "A5",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "A6",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "A7",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "P3_random",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "P3_learned_query",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "P3_parameter_matched",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "P5_fixed",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    },
+    {
+      "experiment": "P5_no_reliability",
+      "status": "NOT_RUN",
+      "seeds": [],
+      "metrics": null
+    }
+  ]
+}

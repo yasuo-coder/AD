@@ -1,4 +1,8 @@
-# 已核验数据协议
+# 数据协议
+
+当前七批独立研究见[ADNI_1–7审计](research/adni_1to7/DATA_AUDIT.md)、[方法与隔离](research/adni_1to7/METHOD_AUDIT.md)及计划004。1323FC/895人，固定新sample-level协议及独立subject-disjoint补充协议；私有成员和完整协议仅在服务器dataset_v1。以下998FC内容是历史五批协议，不能作为七批配置。
+
+## 已核验的五批历史协议
 依据服务器 `config.json`、`protocol.json`、data audit及冻结split；公开镜像在 `BrainPromptPro/configs/research_snapshot_20261007/`，不含划分明细。
 
 - 数据根 `/data2/panyao_data/ADNI`，ADNI_1→5顺序拼接，各批subject/visit排序；一张AAL116 Pearson FC对应一次rs-fMRI acquisition，FC为116×116、float32，对称有限，保留负相关，对角为相关矩阵自相关。不是原始MRI输入；T1配对不额外算FC。
