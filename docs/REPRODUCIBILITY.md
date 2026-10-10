@@ -22,3 +22,6 @@ Adam lr5e-5 wd.005，batch20 dropout.5 clip5；400max、至少120且100轮验证
 
 ## 恢复限制
 先读queue_status再用ps核对PID/command/starttime及result/checkpoint，不启动重复配置。queue可用新phase跳过已完成项且验证checkpoint SHA，遇到partial目录拒绝覆盖。last.pt保存optimizer/scheduler，但没有已实现的任意epoch续训入口，不能宣称自动恢复；先审计RNG/历史完整性，另设恢复计划。禁止删除partial目录或拿其他seed补齐。
+
+## 独立七批研究入口
+新入口 `python -m BrainPromptPro.scripts.adni_1to7.train --config BrainPromptPro/configs/adni_1to7/study_v1.json --experiment A0 --seed 42 --split 0 --device cuda:0 --output <N/new-output>`。`--split 0`为新sample-level协议，`--split 1`为独立subject-disjoint补充协议；不代表历史十折。恢复使用相同不可变代码目录、config、依赖checkpoint和输出，加`--resume`；完整保存optimizer/scheduler/模型/Python/NumPy/Torch/CUDA/loader/mask RNG，拒绝源码或配置hash改变。CPU两轮恢复已验证，旧五批runner的恢复限制不适用于此新入口。队列入口 `python -m BrainPromptPro.scripts.adni_1to7.run_queue --jobs <private-jobs.json> --state <private-state.json> --gpus 0,3,5,7`；启动前核实PID、输出和checkpoint，使用独立会话保活。新训练代码使用Git不可变副本，避免后续修改影响在跑源码封存。完整私有协议不复制到公开仓库。

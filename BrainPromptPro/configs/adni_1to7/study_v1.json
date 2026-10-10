@@ -1,0 +1,412 @@
+{
+  "model": "BrainPromptPro",
+  "baseline_root": "/home/panyao/AD/BrainPrompt",
+  "data": {
+    "format": "prepared_cohort_v1",
+    "cohort_name": "ADNI_Combined_1to7_v1",
+    "scope": "adni1to7",
+    "required_batches": [
+      "ADNI_1",
+      "ADNI_2",
+      "ADNI_3",
+      "ADNI_4",
+      "ADNI_5",
+      "ADNI_6",
+      "ADNI_7"
+    ],
+    "label_policy": "mci_to_lmci_v1",
+    "bundle": "/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010/dataset_v1/cohort.private.pt",
+    "bundle_sha256": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+    "node_num": 116,
+    "class_names": [
+      "CN",
+      "AD",
+      "SMC",
+      "EMCI",
+      "LMCI"
+    ],
+    "site_column": "site_id",
+    "missing_site": "error",
+    "split_mode": "fixed_sample_stratified_holdout",
+    "index_dir": null,
+    "roi_prompt": "/home/panyao/AD/BrainPrompt/data/prompts/ROI_prompts/AAL116_short_datatoken.pt",
+    "roi_text": "/home/panyao/AD/BrainPrompt/data/prompts/ROI_prompts/AAL116_short.txt",
+    "disease_prompt": "/home/panyao/AD/BrainPrompt/data/prompts/label_prompts/adni_label.pt",
+    "disease_text": "/home/panyao/AD/BrainPrompt/data/prompts/label_prompts/adni_label.txt",
+    "clinical_label_source": "download"
+  },
+  "net_params": {
+    "hidden_dim": 116,
+    "L": 4,
+    "readout": "mean",
+    "batch_norm": true,
+    "residual": true,
+    "dropout": 0.5,
+    "use_adaptive_brain_graph": true,
+    "use_disease_aware_readout": true,
+    "use_multirelation_population_graph": true,
+    "brain_edge_hidden_dim": 64,
+    "brain_edge_dropout": 0.0,
+    "pair_chunk_size": 16,
+    "disease_attention_dim": 116,
+    "relation_hidden_dim": 64,
+    "categorical_dim": 8,
+    "relation_gate": "subject_conditioned",
+    "population_scope": "batch",
+    "population_relations": [
+      "age",
+      "sex",
+      "site"
+    ],
+    "candidate_graph_mode": "full",
+    "legacy_fc_threshold": 0.3,
+    "legacy_edge_ratio": 0.2,
+    "legacy_population_threshold": 0.8
+  },
+  "loss": {
+    "lambda_disease": 1.0,
+    "lambda_brain_sparse": 0.0001,
+    "lambda_pop_sparse": 0.0001,
+    "lambda_relation_div": 0.0
+  },
+  "params": {
+    "seed": 42,
+    "epochs": 400,
+    "batch_size": 20,
+    "init_lr": 5e-05,
+    "weight_decay": 0.005,
+    "lr_reduce_factor": 0.5,
+    "lr_schedule_patience": 25,
+    "min_lr": 1e-06,
+    "n_splits": 1,
+    "num_workers": 0,
+    "threads": 2,
+    "device": "cuda:4",
+    "deterministic": true,
+    "early_stopping_patience": 100,
+    "checkpoint_selection": "validation_macro_f1_then_composite_then_lower_loss",
+    "min_epochs": 120,
+    "gradient_clip_norm": 5.0
+  },
+  "new_research": {
+    "dataset_version": "ADNI_Combined_1to7_v1",
+    "split_version": "sample_1729_v1",
+    "split_path": "/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010/dataset_v1/sample_split.private.json",
+    "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130"
+  },
+  "output_dir": "/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010/experiments",
+  "study": {
+    "protocol": "/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010/dataset_v1/protocol.json",
+    "sample_split": "/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010/dataset_v1/sample_split.private.json",
+    "subject_split": "/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010/dataset_v1/subject_split.private.json",
+    "experiments": {
+      "A0": {
+        "modules": {
+          "use_p2": false,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1
+        },
+        "stage": "supervised",
+        "training_mode": "joint"
+      },
+      "A1": {
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1
+        },
+        "stage": "supervised",
+        "training_mode": "joint"
+      },
+      "A2": {
+        "modules": {
+          "use_p2": false,
+          "use_p3": true,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1
+        },
+        "stage": "supervised",
+        "training_mode": "joint"
+      },
+      "A3": {
+        "modules": {
+          "use_p2": false,
+          "use_p3": false,
+          "use_p5": true,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1
+        },
+        "stage": "supervised",
+        "training_mode": "joint"
+      },
+      "A4": {
+        "modules": {
+          "use_p2": true,
+          "use_p3": true,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1
+        },
+        "stage": "supervised",
+        "training_mode": "joint"
+      },
+      "A5": {
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": true,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1
+        },
+        "stage": "supervised",
+        "training_mode": "joint"
+      },
+      "A6": {
+        "modules": {
+          "use_p2": false,
+          "use_p3": true,
+          "use_p5": true,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1
+        },
+        "stage": "supervised",
+        "training_mode": "joint"
+      },
+      "A7": {
+        "modules": {
+          "use_p2": true,
+          "use_p3": true,
+          "use_p5": true,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1
+        },
+        "stage": "supervised",
+        "training_mode": "joint"
+      },
+      "P2_pretrain_rec_05": {
+        "stage": "pretrain",
+        "epochs": 40,
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.05,
+          "decoder": "dot",
+          "consistency_weight": 0
+        }
+      },
+      "P2_pretrain_cons_05": {
+        "stage": "pretrain",
+        "epochs": 40,
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.05,
+          "decoder": "dot",
+          "consistency_weight": 0.1
+        }
+      },
+      "P2_pretrain_rec_10": {
+        "stage": "pretrain",
+        "epochs": 40,
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "consistency_weight": 0
+        }
+      },
+      "P2_pretrain_cons_10": {
+        "stage": "pretrain",
+        "epochs": 40,
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "consistency_weight": 0.1
+        }
+      },
+      "P2_pretrain_rec_15": {
+        "stage": "pretrain",
+        "epochs": 40,
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.15,
+          "decoder": "dot",
+          "consistency_weight": 0
+        }
+      },
+      "P2_pretrain_cons_15": {
+        "stage": "pretrain",
+        "epochs": 40,
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.15,
+          "decoder": "dot",
+          "consistency_weight": 0.1
+        }
+      },
+      "P2_pretrain_pair_10": {
+        "stage": "pretrain",
+        "epochs": 40,
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "pair",
+          "consistency_weight": 0
+        }
+      },
+      "P2_finetune": {
+        "stage": "supervised",
+        "training_mode": "finetune",
+        "modules": {
+          "use_p2": true,
+          "use_p3": false,
+          "use_p5": false,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1
+        }
+      },
+      "P5_no_reliability": {
+        "stage": "supervised",
+        "modules": {
+          "use_p2": false,
+          "use_p3": false,
+          "use_p5": true,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1,
+          "use_reliability": false
+        }
+      },
+      "P5_fixed": {
+        "stage": "supervised",
+        "modules": {
+          "use_p2": false,
+          "use_p3": false,
+          "use_p5": true,
+          "mask_ratio": 0.1,
+          "decoder": "dot",
+          "reconstruction_weight": 0.1,
+          "consistency_weight": 0.1,
+          "reference_topk": 16,
+          "reliability_temperature": 0.05,
+          "task_token_dim": 32,
+          "num_attention_heads": 1,
+          "task_attention_layers": 1,
+          "learn_edges": false,
+          "use_reliability": false
+        }
+      },
+      "LegacyPro": {
+        "stage": "supervised",
+        "architecture": "legacy",
+        "modules": {}
+      },
+      "HistoricalM2": {
+        "stage": "supervised",
+        "architecture": "M2",
+        "modules": {}
+      },
+      "HistoricalM3v3": {
+        "stage": "supervised",
+        "architecture": "M3v3",
+        "modules": {}
+      },
+      "HistoricalM3v3_no_metadata": {
+        "stage": "supervised",
+        "architecture": "M3v3_no_metadata",
+        "modules": {}
+      }
+    },
+    "finite_scope": "A0-A7 all3seeds; historical legacy/M2/M3v3/no_metadata; P5 fixed and no_reliability; P2 TRAIN-only 40epoch seed42 mask/consistency/decoder explorations then freeze recipe by validation before3seeds",
+    "selection": "validation macro-F1, historical fixed composite, lower classification loss; test deferred",
+    "p2_pretrain_budget": "40 epochs TRAIN only; one seed explorations then same selected recipe across3 seeds; report extra cost",
+    "output_root": "/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010"
+  }
+}

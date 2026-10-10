@@ -1,0 +1,13 @@
+{
+  "cpu_unit_tests": 16,
+  "cpu_full_model_switches": 8,
+  "cuda_full_model_switches": 8,
+  "status": "PASSED",
+  "real_train_backward_smoke": "PASSED",
+  "test_accessed": false,
+  "baseline_parity": "CPU bit exact; CUDA tolerance1e-6 after observed1.5e-7 rounding",
+  "formal_model_performance": "PENDING",
+  "smoke_runs_completed": 8,
+  "cpu_two_epoch_resume_model_and_rng_exact": true,
+  "formal_results": "NOT_RUN"
+}

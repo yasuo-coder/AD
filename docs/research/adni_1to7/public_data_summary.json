@@ -1,0 +1,86 @@
+{
+  "dataset_version": "ADNI_Combined_1to7_v1",
+  "samples": 1323,
+  "subjects": 895,
+  "classes": {
+    "CN": 850,
+    "AD": 65,
+    "SMC": 39,
+    "EMCI": 61,
+    "LMCI": 308
+  },
+  "batches": {
+    "ADNI_1": {
+      "valid_fc": 200,
+      "classes": {
+        "CN": 130,
+        "LMCI": 56,
+        "EMCI": 5,
+        "SMC": 5,
+        "AD": 4
+      }
+    },
+    "ADNI_2": {
+      "valid_fc": 198,
+      "classes": {
+        "EMCI": 15,
+        "CN": 126,
+        "SMC": 15,
+        "LMCI": 38,
+        "AD": 4
+      }
+    },
+    "ADNI_3": {
+      "valid_fc": 200,
+      "classes": {
+        "LMCI": 54,
+        "SMC": 18,
+        "CN": 111,
+        "AD": 11,
+        "EMCI": 6
+      }
+    },
+    "ADNI_4": {
+      "valid_fc": 200,
+      "classes": {
+        "CN": 127,
+        "LMCI": 49,
+        "AD": 7,
+        "EMCI": 16,
+        "SMC": 1
+      }
+    },
+    "ADNI_5": {
+      "valid_fc": 200,
+      "classes": {
+        "LMCI": 46,
+        "AD": 15,
+        "CN": 132,
+        "EMCI": 7
+      }
+    },
+    "ADNI_6": {
+      "valid_fc": 198,
+      "classes": {
+        "LMCI": 43,
+        "EMCI": 11,
+        "CN": 134,
+        "AD": 10
+      }
+    },
+    "ADNI_7": {
+      "valid_fc": 127,
+      "classes": {
+        "LMCI": 22,
+        "CN": 90,
+        "AD": 14,
+        "EMCI": 1
+      }
+    }
+  },
+  "dataset_sha256": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+  "split_sha256": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+  "manifest_sha256": "e66d6fe05aa44db298c3801b42c6e98155a29b1da17aa767fb2a8e39fe5eca2e",
+  "historical_fc_label_matches": 998,
+  "duplicate_scans_removed": 0
+}

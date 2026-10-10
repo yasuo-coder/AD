@@ -9,8 +9,10 @@
 - [x] 核验两CLI --split与新runner help，公开隐私/标签检查3项通过。
 - [x] 22项迁移合成回归通过；CLI接口通过。
 - [x] 最终引用与暂存区逐文件/敏感信息审查通过：177项来源hash一致，15处历史断链已修复；见docs/provenance/public_integration_review.md。
-- [ ] 提交并推送（受保护则独立branch/PR），记录实际commit。
+- [x] 提交并推送（受保护则独立branch/PR），记录实际commit。
 - [ ] 转入003：完成独立汇审、冻结、test一次、最终报告并同步。
 
 ## 验收
 source manifest可追溯；原项目未被移动/覆盖，原训练6项自然完成；公开tree无受试者数据、无二层Pro；数据协议不改，接口可用，文档不再称研究未开始。执行`python -B -m tests.run_integration_suite`、两个CLI help、stage2 verifier，检查git staged diff与远程HEAD。Git版本不倒填历史实验。
+
+已发布main 38c72b85f90ab0087556390d3bec97314cf10a3b，与本地493cc7d树完全一致。GitHub应用以expected SHA校验且非强推更新；本地旧main提交保留，后续研究在独立分支。

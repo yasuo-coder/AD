@@ -1,23 +1,25 @@
 # 当前状态
-核对时间：2026-10-10T08:37:13+08:00
+核对日期：2026-10-10（UTC）。
 
-## 当前任务
-先将真实服务器研究接入公开仓库，再完成已有限定范围的最终选型、冻结、测试与报告。活跃计划：[000 接入](plans/000_existing_work_integration.md)，后续 [003 最终验证](plans/003_experiment_validation.md)。
+## 活跃任务
+ADNI_1–7 的 P2 Masked Connectome / P3 Task Token / P5 Reliability Population 独立研究。
+分支 `research/adni1to7-p2p3p5`；活跃计划 [004](plans/004_adni1to7_p2p3p5.md)。
+M0–M3 已完成；模块已实现，基础验证和真实数据 smoke 通过；正式训练尚未启动。
 
 ## 已核验事实
-- 克隆默认分支 main，接入起点 `ed766de4749a66449948a08cbda9730c66032316`；原 BrainPrompt dirty 修改保留，原 Pro 无Git历史。
-- 阶段1有12次正式训练（共同加权9次、未加权探索3次），阶段2有72次正式训练（24配置×3seed），另6次两轮smoke。数值只从 result.json 汇总。
-- 最后队列 `last_triples_20261009` 六项全部退出0，运行中0、待启动0；队列主进程历史PID210880（不可仅凭旧PID判断活性）。未终止其他GPU作业，审计时 docker ps 无运行容器。
-- 阶段2正式实验72/72独立核验PASSED；另6个实际smoke通过。--scope all中18项未计划smoke标pending，不是正式实验缺项。
-- 公共副本保留nets/layers布局，CLI --split 和自定义路径；3项隐私/标签/布局检查通过；两项目CLI help与V3 runner help通过。合成图/梯度等22项回归全部通过（见docs/provenance/integration_validation.json）。
-- 最后M1_M2_M5验证五项均值超过主BP；但M2四背景平均F1边际为负，不满足三个独立有效模块的预定标准。不能据此宣称Top-3已达成。
+- 新数据版本 `ADNI_Combined_1to7_v1`：1323 FC、895 biological subjects；CN850/AD65/SMC39/EMCI61/LMCI308。MCI→LMCI，五类顺序不变。
+- 复用已有清洗时序统一计算经验 Pearson；既存 Nilearn 收缩相关不能与经验 Pearson 混用。旧五批纳入样本的 FC、标签、prompt 已逐项对齐。
+- 新主协议为独立固定 sample-level 80/10/10 holdout，split seed1729；训练seed42/3407/2026。subject-disjoint 补充划分另存。详细成员及关联审计仅在受控目录；不能声称主协议无同人重叠或外部验证。
+- P2/P3/P5 三开关可组合；16模块单测、CPU/CUDA各8组合、真实TRAIN小样本反向通过。CUDA比较容差1e-6；CPU基线关闭开关等价。
+- A0连续/恢复、A7、P2重建、LegacyPro、历史M2/M3v3及no_metadata入口共8份smoke结果完成；均标记 NOT_EVALUATED，不作为正式性能证据。
+- CPU A0两轮连续与断点恢复模型张量及RNG完全一致，证据 `resume_validation.json`。此验证绑定当时源码快照，不等于所有未来修订均已验证。
 
-## 下一步
-1. 公开暂存区审查、22项合成回归与文档引用核验已完成，提交并推送本次接入。
-2. 72正式结果独立核验与完整消融/M1机制审查已完成；按已固定Final_Selection_Rule冻结M1保守配置和M1_M2_M5展示消融组，才创建两个selection_lock。
-3. 使用冻结checkpoint对同一100例test各seed评估一次，核验导出、更新最终报告和仓库。当前没有最终test结果，勿填写目标值。
+## 路径、作业与下一步
+受控根目录 N=`/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010`。
+数据审计 `N/data_audit_v4`；冻结数据 `N/dataset_v1`；契约 `N/contracts_cpu.json`、`N/contracts_cuda.json`；恢复证据 `N/resume_validation.json`；smoke `N/smoke`。
+最新进程核对：无本项目训练作业；GPU 0/3/5/7有余量。下一步公开审查提交本轮实现，使用不可变代码副本运行A0三seed及P2有限预训练探索。正式训练禁止引用smoke checkpoint；全部test暂不评估。
 
-## 阻碍与边界
-没有数据/GPU路径阻碍。公开克隆不包含受限数据/权重/历史split，直接在新机器训练需要合法恢复私有工件；冻结历史工作继续从原工程执行。没有实现部分epoch的自动恢复，队列仅跳过已完成且哈希通过的项，遇到未完成输出会拒绝覆盖。
-
-本文件不预写本次提交SHA；接入提交以Git历史为准。历史实验不能归属于接入后提交。详细证据：[现有工作审计](docs/EXISTING_WORK_AUDIT.md)。
+## 历史边界与限制
+接入 main 已发布 `38c72b85f90ab0087556390d3bec97314cf10a3b`，原工程保留。五批研究12+72正式训练已核验；两个selection_lock及frozen_decision已创建，最终test未运行，计划003保留。
+没有七批正式指标，不宣称P2/P3/P5有效。P2两轮重建误差偏高，需要与TRAIN均值重建对照诊断；P3语义/参数对照和P5正式可靠性机制仍待验证。
+公开只包含代码、配置路径模板、总体匿名分布、hash和测试状态；完整协议、样本身份、split、权重保留服务器。
