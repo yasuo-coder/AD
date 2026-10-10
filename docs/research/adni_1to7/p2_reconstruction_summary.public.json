@@ -1,0 +1,123 @@
+{
+  "evaluation": "validation reconstruction; mean baseline fitted on TRAIN only",
+  "test_accessed": false,
+  "runs": [
+    {
+      "experiment": "P2_pretrain_cons_05",
+      "mask_ratio": 0.05,
+      "checkpoint_sha256": "cf3b15daa3f9e4c094f9d5c786c3e5c5f3e4483ad6e6ec0cdb5fddeab9fed580",
+      "best_training_epoch": 40,
+      "initial_mse": 1.0064147199184708,
+      "validation_mse": 0.0568870261420929,
+      "positive_mse": 0.06194790540534829,
+      "negative_mse": 0.05146085483500757,
+      "correlation": 0.05929624736653378,
+      "train_edge_mean_mse": 0.035413072352628944,
+      "beats_mean": false
+    },
+    {
+      "experiment": "P2_pretrain_cons_10",
+      "mask_ratio": 0.1,
+      "checkpoint_sha256": "2ebdc68e5f2e514894f0c037e06c9d1a24588add2db212bff7a0328556eb5dc5",
+      "best_training_epoch": 40,
+      "initial_mse": 1.0076941412082328,
+      "validation_mse": 0.05678050165541997,
+      "positive_mse": 0.062070513516438365,
+      "negative_mse": 0.05114089715322872,
+      "correlation": 0.046471655665154675,
+      "train_edge_mean_mse": 0.03546077982598988,
+      "beats_mean": false
+    },
+    {
+      "experiment": "P2_pretrain_cons_15",
+      "mask_ratio": 0.15,
+      "checkpoint_sha256": "fd741cc7ce3a998f5990ed145e2c8e3690a42ab8ca1b3949207ce446f61cb842",
+      "best_training_epoch": 40,
+      "initial_mse": 1.0074987287455317,
+      "validation_mse": 0.056737999418448724,
+      "positive_mse": 0.06173559253828535,
+      "negative_mse": 0.05140738360913626,
+      "correlation": 0.03699277484061927,
+      "train_edge_mean_mse": 0.03547223385881825,
+      "beats_mean": false
+    },
+    {
+      "experiment": "P2_pretrain_normalized_dot_10",
+      "mask_ratio": 0.1,
+      "checkpoint_sha256": "548b6b980543ff15cc820f5248391c4e6d2cf5185e13fa86852e33ffac61a5c4",
+      "best_training_epoch": 37,
+      "initial_mse": 0.05385035925964749,
+      "validation_mse": 0.05383613020250394,
+      "positive_mse": 0.05420431450411278,
+      "negative_mse": 0.053443614287692794,
+      "correlation": 0.27497080677377705,
+      "train_edge_mean_mse": 0.03546077982598988,
+      "beats_mean": false
+    },
+    {
+      "experiment": "P2_pretrain_normalized_pair_10",
+      "mask_ratio": 0.1,
+      "checkpoint_sha256": "f2e412213d684c61fb875c67abafd8c81e706c842e51e7803b4fc1a4d1dc2438",
+      "best_training_epoch": 40,
+      "initial_mse": 0.058286776095655725,
+      "validation_mse": 0.11154718254781223,
+      "positive_mse": 0.12053159682251859,
+      "negative_mse": 0.10196902950687918,
+      "correlation": 0.2852197355674205,
+      "train_edge_mean_mse": 0.03546077982598988,
+      "beats_mean": false
+    },
+    {
+      "experiment": "P2_pretrain_pair_10",
+      "mask_ratio": 0.1,
+      "checkpoint_sha256": "40055ea0a1061191f81c341bc9e0b8ab2f777e3da59bd27e730c20d29c5caa10",
+      "best_training_epoch": 37,
+      "initial_mse": 0.0718239514430116,
+      "validation_mse": 0.05617060764520755,
+      "positive_mse": 0.061121248302719124,
+      "negative_mse": 0.05089280183411464,
+      "correlation": 0.14376653216721713,
+      "train_edge_mean_mse": 0.03546077982598988,
+      "beats_mean": false
+    },
+    {
+      "experiment": "P2_pretrain_rec_05",
+      "mask_ratio": 0.05,
+      "checkpoint_sha256": "8b802ab1d997b10dbd13fdc5c9f666f59c9d9c1139c354801cdc50c18c064b29",
+      "best_training_epoch": 40,
+      "initial_mse": 1.0064147199184708,
+      "validation_mse": 0.05689534572022516,
+      "positive_mse": 0.05998115996961565,
+      "negative_mse": 0.05358679875278239,
+      "correlation": 0.06303126578698637,
+      "train_edge_mean_mse": 0.035413072352628944,
+      "beats_mean": false
+    },
+    {
+      "experiment": "P2_pretrain_rec_10",
+      "mask_ratio": 0.1,
+      "checkpoint_sha256": "4c24ea4294b1e82cd1ff3b2d30fec1ec217edb9a92c4a9713914f65397e48f98",
+      "best_training_epoch": 40,
+      "initial_mse": 1.0076941412082328,
+      "validation_mse": 0.05673046107159902,
+      "positive_mse": 0.06129516515008692,
+      "negative_mse": 0.051864096619392445,
+      "correlation": 0.05349172430155361,
+      "train_edge_mean_mse": 0.03546077982598988,
+      "beats_mean": false
+    },
+    {
+      "experiment": "P2_pretrain_rec_15",
+      "mask_ratio": 0.15,
+      "checkpoint_sha256": "5d0f6c1908a5a0e73c8c77de0db43af40575bd0b7247dbfdb972c06b4ff7809c",
+      "best_training_epoch": 40,
+      "initial_mse": 1.0074987287455317,
+      "validation_mse": 0.056709826458366794,
+      "positive_mse": 0.06138593089333592,
+      "negative_mse": 0.0517221222516951,
+      "correlation": 0.04280845006058928,
+      "train_edge_mean_mse": 0.03547223385881825,
+      "beats_mean": false
+    }
+  ]
+}

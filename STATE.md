@@ -25,3 +25,7 @@ M0–M3 已完成；模块已实现，基础验证和真实数据 smoke 通过�
 接入 main 已发布 `38c72b85f90ab0087556390d3bec97314cf10a3b`，原工程保留。五批研究12+72正式训练已核验；两个selection_lock及frozen_decision已创建，最终test未运行，计划003保留。
 没有七批正式指标，不宣称P2/P3/P5有效。首个P2 mask.05/40轮验证重建劣于TRAIN逐边均值，见D015与受控probes；初始化饱和和近常数输出有实证，不宣布P2有效。已新增P3三对照及P2两数值候选，5个CPU单轮smoke全部通过；这些不计正式性能。P3和P5机制收益仍待正式验证。
 公开只包含代码、配置路径模板、总体匿名分布、hash和测试状态；完整协议、样本身份、split、权重保留服务器。
+
+## Phase2 当前活跃作业
+`N/queues/phase2_controls/state.private.json`，controller PID1165476，GPU0/3/5/7，运行源码`N/code/39112f2`；本地39112f2与公开c499ddb8f08704b1eb56af27e8c8e8855f74801a的tree相同。14项单seed任务中两个归一化预训练已完成，历史Pro/M2/M3、A1/A2/A3和P3/P5机制对照按队列继续。完整实时状态见state及ps；不得从旧代码目录恢复新任务。
+9个P2预训练的验证重建探针均完成且未胜过TRAIN边均值；见公开P2_Reconstruction_Diagnostics及D017。预训练微调CPU单轮入口通过。正在准备独立Phase3：P2两种单损失、两种预训练微调及一个无Dropout预训练诊断；使用新不可变副本，输出不得覆盖Phase1/2。

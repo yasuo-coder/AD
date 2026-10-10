@@ -13,6 +13,7 @@ from BrainPromptPro.scripts.adni_1to7.audit_dataset import sha, write_json
 METRICS = ['accuracy', 'f1_macro', 'precision_macro', 'recall_macro', 'balanced_accuracy', 'roc_auc_macro']
 PLANNED = ['A0', 'LegacyPro', 'HistoricalM2', 'HistoricalM3v3', 'HistoricalM3v3_no_metadata',
            'A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7',
+           'P2_joint_rec_only', 'P2_joint_cons_only', 'P2_finetune_rec10', 'P2_finetune_cons10',
            'P3_random', 'P3_learned_query', 'P3_parameter_matched', 'P5_fixed', 'P5_no_reliability']
 
 

@@ -60,3 +60,9 @@ STATE 用最新快照，详细决策/实验按 ID 追加，避免无限追加聊
 
 ## D015 / 2026-10-10 / P2数值诊断候选，尚未证明有效
 原始dot、mask.05、40轮TRAIN预训练的验证重建MSE .056895，TRAIN逐连接均值对照 .035413；预测标准差 .02538、相关性 .06303，接近常数。初始tanh饱和比例 .98105。依据受控 probes/P2_pretrain_rec_05.json，追加两个有限候选：仅解码器内对ROI特征LayerNorm后减ROI均值；dot用可学习缩放cosine、初始scale .1，pair用同一中心化输入。两候选均mask.10、seed42、40轮，原始7项负面结果保留；不修改运行中的代码或A0。先比较验证重建和TRAIN均值，再验证分类收益。P3同时登记random、无语义learned_query和均值MLP近参数匹配对照；这些仅控制新P3 ROI查询，原基线疾病辅助损失保持不变。
+
+## D016 / 2026-10-10 / 补齐P2分类机制对照
+原始七项预训练的验证重建均劣于TRAIN逐连接均值，不能把下降的训练loss称作有效预训练。但重建失败本身不能替代分类验证；按用户要求登记joint rec-only、joint cons-only、固定40轮rec10/cons10后finetune四项seed42对照。权重/优化预算沿用共同协议，额外40轮成本单列。与A1 joint full及A0比较后再决定配方，不直接给八组合使用未经验证的修订；test保持封存。
+
+## D017 / 2026-10-10 / 仅预训练Dropout诊断
+归一化pair验证MSE .111547；TRAIN-only四模式探针：eval .114435、train .049894、固定BN统计但开启Dropout .050739、batch统计且关闭Dropout .219797。Dropout状态变化具有明显影响，BN也可能交互，不能只怪验证过拟合。新增一个受限候选normalized pair / mask.10 / TRAIN dropout0 / 40轮 / seed42，原始结果保留；监督训练dropout仍.5。证据N/probes/pretrain_modes_normalized_pair.json。候选尚未证明有效，不能把关闭Dropout推为全模型最优配置。

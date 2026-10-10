@@ -9,6 +9,15 @@ def completed(entry):
     if data['experiment']!=entry['experiment'] or data['seed']!=entry['seed'] or data['smoke_epochs']:
         raise ValueError('Completed job identity differs from queue declaration')
     if data['config_sha256']!=sha(entry['config']):raise ValueError('Completed config differs')
+    cfg=json.loads(Path(entry['config']).read_text())
+    split_path=cfg['study']['sample_split' if str(entry.get('split','0'))=='0' else 'subject_split']
+    if data['split_hash']!=sha(split_path):raise ValueError('Completed split differs')
+    for field in ['initial','reference']:
+        dependency=entry.get(field+'_checkpoint')
+        if data[field+'_sha256']!=(sha(dependency) if dependency else None):raise ValueError('Completed dependency differs')
+    root=Path(entry['code_root']).resolve()
+    if not any(Path(p).is_relative_to(root) for p in data['source_sha256']):raise ValueError('Completed code root differs')
+    if any(sha(p)!=h for p,h in data['source_sha256'].items()):raise ValueError('Completed source changed')
     cp=out/('best_training.pt' if data['stage']=='pretrain' else 'best_validation.pt')
     if sha(cp)!=data['checkpoint_sha256']:raise ValueError('Existing result checkpoint mismatch')
 

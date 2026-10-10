@@ -124,6 +124,10 @@ def main():
             for name in ['visibility_projection','decoder']:
                 getattr(model,name).load_state_dict({k[len(name)+1:]:v for k,v in ck['model'].items() if k.startswith(name+'.')})
     stage=spec.get('stage','supervised');epochs=a.smoke_epochs or (spec.get('epochs',40) if stage=='pretrain' else optconfig['epochs'])
+    if 'pretrain_dropout' in spec:
+        if stage!='pretrain' or not 0<=spec['pretrain_dropout']<1:raise ValueError('Invalid pretraining-only dropout override')
+        for module in model.modules():
+            if isinstance(module,torch.nn.Dropout):module.p=spec['pretrain_dropout']
     best_path=a.output/('best_training.pt' if stage=='pretrain' else 'best_validation.pt')
     if stage=='pretrain' and not model.use_p2:raise ValueError('Pretraining needs P2')
     if a.output.exists() and not a.resume:raise FileExistsError('Output exists; do not overwrite')
