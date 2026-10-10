@@ -37,3 +37,20 @@ ADNI_*/
 Thumbs.db
 
 # Ignoring is not a privacy guarantee; inspect every staged change.
+
+# Private cohort manifests and local exception audits
+*.index
+*.pkl
+*.pickle
+*.mat
+*.hdf
+*.dconn.nii
+*.dtseries.nii
+private_audit*.json
+*.private.json
+*_samples.csv
+*predictions.csv
+*manifest.csv
+*metadata.csv
+*metadata.tsv
+BrainPromptPro/configs/local/

@@ -1,24 +1,16 @@
 # 项目背景
-更新：2026-10-09
+更新：2026-10-09T21:21:08+08:00
 
-## 长期目标
-在 BrainPrompt 开源方法基础上，研究语义提示与图学习如何改善 ADNI 多类别疾病分类。
-评估 Accuracy、Macro-F1、Balanced Accuracy、每类 Recall、混淆矩阵及适用的多类别 AUC。
+研究已在服务器开展，初始化文档不是实际进度。源码和匿名汇总现接入本仓库；历史运行仍在原目录，不迁移、不重训。
 
-## 用户已明确的要求
-- 数据由 ADNI_1、ADNI_2、ADNI_3、ADNI_4、ADNI_5 合并组成。
-- 模型输入为 rs-fMRI 时间序列计算得到的 FC 矩阵，不直接输入扫描图像。
-- 新代码全部放在 BrainPromptPro/。
-- 关注语义引导自适应脑图、疾病感知读出、学习化 population graph；允许补充候选并通过证据选择最有效的三个。
-- 不采用 BrainPromptPlus 提出的方法；具体排除范围需要论文和代码核验。
-- 不同访视可作为独立样本，样本单位与评估划分另见数据协议。
+- 原工程：`/home/panyao/AD/BrainPrompt`（官方 c85304a 加既有本地修改）；`/home/panyao/AD/BrainPromptPro`（此前未纳入 Git）。
+- 数据根：`/data2/panyao_data/ADNI`，本轮仅 ADNI_1–5，FC 样本为一次 rs-fMRI acquisition；不同 visit 保留。
+- 研究目录：`/home/panyao/AD/BrainPromptPro/outputs/research/final_optimization_20261007`，候选阶段为其 `stage2_20261008`。
+- 固定五类 CN/AD/SMC/EMCI/LMCI，MCI→LMCI；998 FC、685 biological subjects，固定798/100/100 holdout，seed42/3407/2026。详情见数据协议。
+- 最新任务使用验证 macro-F1 选 checkpoint，与早期十折末轮协议分开；不执行初始化文档曾拟议的五折。
+- 目标为五项指标整体提升，宏F1/P/R≥60%为研究目标而非已达成结果。不能强凑三个弱模块。
+- BrainPromptPlus 全文及官方代码已审查，具体排重文件见 docs/research；不能照搬频谱/空间语义提示图创新。
+- Source_Dataset 仅追踪；site 为历史metadata字段，未独立确认真实采集站点来源。
+- 允许同人跨 split 关联，必须报告46/38/6共享受试者；ADNI_1–4有历史探索暴露，不是新外部验证队列。
 
-## 待核验的历史背景
-过去对话报告过全部预测 CN 的分类塌缩，且 Accuracy 等于多数类比例。
-本仓库尚未取得原日志和 checkpoint，不能把这些报告当作本次复现实验结果。
-当前类别定义、样本数、划分和已有优化实现均待代码与数据核验。
-
-## 来源与界限
-上游候选：https://github.com/AngusMonroe/BrainPrompt
-来源目前为用户会话及仓库初始化检查；尚未阅读并导入上游论文和源码。
-不预先宣称任何候选有效，也不预先锁定三项最终创新。
+下一步始终读取 STATE、EXPERIMENTS、活跃计划和实际队列；禁止重复启动已完成配置。公开仓库无受试者明细、FC、原始影像、权重、LLM模型或患者prompt。

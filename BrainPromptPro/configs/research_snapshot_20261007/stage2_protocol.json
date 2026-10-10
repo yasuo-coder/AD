@@ -1,0 +1,27 @@
+{
+  "phase": "candidate_development",
+  "source_protocol": "/home/panyao/AD/BrainPromptPro/outputs/research/final_optimization_20261007/protocol.json",
+  "source_protocol_sha256": "e51dee804721f75f69d389e6f2e66761b96a4ea9fdcafd76aee908ee6ce724a7",
+  "data_or_split_changes": false,
+  "seeds": [
+    42,
+    3407,
+    2026
+  ],
+  "supporting_profile": "sqrt_inverse_frequency",
+  "selection": "same validation macro F1, composite, loss; no test",
+  "single_module_order": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5"
+  ],
+  "ranking_rule": "Five mean metric deltas versus BP; Strong=all five positive; Acceptable=at least four positive and remaining >= -0.01 absolute; <=2 positives and a drop >.01 is Weak. Report every seed; select no best seed.",
+  "pairwise_rule": "Explore pairs among top four validation macro-F1 candidates, including mechanistically complementary M1/M2/M3 when singles suggest interaction; show all deltas, never assume synergy",
+  "triple_rule": "At most top four triples after pairs; no forced claim of three successful innovations",
+  "reference_bank": "All 798 TRAIN acquisitions, numeric FC upper triangle + age/sex/site; no diagnosis/source features. Self reference masked by Sample_ID during train; same acquisition metadata mask on all roles; no query-query edges.",
+  "test": "CLOSED until model and ablation decisions frozen",
+  "paper_sha256": "16f5b593f95b45431f2938243c36c16ecbfa427ed296349de3026ee1361979df",
+  "source_configuration_sha256": "a1a0eb62a2f839b889505fe663d8e8fad0aea7751f38263863cce3c911cd9050"
+}

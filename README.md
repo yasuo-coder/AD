@@ -1,28 +1,11 @@
 # AD- / BrainPromptPro
+基于ADNI rs-fMRI功能连接和语义提示的多类别分类研究。已接入服务器实际BrainPrompt、BrainPromptPro、固定协议、候选实现及匿名验证汇总；受控数据和权重不公开。
 
-BrainPromptPro：基于 ADNI 静息态 fMRI 功能连接与语义提示的阿尔茨海默病分类研究。
+先读[STATE](STATE.md)、[现有工作审计](docs/EXISTING_WORK_AUDIT.md)和[活跃接入计划](plans/000_existing_work_integration.md)，不能从初始化骨架重新开始实验。
 
-当前交付为项目目录及长期上下文管理体系。尚未导入 BrainPrompt 源码、数据或模型，不能直接启动训练。
+- [背景](CONTEXT.md)、[路线](ROADMAP.md)、[决策](DECISIONS.md)、[实验索引](EXPERIMENTS.md)
+- [数据协议](docs/DATA_PROTOCOL.md)、[实际架构](docs/ARCHITECTURE.md)、[复现与恢复](docs/REPRODUCIBILITY.md)
+- [BrainPrompt来源](BrainPrompt/UPSTREAM.md)、[BrainPromptPro源码](BrainPromptPro/README.md)、[Plus排重](docs/research/BrainPromptPlus_Novelty_Exclusion_List.md)
+- [三seed验证汇总](docs/experiments/final_optimization_20261007/Validation_Results.md)
 
-## 快速恢复上下文
-打开仓库根目录，让 Codex 读取 [AGENTS.md](AGENTS.md)，然后读取 [STATE.md](STATE.md)。
-使用 [会话启动模板](docs/SESSION_START.md) 提交本次具体任务。
-
-## 文档导航
-| 文件 | 职责 |
-| --- | --- |
-| [CONTEXT.md](CONTEXT.md) | 研究背景、目标与约束 |
-| [STATE.md](STATE.md) | 最新状态、阻碍、下一步 |
-| [ROADMAP.md](ROADMAP.md) | 阶段目标与验收标准 |
-| [DECISIONS.md](DECISIONS.md) | 决策、理由与证据 |
-| [EXPERIMENTS.md](EXPERIMENTS.md) | 实验索引 |
-| [数据协议](docs/DATA_PROTOCOL.md) | 数据、标签、划分、泄漏检查 |
-| [架构](docs/ARCHITECTURE.md) | 候选方法及接口 |
-| [复现要求](docs/REPRODUCIBILITY.md) | 环境、版本与实验记录 |
-| [plans/](plans/) | 活跃执行计划 |
-| [BrainPromptPro/](BrainPromptPro/) | 新开发代码目录 |
-
-## 工作方式
-每个里程碑：恢复上下文 → 执行计划 → 验证 → 更新文档 → 提交对应改动。
-STATE 保持最新快照；决策与实验按 ID 追加；详细日志保存在实验服务器。
-数据、个人信息、密钥和模型权重不提交本仓库。仓库目前为公开仓库。
+当前采用998 FC的固定训练/验证/测试划分与三训练seed，非初始化拟议五折。研究收益和Top-3资格按实际验证/消融判定，未宣称已经达到60%目标。公开树不含ADNI影像、FC、受试者信息、私有划分、密钥和checkpoint。

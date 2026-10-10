@@ -1,28 +1,24 @@
-# 复现与实验要求
+# 复现与恢复
+服务器Python：`/home/panyao/miniconda3/envs/brainprompt/bin/python`；Python3.10.21、torch2.4.0+cu121、DGL2.4.0+cu121、CUDA12.1、numpy1.26.4、scipy1.15.3、sklearn1.7.2、pandas2.3.3、transformers4.44.2。GPU为RTX4090；共享负载使耗时不适合作严格速度benchmark。
 
-## 代码和环境
-记录上游/本仓库 Git SHA、dirty patch、Python/PyTorch/CUDA/图库版本、GPU 和依赖锁定信息。
-当前环境未确认，不能先填写固定依赖或训练命令。
+## 公开副本验证
+在仓库根执行 `PYTHONDONTWRITEBYTECODE=1 python -B -m tests.run_integration_suite`（合成数据）；`python BrainPromptPro/llm-main.py --help`；`cd BrainPrompt && python llm-main.py --help`；`python -m BrainPromptPro.candidate_v3_initialized_runner --help`。不包含全量数据依赖测试成功的承诺。
+两旧CLI保留`--config`和`--split`，baseline --split为0–9。新研究runner使用固定holdout，不接受--split；不要把历史CV接口强加新协议。
 
-## 每次实验
-记录 Experiment ID、完整配置/命令、seed、数据版本、split hash、标签映射、预处理、
-checkpoint 选择指标、停止规则、作业 ID、起止时间、退出码、日志及 checkpoint 路径。
-seed 与确定性设置需实际保存，不能把固定 seed 视为完全消除 GPU 非确定性。
+`BrainPromptPro/scripts/server_research/`明确保留原服务器绝对路径，是冻结历史运行的审计/恢复脚本，不是跨机器免配置入口。
 
-## 验证顺序
-1. FC 与标签检查。
-2. 前向 shape、finite、loss、梯度与图边界检查。
-3. 小样本过拟合和单折诊断。
-4. 固定协议后的完整训练和消融。
-只运行与改动相关的有效验证，不为目录占位写模型测试。
+## 当前实验命令与运行位置
+工作目录`/home/panyao/AD`，始终用上述venv Python和原BrainPromptPro。R=`/home/panyao/AD/BrainPromptPro/outputs/research/final_optimization_20261007`；S=R/stage2_20261008。
+已执行：`python -m BrainPromptPro.candidate_v3_initialized_runner train --model MODEL --seed SEED --device cuda:0`；种子42/3407/2026，共同sqrt_inverse_frequency profile。单GPU由CUDA_VISIBLE_DEVICES映射；队列为S/audit_scripts/run_research_queue_v2.py，独立Popen start_new_session启动，状态/日志保存在S。最后phase last_triples_20261009已完成，不再执行train。
+复核：`python "$S/audit_scripts/verify_stage2_development_v2.py" --scope all`；`python "$S/audit_scripts/summarize_stage2.py"`；`python "$S/audit_scripts/build_ablation_evidence.py"`。冻结后开发验证器按设计拒绝继续（防test污染），使用冻结前验证报告。
+最终test需先按Final_Selection_Rule建立两个selection_lock，具体路径和checkpoint SHA固定；官方/旧Pro用research_runner test，V2用candidate_runner test，V3用candidate_v3_initialized_runner test；每项只允许导出一次。未冻结不运行test。导出后verify_final_test_artifacts.py独立复算。
 
-## 指标
-报告 Accuracy、Balanced Accuracy、Macro-F1、每类 Precision/Recall/F1、混淆矩阵。
-多类 AUC 写明 OvR/OvO、macro/weighted 和缺失类别处理，不能用硬标签代替预测概率。
-以验证集选择 checkpoint 与超参；测试集固定后仅用于最终评价。
-五折给出各折值与均值/标准差，多种子统计与折间统计分别标识。
+## 协议
+Adam lr5e-5 wd.005，batch20 dropout.5 clip5；400max、至少120且100轮验证选型无改善或LR<1e-6停止，LR loss patience25 factor.5。训练计数^-0.5均值归一化用于两个CE，辅助权重1、图项1e-4。checkpoint主验证macroF1，平局固定综合分再低loss。三seed报告mean±sample SD，不挑best seed；ROC-AUC=概率macro OvR，来源子集缺类则AUC缺失，P/R/F1仍固定五类macro。
 
-## 作业恢复
-使用服务器现有调度器、systemd 或 tmux 管理长时任务，记录恢复命令。
-checkpoint 保存模型、优化器、调度器、epoch/step、随机状态和配置。
-公开文档仅保留汇总；影像、标签明细、身份、密钥、权重留在受控存储。
+## 路径与版本
+新克隆提供源码而非复制受控产物。历史config中的路径与@pro保持原义；跨机器需在私有local配置映射data、baseline_root、prompt、bundle，恢复经哈希核验的私有split，不能直接重造划分。不要覆盖server frozen config。公开构建脚本的例外清单由BRAINPROMPT_PRIVATE_AUDIT_JSON指向服务器私有JSON，字段missing_original_images/excluded_historical_replacements/adni4_sex_conflicts；读取前与已裁决私有文件SHA256绑定，同时检查预定2/1/1基数；缺失/篡改/空/重复时拒绝。不要把它提交Git。
+原Pro历史无Git版本；从每实验source_sha256、source/快照和checkpoint追溯。接入manifest列source/imported hash；接入修订不影响原训练源码。root阶段1全依赖封存为训练后补充证据，不能倒称完整训练前seal。
+
+## 恢复限制
+先读queue_status再用ps核对PID/command/starttime及result/checkpoint，不启动重复配置。queue可用新phase跳过已完成项且验证checkpoint SHA，遇到partial目录拒绝覆盖。last.pt保存optimizer/scheduler，但没有已实现的任意epoch续训入口，不能宣称自动恢复；先审计RNG/历史完整性，另设恢复计划。禁止删除partial目录或拿其他seed补齐。

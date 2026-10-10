@@ -1,0 +1,43 @@
+{
+    "gpu": {
+        "use": true,
+        "id": 0
+    },
+    "model": "LG-GNN",
+    "dataset": "abide_full_AAL116",
+    "out_dir": "out/baselines/LG-GNN/abide_full_AAL116/",
+    "params": {
+        "seed": 41,
+        "epochs": 1000,
+        "batch_size": 20,
+        "init_lr": 5e-05,
+        "lr_reduce_factor": 0.5,
+        "lr_schedule_patience": 25,
+        "min_lr": 1e-06,
+        "weight_decay": 0.005,
+        "print_epoch_interval": 5,
+        "max_time": 12,
+        "node_feat_transform": "pearson",
+        "edge_ratio": 0.2,
+        "threshold": 0.3
+    },
+    "net_params": {
+        "L": 4,
+        "hidden_dim": 116,
+        "out_dim": 116,
+        "residual": true,
+        "readout": "mean",
+        "in_feat_dropout": 0.0,
+        "dropout": 0.0,
+        "batch_norm": true,
+        "self_loop": false,
+        "edge_feat": true,
+        "lg_pool_ratio": 0.9,
+        "lg_mi_weight": 0.1,
+        "lg_affinity_threshold": 1.1,
+        "lg_age_threshold": 2.0,
+        "lg_population_scope": "split",
+        "baseline_metadata_csv": null
+    },
+    "implementation": "adapted_baseline"
+}

@@ -1,0 +1,4 @@
+# Optional only for fTSPL; install a matching torch/torchvision build first.
+open_clip_torch==2.23.0
+timm==0.9.12
+transformers==4.35.2

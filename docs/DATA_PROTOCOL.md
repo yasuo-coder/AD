@@ -1,36 +1,15 @@
-# 数据协议
-状态：用户要求已记录，实际数据待核验。
+# 已核验数据协议
+依据服务器 `config.json`、`protocol.json`、data audit及冻结split；公开镜像在 `BrainPromptPro/configs/research_snapshot_20261007/`，不含划分明细。
 
-## 数据与输入
-ADNI_1–5 合并；输入为 rs-fMRI 计算的 FC。
-待记录：各数据版本、去重规则、时间序列提取、AAL116/其他 atlas、ROI 顺序、
-相关系数定义、Fisher-z、对角线、负边、阈值、缺失值与 QC 规则。
-不能假定所有 FC 均为 116×116；需检查实际文件。
+- 数据根 `/data2/panyao_data/ADNI`，ADNI_1→5顺序拼接，各批subject/visit排序；一张AAL116 Pearson FC对应一次rs-fMRI acquisition，FC为116×116、float32，对称有限，保留负相关，对角为相关矩阵自相关。不是原始MRI输入；T1配对不额外算FC。
+- 998 FC，685 biological subjects，216人多访视；CN626/AD41/SMC39/EMCI49/LMCI243。AD 4.108%。各批FC200/198/200/200/200，AD4/4/11/7/15。没有把目录当独立训练集。
+- 原CSV影像行数不能当FC数；ADNI1–4的8/8/22/14条AD影像包含配对T1。两张缺少可核验映射的原始功能扫描排除，一张不在下载清单的替代扫描不补入；私有ID只留服务器。
+- 标签使用下载CSV Group；CN=0/AD=1/SMC=2/EMCI=3/LMCI=4，MCI→LMCI（191条原MCI）。疾病prompt和输出同序。79原始来源冲突、合并后58冲突采用统一既定来源约定，非独立临床裁决。
+- 严格检查同一扫描/Image ID、时序内容、FC内容；不同visit不自动去重。此队列未发现重复/无效FC。
+- 固定seed42分层划分，train798 [500,33,31,39,195]，val/test各100 [63,4,4,5,24]。只由划分器内部打乱，三训练seed共用同一划分。
+- split SHA256 `0a2245d4febd3f187291e78aec7a367066f18c43dc310ab0e426e97bde793d6e`；bundle SHA256 `a93f450ad99b5574bdbddf57993f2c4ea21a4253e2e40d51c79c918499f857c7`。
+- Train–Val/Train–Test/Val–Test共享biological subjects=46/38/6。用户允许sample-level主协议，不能声称未见受试者泛化。ADNI1–4历史研究暴露已记录，不是新外部队列。
+- age/sex来自下载metadata；site由历史ADNI_2/pipeline_logs/ADNI_metadata.csv按Image ID对齐，未独立核验真实采集site。source×site Cramér's V=.969、site×diagnosis=.340仅描述关联。Source_Dataset不进入分类特征/关系。
+- 元数据编码、类别权重、M3参考库及V3 PCA仅训练集拟合。M3参考798 TRAIN样本、当前样本自环屏蔽；不传播query-query。所有疾病query同时使用，无真实标签选择prompt。
 
-## 样本单位
-一次有效访视/扫描对应一个样本；不同访视允许作为独立样本。
-同次扫描重复文件需去重。受试者关联信息在受控服务器保留用于审计，不上传公开仓库。
-
-## 标签
-类别数、原始诊断值、整数编码、disease prompt 逐项核对。
-MCI、SMC 等处理及任何 5→4 合并没有核验前均为未确定。
-诊断标签应对应访视时间；不得从训练/测试结果倒推修改映射。
-
-## 划分
-已有 split 优先核验，不擅自重新划分。
-记录样本单位、比例/折数、seed、分层规则、清单 hash、各类分布及同人跨 split 重叠。
-扫描级与受试者独立评估分别命名，不混合解释。
-拟定五折时，验证集选择只使用训练折，最终测试折不用于优化筛选。
-
-## 泄漏核验
-检查重复扫描/FC、不同访视关联、全数据拟合归一化和特征选择、
-population graph 中测试节点/标签使用，以及 prompt 是否引入真实标签。
-记录 inductive/transductive 协议与测试节点可访问的信息。
-所有可学习预处理只在训练数据拟合。
-
-## 待完成清单
-- [ ] 数据路径、访问权限与版本。
-- [ ] 样本数、重复、FC shape/finite/symmetry、ROI 顺序。
-- [ ] 标签映射与每类分布。
-- [ ] 划分文件与跨划分关联统计。
-- [ ] 预处理、图构建、prompt 与评价泄漏审计。
+私有bundle：`/home/panyao/AD/BrainPromptPro/outputs/data/adni12345_download_mci_to_lmci_v1_20261007/cohort.pt`；划分：研究目录`splits/ADNI_Combined`。这些文件不上传；只保存哈希、分布和恢复规则。
