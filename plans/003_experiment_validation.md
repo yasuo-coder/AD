@@ -6,10 +6,12 @@
 - [x] 72候选/对照/组合训练完成；最后队列6exit0，现运行0。
 - [x] 正式scope experiments 72/72 PASSED；6个实际smoke也通过，all报告中18项未计划smoke不补跑。
 - [x] build_ablation_evidence.py 输出四组三元的八配置、四背景平均边际和leave-one-out，两者不偷换。
-- [ ] 根据验证与机制证据形成具体frozen_decision，较简候选/leading triple/三seedcheckpoint集合全部列出。
+- [x] 根据验证与机制证据形成具体frozen_decision，较简候选/leading triple/三seedcheckpoint集合全部列出。
 - [ ] 依次创建root/stage2 selection_lock，运行pretest preflight。
 - [ ] root三基线+选定候选+leading triple完整八配置（去重）正式test，统一100例，不选bestseed。
 - [ ] verify_final_test_artifacts.py 独立复算；完整指标、逐类、来源缺类AUC、预测分布、目标是否失败全部报告。
 - [ ] 更新本地20节BrainPromptPro_Optimization_Report.md，公开匿名汇总及STATE/EXPERIMENTS，提交推送。
 
 验收：锁先于test，数据/split/hash不变，所有被测模型三seed完整，未编造Top-3或60%，不看test后换配置。真实运行失败保留证据而不覆盖；当前无新训练要启动。
+
+2026-10-10：接入提交38c72b8已发布；两个selection_lock及frozen_decision已创建。未执行preflight或test，随后用户启动独立七批004；旧锁不改、不与新研究混合。

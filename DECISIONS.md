@@ -48,3 +48,47 @@ STATE 用最新快照，详细决策/实验按 ID 追加，避免无限追加聊
 
 ## D011 / 2026-10-09 / 迁移兼容性
 实际nets/layers/data/cli布局优先于初始化空models/training目录。保留--split与历史入口；验证代码位于根tests，历史相对导入已调整。server_research脚本保持服务器冻结路径，不能误当跨机器免配置入口。公开副本的历史路径配置保留为模板，使用前明确映射私有工件，不自动移动数据。
+
+## D012 / 2026-10-10 / 七批独立研究
+用户新任务使用独立分支、数据版本、划分与输出。五批已冻结选择不变；旧test未运行。
+
+## D013 / 2026-10-10 / Pearson与采集配对
+复用清洗时序统一经验Pearson；不能与既存收缩相关混用。同访视不同采集日期分别保留。QC失败不补造，原998FC保持相同。
+
+## D014 / 2026-10-10 / P5固定编码器
+初版query与TRAIN reference都由同seed新A0固定checkpoint编码；分类主干独立训练，禁过期参考缓存与直接current-FC value捷径；报告额外编码器成本。
+
+## D015 / 2026-10-10 / P2数值诊断候选，尚未证明有效
+原始dot、mask.05、40轮TRAIN预训练的验证重建MSE .056895，TRAIN逐连接均值对照 .035413；预测标准差 .02538、相关性 .06303，接近常数。初始tanh饱和比例 .98105。依据受控 probes/P2_pretrain_rec_05.json，追加两个有限候选：仅解码器内对ROI特征LayerNorm后减ROI均值；dot用可学习缩放cosine、初始scale .1，pair用同一中心化输入。两候选均mask.10、seed42、40轮，原始7项负面结果保留；不修改运行中的代码或A0。先比较验证重建和TRAIN均值，再验证分类收益。P3同时登记random、无语义learned_query和均值MLP近参数匹配对照；这些仅控制新P3 ROI查询，原基线疾病辅助损失保持不变。
+
+## D016 / 2026-10-10 / 补齐P2分类机制对照
+原始七项预训练的验证重建均劣于TRAIN逐连接均值，不能把下降的训练loss称作有效预训练。但重建失败本身不能替代分类验证；按用户要求登记joint rec-only、joint cons-only、固定40轮rec10/cons10后finetune四项seed42对照。权重/优化预算沿用共同协议，额外40轮成本单列。与A1 joint full及A0比较后再决定配方，不直接给八组合使用未经验证的修订；test保持封存。
+
+## D017 / 2026-10-10 / 仅预训练Dropout诊断
+归一化pair验证MSE .111547；TRAIN-only四模式探针：eval .114435、train .049894、固定BN统计但开启Dropout .050739、batch统计且关闭Dropout .219797。Dropout状态变化具有明显影响，BN也可能交互，不能只怪验证过拟合。新增一个受限候选normalized pair / mask.10 / TRAIN dropout0 / 40轮 / seed42，原始结果保留；监督训练dropout仍.5。证据N/probes/pretrain_modes_normalized_pair.json。候选尚未证明有效，不能把关闭Dropout推为全模型最优配置。
+
+## D018 / 2026-10-10 / 预训练checkpoint敏感性对照
+no-dropout normalized-pair的验证重建：best_training MSE .036301，固定第40轮last MSE .028170，TRAIN边均值 .035461；last相关性 .75434，高于均值 .61381。两checkpoint均由既有探针预先计算，未使用test。不能只报告较好last并隐去best失败；登记best/last两个下游微调对照，原best规则的在跑任务不改。分类益处尚未证明。新增排队依赖，仅在Phase3全部正常退出后使用GPU4/6运行此两项，防止与既有队列争用或重复启动。
+
+## D019 / 2026-10-11 / 固定三seed完整消融配方
+Phase1–4的21分类/10预训练全部结束，21分类独立复算通过。P2最佳重建候选的两种checkpoint均未改善下游分类，停止预训练扩搜。原A1 joint full、A2 semantic class token、A3 learned reliability单seedF1均未超过A0，不能宣布成功。为完成用户指定八组合及交互判断，保持原登记完整配方：P2 mask.10/dot、rec.1+cons.1、监督dropout.5；P3语义逐类token；P5同seed冻结A0/TRAIN-only/top16/tau.05。固定图或rec-only单列对照，不改名替代完整模块。
+A0–A7和LegacyPro/HistoricalM2/HistoricalM3v3/HistoricalM3v3_no_metadata/P3_parameter_matched/P3_random/P3_learned_query/P5_fixed/P5_no_reliability/P2_joint_rec_only/P2_joint_cons_only各3seed，共57项，17项已有且40项补齐。使用现存已验证不可变29f34f9源码；不改数据/划分/训练预算/停训条件。recipe_freeze.private.json在Phase5启动前写入，不是最终selection_lock。全部仅TRAIN/VAL；待完整配对结果再决定保留模块，失败方向保留。
+
+## D020 / 2026-10-11 / 机制复核与受试者隔离补充
+25个checkpoint机制探针（7方法三seed及4项seed42）复核完成；P2全面鲁棒性/P3相对参数对照/P5连续边权收益均未证明。CPU重载P5_no_reliability偏差保留；原CUDA复核通过，未降低阈值。主配置仍按D019，不根据诊断中途修改在跑实验。
+冻结subject-disjoint划分在dataset_v1既有文件，启动A0三seed补充基线，GPU1/2/5、独立subject_experiments、--split1，避免闲置资源；不重划分、不混合指标、不改变主模型选型口径。主矩阵完成后决定有证据的候选补充比较。主study尚无selection_lock，仍不评估test。
+
+## D021 / 2026-10-11 / 验证集选型与冻结测试范围
+在TEST尚未访问时明确最终比较规则：完整A0–A7各三seed均完成并独立复核后，按三seed平均Macro-F1选择主实验候选；严格平局依次用平均Balanced Accuracy、平均AUC、更少参数。此规则属于观察验证结果后的模型选型，不能倒称训练前预注册。候选仅是待holdout核验对象，不因少量或部分指标提升就宣布有效创新。
+主候选补充运行既有subject-disjoint协议三seed，与已完成A0单独比较；该补充不用于改变主候选。所有TRAIN/VAL开发结束后封存精确checkpoint/source/dataset/split/evaluator hash。冻结测试范围为登记的主协议19方法各三seed（A0–A7+11关键对照），及subject协议A0与主候选；这些比较对象在test前固定，不按test高低换冠军。保留P2四项单seed微调为验证探索，不混入三seed正式test矩阵。
+测试入口默认validation，真实test需要完整selection_lock和显式锁SHA，先复核VAL预测；拒绝覆盖输出。所有后续test结果只能用于固定比较和报告，不继续本研究调参或用test选模型。历史五批测试锁不变。
+
+## D022 / 2026-10-11 / 主矩阵完成与隔离范围审计
+61份分类主协议结果独立核验完成，其中57项为19方法各3seed。A1按D021入选研究候选，F1仅较A0高约0.60个百分点且三项主指标较低；A7 F1约33.00%，P2/P3/P5平均边际均为负，拒绝“三个稳定有效方向”的结论。Phase7仅训练冻结subject协议下A1三个seed，不更改主要候选。
+交叉角色审计确认sample测试样本有部分处于subject协议的TRAIN/VAL，反向亦然。因此test封存及TRAIN-only等声明限定各自协议；不能宣称七批全部数据在项目开发中未被使用。完整私有交叉表留N/reports，最终锁绑定其hash；公开只写清边界，不上传成员明细。该审计不改变已冻结划分，也不使subject结果参与主选型。
+
+## D023 / 2026-10-11 / TEST访问前故障恢复
+Phase8在subject验证汇总读取自身控制器状态时误要求running字段，生成锁之前失败。已核实无selection_lock、无TEST access/result，模型与数据未变。汇总器显式区分训练队列(queue_pid)和控制器(pid/phase)，真正损坏的训练schema仍拒绝；3项回归测试通过。finalize_study增加新队列目录参数，只用于审查后的pre-lock恢复，继续拒绝已存在锁或状态。保留fe8bf25失败快照和原日志；以新Git快照重启控制器，不重训、不修改候选或测试范围、不改evaluate_frozen本体。
+
+## D024 / 2026-10-11 / 冻结研究结论，不因TEST重选
+63项固定TEST全部完成；预测与冻结标签/成员逐项对齐，计数公式复算七指标及混淆矩阵通过。A1仍为TEST前选择的候选，不改选测试分数较高的A4/历史M2/random对照。主TEST A1五项均值均未超A0；A7只部分指标高于A0、F1与AUC更低。subject A1部分提高但非全指标/全seed一致。拒绝“三稳定创新”与全面性能改善结论，保留完整实现/消融/失败产物。当前有限研究结束，不继续在已使用TEST上调参。后续若开展新研究，先定义独立评估范围和开发期规则；不是继续扩大本次已结束的候选池。

@@ -1,0 +1,5009 @@
+{
+  "evaluation": "locked TEST; no test-based selection or further tuning",
+  "isolation_scope": "Within each protocol only; cross-protocol and historical development exposure exists",
+  "verification": "PASSED",
+  "selection_lock_sha256": "fb71040c47d235b382dac5f487b01ff9f925d262f305f134254a67250bc63031",
+  "primary_candidate_from_validation": "A1",
+  "runs": [
+    {
+      "protocol": "sample",
+      "experiment": "A0",
+      "seed": 42,
+      "checkpoint_sha256": "912fe999b8413f27dd44016af9ca7272b3075c4876f1f5df6c70f23a37117503",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.49624060150375937,
+        "f1_macro": 0.283921568627451,
+        "precision_macro": 0.29399407609933925,
+        "recall_macro": 0.31438601246950393,
+        "balanced_accuracy": 0.31438601246950393,
+        "roc_auc_macro": 0.6724560731566689,
+        "f1_weighted": 0.5216334955034645
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7012987012987013,
+          "recall": 0.6352941176470588,
+          "f1": 0.6666666666666666,
+          "specificity": 0.5208333333333334
+        },
+        "AD": {
+          "precision": 0.3,
+          "recall": 0.42857142857142855,
+          "f1": 0.35294117647058826,
+          "specificity": 0.9444444444444444
+        },
+        "SMC": {
+          "precision": 0.047619047619047616,
+          "recall": 0.25,
+          "f1": 0.08,
+          "specificity": 0.8449612403100775
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.952755905511811
+        },
+        "LMCI": {
+          "precision": 0.42105263157894735,
+          "recall": 0.25806451612903225,
+          "f1": 0.32,
+          "specificity": 0.8921568627450981
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5789473684210527,
+        "AD": 0.07518796992481203,
+        "SMC": 0.15789473684210525,
+        "EMCI": 0.045112781954887216,
+        "LMCI": 0.14285714285714285
+      },
+      "mean_class_probability": {
+        "CN": 0.39092496037483215,
+        "AD": 0.08655276894569397,
+        "SMC": 0.15242426097393036,
+        "EMCI": 0.11708620190620422,
+        "LMCI": 0.2530117630958557
+      },
+      "classification_collapse": false,
+      "training_parameters": 818095,
+      "trainable_parameters": 818095,
+      "training_seconds": 392.888026827015,
+      "test_inference_seconds": 0.2180501889961306
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A0",
+      "seed": 2026,
+      "checkpoint_sha256": "83f9d7d6060d23c3a56c30fa7e19d5cbc526a6d105227ed605b70736cb04ecac",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5789473684210527,
+        "f1_macro": 0.2894825248416409,
+        "precision_macro": 0.35446428571428573,
+        "recall_macro": 0.28032529140688534,
+        "balanced_accuracy": 0.28032529140688534,
+        "roc_auc_macro": 0.6906858963230754,
+        "f1_weighted": 0.5695890810749782
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.71875,
+          "recall": 0.8117647058823529,
+          "f1": 0.7624309392265194,
+          "specificity": 0.4375
+        },
+        "AD": {
+          "precision": 0.42857142857142855,
+          "recall": 0.42857142857142855,
+          "f1": 0.42857142857142855,
+          "specificity": 0.9682539682539683
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9534883720930233
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.8740157480314961
+        },
+        "LMCI": {
+          "precision": 0.625,
+          "recall": 0.16129032258064516,
+          "f1": 0.2564102564102564,
+          "specificity": 0.9705882352941176
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7218045112781954,
+        "AD": 0.05263157894736842,
+        "SMC": 0.045112781954887216,
+        "EMCI": 0.12030075187969924,
+        "LMCI": 0.06015037593984962
+      },
+      "mean_class_probability": {
+        "CN": 0.48547568917274475,
+        "AD": 0.09867528825998306,
+        "SMC": 0.06134624779224396,
+        "EMCI": 0.148207426071167,
+        "LMCI": 0.20629534125328064
+      },
+      "classification_collapse": false,
+      "training_parameters": 818095,
+      "trainable_parameters": 818095,
+      "training_seconds": 383.6380739060114,
+      "test_inference_seconds": 0.1783120859763585
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A0",
+      "seed": 3407,
+      "checkpoint_sha256": "f144ccbaadcee5f918d32c5367136c64543a0850f009f1ec0291241d28d7dddd",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6090225563909775,
+        "f1_macro": 0.276535341409291,
+        "precision_macro": 0.2872549019607843,
+        "recall_macro": 0.2799132556248306,
+        "balanced_accuracy": 0.2799132556248306,
+        "roc_auc_macro": 0.7031373427996367,
+        "f1_weighted": 0.5781262060531662
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6862745098039216,
+          "recall": 0.8235294117647058,
+          "f1": 0.7486631016042781,
+          "specificity": 0.3333333333333333
+        },
+        "AD": {
+          "precision": 0.25,
+          "recall": 0.2857142857142857,
+          "f1": 0.26666666666666666,
+          "specificity": 0.9523809523809523
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9689922480620154
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9921259842519685
+        },
+        "LMCI": {
+          "precision": 0.5,
+          "recall": 0.2903225806451613,
+          "f1": 0.3673469387755102,
+          "specificity": 0.9117647058823529
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7669172932330827,
+        "AD": 0.06015037593984962,
+        "SMC": 0.03007518796992481,
+        "EMCI": 0.007518796992481203,
+        "LMCI": 0.13533834586466165
+      },
+      "mean_class_probability": {
+        "CN": 0.5263516306877136,
+        "AD": 0.07629592716693878,
+        "SMC": 0.057814646512269974,
+        "EMCI": 0.08010829985141754,
+        "LMCI": 0.25942957401275635
+      },
+      "classification_collapse": false,
+      "training_parameters": 818095,
+      "trainable_parameters": 818095,
+      "training_seconds": 423.94146008000826,
+      "test_inference_seconds": 0.13635039702057838
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A1",
+      "seed": 42,
+      "checkpoint_sha256": "5ca3856dcb6010d51427aac0124ac618bd4e678cd19654379481c9ffa81a3c1e",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5488721804511278,
+        "f1_macro": 0.29622036533229695,
+        "precision_macro": 0.2912783751493429,
+        "recall_macro": 0.3037029005150447,
+        "balanced_accuracy": 0.3037029005150447,
+        "roc_auc_macro": 0.6724276481832787,
+        "f1_weighted": 0.5563796539541626
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7037037037037037,
+          "recall": 0.6705882352941176,
+          "f1": 0.6867469879518072,
+          "specificity": 0.5
+        },
+        "AD": {
+          "precision": 0.3333333333333333,
+          "recall": 0.42857142857142855,
+          "f1": 0.375,
+          "specificity": 0.9523809523809523
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9457364341085271
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9606299212598425
+        },
+        "LMCI": {
+          "precision": 0.41935483870967744,
+          "recall": 0.41935483870967744,
+          "f1": 0.41935483870967744,
+          "specificity": 0.8235294117647058
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6090225563909775,
+        "AD": 0.06766917293233082,
+        "SMC": 0.05263157894736842,
+        "EMCI": 0.03759398496240601,
+        "LMCI": 0.23308270676691728
+      },
+      "mean_class_probability": {
+        "CN": 0.4060650169849396,
+        "AD": 0.10505189746618271,
+        "SMC": 0.08106933534145355,
+        "EMCI": 0.10823903232812881,
+        "LMCI": 0.29957473278045654
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 1094.9811561800016,
+      "test_inference_seconds": 0.18842982497881167
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A1",
+      "seed": 2026,
+      "checkpoint_sha256": "b6cddb9343e001d1b78e573cf834e19d5afaf02cc6b481192c1b0e5b31892920",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.48872180451127817,
+        "f1_macro": 0.25813719080309466,
+        "precision_macro": 0.2770897832817337,
+        "recall_macro": 0.26028734074274873,
+        "balanced_accuracy": 0.26028734074274873,
+        "roc_auc_macro": 0.6631537410316508,
+        "f1_weighted": 0.5212535875484724
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7236842105263158,
+          "recall": 0.6470588235294118,
+          "f1": 0.6832298136645962,
+          "specificity": 0.5625
+        },
+        "AD": {
+          "precision": 0.25,
+          "recall": 0.42857142857142855,
+          "f1": 0.3157894736842105,
+          "specificity": 0.9285714285714286
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.875968992248062
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.905511811023622
+        },
+        "LMCI": {
+          "precision": 0.4117647058823529,
+          "recall": 0.22580645161290322,
+          "f1": 0.2916666666666667,
+          "specificity": 0.9019607843137255
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5714285714285714,
+        "AD": 0.09022556390977443,
+        "SMC": 0.12030075187969924,
+        "EMCI": 0.09022556390977443,
+        "LMCI": 0.12781954887218044
+      },
+      "mean_class_probability": {
+        "CN": 0.4050142467021942,
+        "AD": 0.09798216819763184,
+        "SMC": 0.15235456824302673,
+        "EMCI": 0.12266980856657028,
+        "LMCI": 0.22197940945625305
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 1157.089727545972,
+      "test_inference_seconds": 0.15868118600337766
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A1",
+      "seed": 3407,
+      "checkpoint_sha256": "e0be4711359cb74acc626e52e43ad0653c5864bb1e3255203309ae120be021cc",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.631578947368421,
+        "f1_macro": 0.29303258145363403,
+        "precision_macro": 0.3345021645021645,
+        "recall_macro": 0.3090918948224451,
+        "balanced_accuracy": 0.3090918948224451,
+        "roc_auc_macro": 0.693938949998407,
+        "f1_weighted": 0.5965100721729135
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6952380952380952,
+          "recall": 0.8588235294117647,
+          "f1": 0.7684210526315789,
+          "specificity": 0.3333333333333333
+        },
+        "AD": {
+          "precision": 0.25,
+          "recall": 0.42857142857142855,
+          "f1": 0.3157894736842105,
+          "specificity": 0.9285714285714286
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9612403100775194
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.7272727272727273,
+          "recall": 0.25806451612903225,
+          "f1": 0.38095238095238093,
+          "specificity": 0.9705882352941176
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7894736842105263,
+        "AD": 0.09022556390977443,
+        "SMC": 0.03759398496240601,
+        "EMCI": 0.0,
+        "LMCI": 0.08270676691729323
+      },
+      "mean_class_probability": {
+        "CN": 0.4674416482448578,
+        "AD": 0.10598176717758179,
+        "SMC": 0.07894478738307953,
+        "EMCI": 0.10925125330686569,
+        "LMCI": 0.2383805811405182
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 1010.6758735619951,
+      "test_inference_seconds": 0.15829937299713492
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A2",
+      "seed": 42,
+      "checkpoint_sha256": "9ae4e30a22e9e5a5f286e632142ac9f9345ab3d7b13244073e8efeda7220e5b5",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5714285714285714,
+        "f1_macro": 0.24341011929247225,
+        "precision_macro": 0.2725490196078431,
+        "recall_macro": 0.2435565193819463,
+        "balanced_accuracy": 0.2435565193819463,
+        "roc_auc_macro": 0.6737345393684742,
+        "f1_weighted": 0.5364609075135391
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.696078431372549,
+          "recall": 0.8352941176470589,
+          "f1": 0.7593582887700535,
+          "specificity": 0.3541666666666667
+        },
+        "AD": {
+          "precision": 0.3333333333333333,
+          "recall": 0.2857142857142857,
+          "f1": 0.3076923076923077,
+          "specificity": 0.9682539682539683
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9224806201550387
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.952755905511811
+        },
+        "LMCI": {
+          "precision": 0.3333333333333333,
+          "recall": 0.0967741935483871,
+          "f1": 0.15,
+          "specificity": 0.9411764705882353
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7669172932330827,
+        "AD": 0.045112781954887216,
+        "SMC": 0.07518796992481203,
+        "EMCI": 0.045112781954887216,
+        "LMCI": 0.06766917293233082
+      },
+      "mean_class_probability": {
+        "CN": 0.49575668573379517,
+        "AD": 0.0656634196639061,
+        "SMC": 0.11312615126371384,
+        "EMCI": 0.08463804423809052,
+        "LMCI": 0.24081578850746155
+      },
+      "classification_collapse": false,
+      "training_parameters": 968896,
+      "trainable_parameters": 968896,
+      "training_seconds": 515.5838857209892,
+      "test_inference_seconds": 0.22395020100520924
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A2",
+      "seed": 2026,
+      "checkpoint_sha256": "1259e4dbd0e0f825e0330e3e360221190609ea422e2b2fef80677a7edf7e4d85",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5488721804511278,
+        "f1_macro": 0.3400805287902062,
+        "precision_macro": 0.3604385012577784,
+        "recall_macro": 0.38938194632691786,
+        "balanced_accuracy": 0.38938194632691786,
+        "roc_auc_macro": 0.6652421916444442,
+        "f1_weighted": 0.5581271815203418
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7349397590361446,
+          "recall": 0.7176470588235294,
+          "f1": 0.7261904761904762,
+          "specificity": 0.5416666666666666
+        },
+        "AD": {
+          "precision": 0.2857142857142857,
+          "recall": 0.2857142857142857,
+          "f1": 0.2857142857142857,
+          "specificity": 0.9603174603174603
+        },
+        "SMC": {
+          "precision": 0.2,
+          "recall": 0.25,
+          "f1": 0.2222222222222222,
+          "specificity": 0.9689922480620154
+        },
+        "EMCI": {
+          "precision": 0.12,
+          "recall": 0.5,
+          "f1": 0.1935483870967742,
+          "specificity": 0.8267716535433071
+        },
+        "LMCI": {
+          "precision": 0.46153846153846156,
+          "recall": 0.1935483870967742,
+          "f1": 0.2727272727272727,
+          "specificity": 0.9313725490196079
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6240601503759399,
+        "AD": 0.05263157894736842,
+        "SMC": 0.03759398496240601,
+        "EMCI": 0.18796992481203006,
+        "LMCI": 0.09774436090225563
+      },
+      "mean_class_probability": {
+        "CN": 0.3907082974910736,
+        "AD": 0.10273271799087524,
+        "SMC": 0.05970456078648567,
+        "EMCI": 0.20092082023620605,
+        "LMCI": 0.2459336519241333
+      },
+      "classification_collapse": false,
+      "training_parameters": 968896,
+      "trainable_parameters": 968896,
+      "training_seconds": 495.61088473699056,
+      "test_inference_seconds": 0.12263232099940069
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A2",
+      "seed": 3407,
+      "checkpoint_sha256": "dd584bea3f6cf10bfa472de68277a4e40d628b2d05e5362e493fbfae4c798e5a",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6240601503759399,
+        "f1_macro": 0.19392635102821618,
+        "precision_macro": 0.21277310924369747,
+        "recall_macro": 0.21168880455407973,
+        "balanced_accuracy": 0.21168880455407973,
+        "roc_auc_macro": 0.6997040452731962,
+        "f1_weighted": 0.5404670212115654
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6638655462184874,
+          "recall": 0.9294117647058824,
+          "f1": 0.7745098039215687,
+          "specificity": 0.16666666666666666
+        },
+        "AD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9689922480620154
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.4,
+          "recall": 0.12903225806451613,
+          "f1": 0.1951219512195122,
+          "specificity": 0.9411764705882353
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.8947368421052632,
+        "AD": 0.0,
+        "SMC": 0.03007518796992481,
+        "EMCI": 0.0,
+        "LMCI": 0.07518796992481203
+      },
+      "mean_class_probability": {
+        "CN": 0.5433276295661926,
+        "AD": 0.03827887773513794,
+        "SMC": 0.08366377651691437,
+        "EMCI": 0.08078821003437042,
+        "LMCI": 0.25394153594970703
+      },
+      "classification_collapse": false,
+      "training_parameters": 968896,
+      "trainable_parameters": 968896,
+      "training_seconds": 579.7470462320198,
+      "test_inference_seconds": 0.13801573700038716
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A3",
+      "seed": 42,
+      "checkpoint_sha256": "55d8ee01b7316493a4382ce1c78ab5e8f20479871a73682b05af88fddeb696bb",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5864661654135338,
+        "f1_macro": 0.26341011929247227,
+        "precision_macro": 0.31699346405228757,
+        "recall_macro": 0.256459745188398,
+        "balanced_accuracy": 0.256459745188398,
+        "roc_auc_macro": 0.6827469382765246,
+        "f1_weighted": 0.5597691781902309
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.696078431372549,
+          "recall": 0.8352941176470589,
+          "f1": 0.7593582887700535,
+          "specificity": 0.3541666666666667
+        },
+        "AD": {
+          "precision": 0.3333333333333333,
+          "recall": 0.2857142857142857,
+          "f1": 0.3076923076923077,
+          "specificity": 0.9682539682539683
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9612403100775194
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9133858267716536
+        },
+        "LMCI": {
+          "precision": 0.5555555555555556,
+          "recall": 0.16129032258064516,
+          "f1": 0.25,
+          "specificity": 0.9607843137254902
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7669172932330827,
+        "AD": 0.045112781954887216,
+        "SMC": 0.03759398496240601,
+        "EMCI": 0.08270676691729323,
+        "LMCI": 0.06766917293233082
+      },
+      "mean_class_probability": {
+        "CN": 0.5099070072174072,
+        "AD": 0.0754709467291832,
+        "SMC": 0.06463358551263809,
+        "EMCI": 0.12102220207452774,
+        "LMCI": 0.22896625101566315
+      },
+      "classification_collapse": false,
+      "training_parameters": 1649844,
+      "trainable_parameters": 831749,
+      "training_seconds": 1654.672156212997,
+      "test_inference_seconds": 0.8979177069850266
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A3",
+      "seed": 2026,
+      "checkpoint_sha256": "ed7947ede0dc8e63769331431da45a4b9f7e52afee08fa1a85ef1e7ac5a4e56a",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.518796992481203,
+        "f1_macro": 0.30409448848572324,
+        "precision_macro": 0.3134365634365634,
+        "recall_macro": 0.32964217945242613,
+        "balanced_accuracy": 0.32964217945242613,
+        "roc_auc_macro": 0.6723482650587215,
+        "f1_weighted": 0.5616677323593388
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7857142857142857,
+          "recall": 0.6470588235294118,
+          "f1": 0.7096774193548387,
+          "specificity": 0.6875
+        },
+        "AD": {
+          "precision": 0.25,
+          "recall": 0.42857142857142855,
+          "f1": 0.3157894736842105,
+          "specificity": 0.9285714285714286
+        },
+        "SMC": {
+          "precision": 0.07692307692307693,
+          "recall": 0.25,
+          "f1": 0.11764705882352941,
+          "specificity": 0.9069767441860465
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.8740157480314961
+        },
+        "LMCI": {
+          "precision": 0.45454545454545453,
+          "recall": 0.3225806451612903,
+          "f1": 0.37735849056603776,
+          "specificity": 0.8823529411764706
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5263157894736842,
+        "AD": 0.09022556390977443,
+        "SMC": 0.09774436090225563,
+        "EMCI": 0.12030075187969924,
+        "LMCI": 0.16541353383458646
+      },
+      "mean_class_probability": {
+        "CN": 0.4050220549106598,
+        "AD": 0.10448957234621048,
+        "SMC": 0.08865679055452347,
+        "EMCI": 0.13902032375335693,
+        "LMCI": 0.26281118392944336
+      },
+      "classification_collapse": false,
+      "training_parameters": 1649844,
+      "trainable_parameters": 831749,
+      "training_seconds": 1561.3805171620043,
+      "test_inference_seconds": 0.8067318380053621
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A3",
+      "seed": 3407,
+      "checkpoint_sha256": "4826a96ae2a89fadfaf7bf8558f783de62056a266ba21286d65a7f470c7411a0",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5939849624060151,
+        "f1_macro": 0.2651042499866688,
+        "precision_macro": 0.31276846131215064,
+        "recall_macro": 0.2711087015451342,
+        "balanced_accuracy": 0.2711087015451342,
+        "roc_auc_macro": 0.7006609573593374,
+        "f1_weighted": 0.5689986845212536
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6699029126213593,
+          "recall": 0.8117647058823529,
+          "f1": 0.7340425531914894,
+          "specificity": 0.2916666666666667
+        },
+        "AD": {
+          "precision": 0.16666666666666666,
+          "recall": 0.2857142857142857,
+          "f1": 0.21052631578947367,
+          "specificity": 0.9206349206349206
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9457364341085271
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.7272727272727273,
+          "recall": 0.25806451612903225,
+          "f1": 0.38095238095238093,
+          "specificity": 0.9705882352941176
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7744360902255639,
+        "AD": 0.09022556390977443,
+        "SMC": 0.05263157894736842,
+        "EMCI": 0.0,
+        "LMCI": 0.08270676691729323
+      },
+      "mean_class_probability": {
+        "CN": 0.5271958708763123,
+        "AD": 0.07943587005138397,
+        "SMC": 0.07347182929515839,
+        "EMCI": 0.08320364356040955,
+        "LMCI": 0.23669259250164032
+      },
+      "classification_collapse": false,
+      "training_parameters": 1649844,
+      "trainable_parameters": 831749,
+      "training_seconds": 2352.630582778016,
+      "test_inference_seconds": 0.768874050991144
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A4",
+      "seed": 42,
+      "checkpoint_sha256": "10ffe86c1fd78ce5c41d83561cfbec874031789a51d8fc27ea3b337d925d2bf1",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5488721804511278,
+        "f1_macro": 0.33111493593421304,
+        "precision_macro": 0.349347442680776,
+        "recall_macro": 0.3625002258968103,
+        "balanced_accuracy": 0.3625002258968103,
+        "roc_auc_macro": 0.6802361709658571,
+        "f1_weighted": 0.5657718593672937
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7530864197530864,
+          "recall": 0.7176470588235294,
+          "f1": 0.7349397590361446,
+          "specificity": 0.5833333333333334
+        },
+        "AD": {
+          "precision": 0.4,
+          "recall": 0.2857142857142857,
+          "f1": 0.3333333333333333,
+          "specificity": 0.9761904761904762
+        },
+        "SMC": {
+          "precision": 0.07142857142857142,
+          "recall": 0.25,
+          "f1": 0.1111111111111111,
+          "specificity": 0.8992248062015504
+        },
+        "EMCI": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3333333333333333,
+          "f1": 0.19047619047619047,
+          "specificity": 0.8976377952755905
+        },
+        "LMCI": {
+          "precision": 0.3888888888888889,
+          "recall": 0.22580645161290322,
+          "f1": 0.2857142857142857,
+          "specificity": 0.8921568627450981
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6090225563909775,
+        "AD": 0.03759398496240601,
+        "SMC": 0.10526315789473684,
+        "EMCI": 0.11278195488721804,
+        "LMCI": 0.13533834586466165
+      },
+      "mean_class_probability": {
+        "CN": 0.4018546938896179,
+        "AD": 0.0869973823428154,
+        "SMC": 0.1292266845703125,
+        "EMCI": 0.13242293894290924,
+        "LMCI": 0.2494981735944748
+      },
+      "classification_collapse": false,
+      "training_parameters": 986065,
+      "trainable_parameters": 986065,
+      "training_seconds": 1569.4868466799962,
+      "test_inference_seconds": 0.204654280008981
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A4",
+      "seed": 2026,
+      "checkpoint_sha256": "b577c9d54dc3114270966592185c3b983cf5cac732c3cdc3d073ca8c6137f7d1",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6240601503759399,
+        "f1_macro": 0.2994652406417112,
+        "precision_macro": 0.3495098039215686,
+        "recall_macro": 0.2846191379777717,
+        "balanced_accuracy": 0.2846191379777717,
+        "roc_auc_macro": 0.6872096697592583,
+        "f1_weighted": 0.5894736842105263
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7058823529411765,
+          "recall": 0.8470588235294118,
+          "f1": 0.7700534759358288,
+          "specificity": 0.375
+        },
+        "AD": {
+          "precision": 0.6666666666666666,
+          "recall": 0.2857142857142857,
+          "f1": 0.4,
+          "specificity": 0.9920634920634921
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9689922480620154
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.375,
+          "recall": 0.2903225806451613,
+          "f1": 0.32727272727272727,
+          "specificity": 0.8529411764705882
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7669172932330827,
+        "AD": 0.022556390977443608,
+        "SMC": 0.03007518796992481,
+        "EMCI": 0.0,
+        "LMCI": 0.18045112781954886
+      },
+      "mean_class_probability": {
+        "CN": 0.4983339309692383,
+        "AD": 0.07966213673353195,
+        "SMC": 0.061374492943286896,
+        "EMCI": 0.08208135515451431,
+        "LMCI": 0.27854812145233154
+      },
+      "classification_collapse": false,
+      "training_parameters": 986065,
+      "trainable_parameters": 986065,
+      "training_seconds": 1142.0597316669882,
+      "test_inference_seconds": 0.16902109698276035
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A4",
+      "seed": 3407,
+      "checkpoint_sha256": "85676c5a4d10885f779f094d0e42b920ca9c82cca85000512fb06749637cf899",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5714285714285714,
+        "f1_macro": 0.2841308089500861,
+        "precision_macro": 0.2842307293287686,
+        "recall_macro": 0.28454323664949854,
+        "balanced_accuracy": 0.28454323664949854,
+        "roc_auc_macro": 0.683392368621627,
+        "f1_weighted": 0.5779690189328744
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7530864197530864,
+          "recall": 0.7176470588235294,
+          "f1": 0.7349397590361446,
+          "specificity": 0.5833333333333334
+        },
+        "AD": {
+          "precision": 0.2857142857142857,
+          "recall": 0.2857142857142857,
+          "f1": 0.2857142857142857,
+          "specificity": 0.9603174603174603
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.937984496124031
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9763779527559056
+        },
+        "LMCI": {
+          "precision": 0.38235294117647056,
+          "recall": 0.41935483870967744,
+          "f1": 0.4,
+          "specificity": 0.7941176470588235
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6090225563909775,
+        "AD": 0.05263157894736842,
+        "SMC": 0.06015037593984962,
+        "EMCI": 0.022556390977443608,
+        "LMCI": 0.2556390977443609
+      },
+      "mean_class_probability": {
+        "CN": 0.4303734600543976,
+        "AD": 0.08430695533752441,
+        "SMC": 0.07913029193878174,
+        "EMCI": 0.09994792938232422,
+        "LMCI": 0.30624133348464966
+      },
+      "classification_collapse": false,
+      "training_parameters": 986065,
+      "trainable_parameters": 986065,
+      "training_seconds": 1219.8823212790012,
+      "test_inference_seconds": 0.1334219940181356
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A5",
+      "seed": 42,
+      "checkpoint_sha256": "aa026f2f5fddd16ca9aa4c95ecd7c76d39c79c83d374f08e5664d7f5106f09ad",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.49624060150375937,
+        "f1_macro": 0.30171398319105286,
+        "precision_macro": 0.3226734569330163,
+        "recall_macro": 0.3209568988885877,
+        "balanced_accuracy": 0.3209568988885877,
+        "roc_auc_macro": 0.662248526778183,
+        "f1_weighted": 0.5352252977092324
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7704918032786885,
+          "recall": 0.5529411764705883,
+          "f1": 0.6438356164383562,
+          "specificity": 0.7083333333333334
+        },
+        "AD": {
+          "precision": 0.4,
+          "recall": 0.2857142857142857,
+          "f1": 0.3333333333333333,
+          "specificity": 0.9761904761904762
+        },
+        "SMC": {
+          "precision": 0.05263157894736842,
+          "recall": 0.25,
+          "f1": 0.08695652173913043,
+          "specificity": 0.8604651162790697
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9448818897637795
+        },
+        "LMCI": {
+          "precision": 0.3902439024390244,
+          "recall": 0.5161290322580645,
+          "f1": 0.4444444444444444,
+          "specificity": 0.7549019607843137
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.45864661654135336,
+        "AD": 0.03759398496240601,
+        "SMC": 0.14285714285714285,
+        "EMCI": 0.05263157894736842,
+        "LMCI": 0.3082706766917293
+      },
+      "mean_class_probability": {
+        "CN": 0.3572600781917572,
+        "AD": 0.08571558445692062,
+        "SMC": 0.13108038902282715,
+        "EMCI": 0.11936528235673904,
+        "LMCI": 0.30657848715782166
+      },
+      "classification_collapse": false,
+      "training_parameters": 1667013,
+      "trainable_parameters": 848918,
+      "training_seconds": 4030.84980904602,
+      "test_inference_seconds": 0.975043228972936
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A5",
+      "seed": 2026,
+      "checkpoint_sha256": "18af1cbd992b89d2eb9b24ed700e4e64ebaf00c7a0790b5779f845e03a89bbe3",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.49624060150375937,
+        "f1_macro": 0.26980174081237907,
+        "precision_macro": 0.2852777777777778,
+        "recall_macro": 0.3102873407427487,
+        "balanced_accuracy": 0.3102873407427487,
+        "roc_auc_macro": 0.669152953126284,
+        "f1_weighted": 0.5258967656084118
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7333333333333333,
+          "recall": 0.6470588235294118,
+          "f1": 0.6875,
+          "specificity": 0.5833333333333334
+        },
+        "AD": {
+          "precision": 0.2,
+          "recall": 0.42857142857142855,
+          "f1": 0.2727272727272727,
+          "specificity": 0.9047619047619048
+        },
+        "SMC": {
+          "precision": 0.05555555555555555,
+          "recall": 0.25,
+          "f1": 0.09090909090909091,
+          "specificity": 0.8682170542635659
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9291338582677166
+        },
+        "LMCI": {
+          "precision": 0.4375,
+          "recall": 0.22580645161290322,
+          "f1": 0.2978723404255319,
+          "specificity": 0.9117647058823529
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5639097744360902,
+        "AD": 0.11278195488721804,
+        "SMC": 0.13533834586466165,
+        "EMCI": 0.06766917293233082,
+        "LMCI": 0.12030075187969924
+      },
+      "mean_class_probability": {
+        "CN": 0.42362186312675476,
+        "AD": 0.1143193244934082,
+        "SMC": 0.13549764454364777,
+        "EMCI": 0.11334580183029175,
+        "LMCI": 0.21321532130241394
+      },
+      "classification_collapse": false,
+      "training_parameters": 1667013,
+      "trainable_parameters": 848918,
+      "training_seconds": 4172.469322743011,
+      "test_inference_seconds": 0.7088003510143608
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A5",
+      "seed": 3407,
+      "checkpoint_sha256": "6bddb0695da527fd07839bbb7ce38ba625dcb849adf88f41e6fe07d1a87839d0",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5864661654135338,
+        "f1_macro": 0.25337995337995334,
+        "precision_macro": 0.2785317775008497,
+        "recall_macro": 0.2646570886419084,
+        "balanced_accuracy": 0.2646570886419084,
+        "roc_auc_macro": 0.6747879019488152,
+        "f1_weighted": 0.5687783394550311
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.711340206185567,
+          "recall": 0.8117647058823529,
+          "f1": 0.7582417582417582,
+          "specificity": 0.4166666666666667
+        },
+        "AD": {
+          "precision": 0.14285714285714285,
+          "recall": 0.2857142857142857,
+          "f1": 0.19047619047619047,
+          "specificity": 0.9047619047619048
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9612403100775194
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.968503937007874
+        },
+        "LMCI": {
+          "precision": 0.5384615384615384,
+          "recall": 0.22580645161290322,
+          "f1": 0.3181818181818182,
+          "specificity": 0.9411764705882353
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7293233082706767,
+        "AD": 0.10526315789473684,
+        "SMC": 0.03759398496240601,
+        "EMCI": 0.03007518796992481,
+        "LMCI": 0.09774436090225563
+      },
+      "mean_class_probability": {
+        "CN": 0.4246043562889099,
+        "AD": 0.09934759140014648,
+        "SMC": 0.07893478870391846,
+        "EMCI": 0.136301651597023,
+        "LMCI": 0.2608117163181305
+      },
+      "classification_collapse": false,
+      "training_parameters": 1667013,
+      "trainable_parameters": 848918,
+      "training_seconds": 4888.140729514998,
+      "test_inference_seconds": 0.7927946329873521
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A6",
+      "seed": 42,
+      "checkpoint_sha256": "a7f724ac72e145ac6ee30dd50e46f0eed37a995a16c5a225430b0eb34d0fa6cb",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5112781954887218,
+        "f1_macro": 0.27422350943773094,
+        "precision_macro": 0.2855464612421762,
+        "recall_macro": 0.269818378964489,
+        "balanced_accuracy": 0.269818378964489,
+        "roc_auc_macro": 0.6545421334403969,
+        "f1_weighted": 0.5549244628599364
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7761194029850746,
+          "recall": 0.611764705882353,
+          "f1": 0.6842105263157895,
+          "specificity": 0.6875
+        },
+        "AD": {
+          "precision": 0.2,
+          "recall": 0.2857142857142857,
+          "f1": 0.23529411764705882,
+          "specificity": 0.9365079365079365
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.8604651162790697
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9448818897637795
+        },
+        "LMCI": {
+          "precision": 0.45161290322580644,
+          "recall": 0.45161290322580644,
+          "f1": 0.45161290322580644,
+          "specificity": 0.8333333333333334
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5037593984962406,
+        "AD": 0.07518796992481203,
+        "SMC": 0.13533834586466165,
+        "EMCI": 0.05263157894736842,
+        "LMCI": 0.23308270676691728
+      },
+      "mean_class_probability": {
+        "CN": 0.40670788288116455,
+        "AD": 0.08075829595327377,
+        "SMC": 0.13095900416374207,
+        "EMCI": 0.09298820793628693,
+        "LMCI": 0.28858649730682373
+      },
+      "classification_collapse": false,
+      "training_parameters": 1800645,
+      "trainable_parameters": 982550,
+      "training_seconds": 1799.708370094013,
+      "test_inference_seconds": 1.1699997450050432
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A6",
+      "seed": 2026,
+      "checkpoint_sha256": "2d602414ae03d51cc49b21f9c8b31ce28302f2b6c40fca291ffe545431544040",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5338345864661654,
+        "f1_macro": 0.27587412587412585,
+        "precision_macro": 0.27937402190923316,
+        "recall_macro": 0.2768772024939008,
+        "balanced_accuracy": 0.2768772024939008,
+        "roc_auc_macro": 0.6690118445024665,
+        "f1_weighted": 0.5626873126873126
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7746478873239436,
+          "recall": 0.6470588235294118,
+          "f1": 0.7051282051282052,
+          "specificity": 0.6666666666666666
+        },
+        "AD": {
+          "precision": 0.2222222222222222,
+          "recall": 0.2857142857142857,
+          "f1": 0.25,
+          "specificity": 0.9444444444444444
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9224806201550387
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.937007874015748
+        },
+        "LMCI": {
+          "precision": 0.4,
+          "recall": 0.45161290322580644,
+          "f1": 0.42424242424242425,
+          "specificity": 0.7941176470588235
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5338345864661654,
+        "AD": 0.06766917293233082,
+        "SMC": 0.07518796992481203,
+        "EMCI": 0.06015037593984962,
+        "LMCI": 0.2631578947368421
+      },
+      "mean_class_probability": {
+        "CN": 0.38537105917930603,
+        "AD": 0.11649896204471588,
+        "SMC": 0.07922839373350143,
+        "EMCI": 0.12960156798362732,
+        "LMCI": 0.2893001437187195
+      },
+      "classification_collapse": false,
+      "training_parameters": 1800645,
+      "trainable_parameters": 982550,
+      "training_seconds": 1872.5210813820013,
+      "test_inference_seconds": 0.8474923030007631
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A6",
+      "seed": 3407,
+      "checkpoint_sha256": "05cad0746e9478973351d4ebef1cfe6fc4df89c2ee60e9783a0ed79ec0d614b4",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6165413533834586,
+        "f1_macro": 0.2666240409207161,
+        "precision_macro": 0.2812461059190031,
+        "recall_macro": 0.27816752507454595,
+        "balanced_accuracy": 0.27816752507454595,
+        "roc_auc_macro": 0.6831572558060601,
+        "f1_weighted": 0.5727794550314405
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6728971962616822,
+          "recall": 0.8470588235294118,
+          "f1": 0.75,
+          "specificity": 0.2708333333333333
+        },
+        "AD": {
+          "precision": 0.2,
+          "recall": 0.2857142857142857,
+          "f1": 0.23529411764705882,
+          "specificity": 0.9365079365079365
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9922480620155039
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.5333333333333333,
+          "recall": 0.25806451612903225,
+          "f1": 0.34782608695652173,
+          "specificity": 0.9313725490196079
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.8045112781954887,
+        "AD": 0.07518796992481203,
+        "SMC": 0.007518796992481203,
+        "EMCI": 0.0,
+        "LMCI": 0.11278195488721804
+      },
+      "mean_class_probability": {
+        "CN": 0.5270378589630127,
+        "AD": 0.08156072348356247,
+        "SMC": 0.032022107392549515,
+        "EMCI": 0.06672079116106033,
+        "LMCI": 0.2926587164402008
+      },
+      "classification_collapse": false,
+      "training_parameters": 1800645,
+      "trainable_parameters": 982550,
+      "training_seconds": 1752.1721275440068,
+      "test_inference_seconds": 0.6644322549982462
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A7",
+      "seed": 42,
+      "checkpoint_sha256": "c50b4d1590ca328de2e8e48630171e694ad4e9821271cac1819a78565f624168",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5789473684210527,
+        "f1_macro": 0.260973152892743,
+        "precision_macro": 0.29231884057971014,
+        "recall_macro": 0.28852263486039575,
+        "balanced_accuracy": 0.28852263486039575,
+        "roc_auc_macro": 0.6555463998434471,
+        "f1_weighted": 0.5714200097537234
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7282608695652174,
+          "recall": 0.788235294117647,
+          "f1": 0.7570621468926554,
+          "specificity": 0.4791666666666667
+        },
+        "AD": {
+          "precision": 0.15,
+          "recall": 0.42857142857142855,
+          "f1": 0.2222222222222222,
+          "specificity": 0.8650793650793651
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9302325581395349
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.5833333333333334,
+          "recall": 0.22580645161290322,
+          "f1": 0.32558139534883723,
+          "specificity": 0.9509803921568627
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6917293233082706,
+        "AD": 0.15037593984962405,
+        "SMC": 0.06766917293233082,
+        "EMCI": 0.0,
+        "LMCI": 0.09022556390977443
+      },
+      "mean_class_probability": {
+        "CN": 0.4195518493652344,
+        "AD": 0.12979459762573242,
+        "SMC": 0.11716201156377792,
+        "EMCI": 0.08632805198431015,
+        "LMCI": 0.24716344475746155
+      },
+      "classification_collapse": false,
+      "training_parameters": 1817814,
+      "trainable_parameters": 999719,
+      "training_seconds": 4485.915129306988,
+      "test_inference_seconds": 1.0829363410011865
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A7",
+      "seed": 2026,
+      "checkpoint_sha256": "2b9d88f4403e8624f144162d888d3cbb1993ddbef8c2064ccf715381f6b38099",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.556390977443609,
+        "f1_macro": 0.24548066875653082,
+        "precision_macro": 0.2525356125356125,
+        "recall_macro": 0.24132285172133366,
+        "balanced_accuracy": 0.24132285172133366,
+        "roc_auc_macro": 0.6737133698367735,
+        "f1_weighted": 0.5466811621530314
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6923076923076923,
+          "recall": 0.7411764705882353,
+          "f1": 0.7159090909090909,
+          "specificity": 0.4166666666666667
+        },
+        "AD": {
+          "precision": 0.2,
+          "recall": 0.14285714285714285,
+          "f1": 0.16666666666666666,
+          "specificity": 0.9682539682539683
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9224806201550387
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.37037037037037035,
+          "recall": 0.3225806451612903,
+          "f1": 0.3448275862068966,
+          "specificity": 0.8333333333333334
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6842105263157895,
+        "AD": 0.03759398496240601,
+        "SMC": 0.07518796992481203,
+        "EMCI": 0.0,
+        "LMCI": 0.20300751879699247
+      },
+      "mean_class_probability": {
+        "CN": 0.4360082447528839,
+        "AD": 0.07843408733606339,
+        "SMC": 0.11300236731767654,
+        "EMCI": 0.10048076510429382,
+        "LMCI": 0.27207449078559875
+      },
+      "classification_collapse": false,
+      "training_parameters": 1817814,
+      "trainable_parameters": 999719,
+      "training_seconds": 4467.271990976995,
+      "test_inference_seconds": 0.7594328089908231
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A7",
+      "seed": 3407,
+      "checkpoint_sha256": "96674e93c0e18dc1d741ae6a37daffd8af8c19a775057fc9e44dde5502e94803",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5939849624060151,
+        "f1_macro": 0.3288101664417454,
+        "precision_macro": 0.31358816715673166,
+        "recall_macro": 0.3572702629438872,
+        "balanced_accuracy": 0.3572702629438872,
+        "roc_auc_macro": 0.6586931247365693,
+        "f1_weighted": 0.5882164080917542
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7441860465116279,
+          "recall": 0.7529411764705882,
+          "f1": 0.7485380116959064,
+          "specificity": 0.5416666666666666
+        },
+        "AD": {
+          "precision": 0.3333333333333333,
+          "recall": 0.42857142857142855,
+          "f1": 0.375,
+          "specificity": 0.9523809523809523
+        },
+        "SMC": {
+          "precision": 0.1111111111111111,
+          "recall": 0.25,
+          "f1": 0.15384615384615385,
+          "specificity": 0.937984496124031
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.3793103448275862,
+          "recall": 0.3548387096774194,
+          "f1": 0.36666666666666664,
+          "specificity": 0.8235294117647058
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6466165413533834,
+        "AD": 0.06766917293233082,
+        "SMC": 0.06766917293233082,
+        "EMCI": 0.0,
+        "LMCI": 0.21804511278195488
+      },
+      "mean_class_probability": {
+        "CN": 0.4251370131969452,
+        "AD": 0.09150884300470352,
+        "SMC": 0.10893454402685165,
+        "EMCI": 0.0903950184583664,
+        "LMCI": 0.28402459621429443
+      },
+      "classification_collapse": false,
+      "training_parameters": 1817814,
+      "trainable_parameters": 999719,
+      "training_seconds": 3676.4636602470127,
+      "test_inference_seconds": 0.7853717750112992
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM2",
+      "seed": 42,
+      "checkpoint_sha256": "b8493f53f4a692f8063392d3588fc0b27aeed916594dc86eb8f2d2d3134e8cca",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5939849624060151,
+        "f1_macro": 0.3122132404758944,
+        "precision_macro": 0.3928104575163399,
+        "recall_macro": 0.2938917502484865,
+        "balanced_accuracy": 0.2938917502484865,
+        "roc_auc_macro": 0.6693731957737917,
+        "f1_weighted": 0.5705829054666264
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6862745098039216,
+          "recall": 0.8235294117647058,
+          "f1": 0.7486631016042781,
+          "specificity": 0.3333333333333333
+        },
+        "AD": {
+          "precision": 0.6666666666666666,
+          "recall": 0.2857142857142857,
+          "f1": 0.4,
+          "specificity": 0.9920634920634921
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9457364341085271
+        },
+        "EMCI": {
+          "precision": 0.1111111111111111,
+          "recall": 0.16666666666666666,
+          "f1": 0.13333333333333333,
+          "specificity": 0.937007874015748
+        },
+        "LMCI": {
+          "precision": 0.5,
+          "recall": 0.1935483870967742,
+          "f1": 0.27906976744186046,
+          "specificity": 0.9411764705882353
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7669172932330827,
+        "AD": 0.022556390977443608,
+        "SMC": 0.05263157894736842,
+        "EMCI": 0.06766917293233082,
+        "LMCI": 0.09022556390977443
+      },
+      "mean_class_probability": {
+        "CN": 0.5146992802619934,
+        "AD": 0.06263263523578644,
+        "SMC": 0.09666164964437485,
+        "EMCI": 0.08540334552526474,
+        "LMCI": 0.24060310423374176
+      },
+      "classification_collapse": false,
+      "training_parameters": 968311,
+      "trainable_parameters": 968311,
+      "training_seconds": 449.20672412699787,
+      "test_inference_seconds": 0.22788238202338107
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM2",
+      "seed": 2026,
+      "checkpoint_sha256": "5aa81ae36b4256c15b80226322d17bc0a05c600c8a299d4d1c906ec876ba173d",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6616541353383458,
+        "f1_macro": 0.3223084886128364,
+        "precision_macro": 0.34777036048064086,
+        "recall_macro": 0.32260233125508264,
+        "balanced_accuracy": 0.32260233125508264,
+        "roc_auc_macro": 0.6960143731151033,
+        "f1_weighted": 0.6197150484907921
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7102803738317757,
+          "recall": 0.8941176470588236,
+          "f1": 0.7916666666666666,
+          "specificity": 0.3541666666666667
+        },
+        "AD": {
+          "precision": 0.42857142857142855,
+          "recall": 0.42857142857142855,
+          "f1": 0.42857142857142855,
+          "specificity": 0.9682539682539683
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9767441860465116
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9921259842519685
+        },
+        "LMCI": {
+          "precision": 0.6,
+          "recall": 0.2903225806451613,
+          "f1": 0.391304347826087,
+          "specificity": 0.9411764705882353
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.8045112781954887,
+        "AD": 0.05263157894736842,
+        "SMC": 0.022556390977443608,
+        "EMCI": 0.007518796992481203,
+        "LMCI": 0.11278195488721804
+      },
+      "mean_class_probability": {
+        "CN": 0.5192666053771973,
+        "AD": 0.09794121235609055,
+        "SMC": 0.042724255472421646,
+        "EMCI": 0.07787744700908661,
+        "LMCI": 0.2621906101703644
+      },
+      "classification_collapse": false,
+      "training_parameters": 968311,
+      "trainable_parameters": 968311,
+      "training_seconds": 593.9931378570036,
+      "test_inference_seconds": 0.1920453880156856
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM2",
+      "seed": 3407,
+      "checkpoint_sha256": "7a4e7be0d96c3c6c68fd8f4279b025778bf7f4681fa02df57b80001d47fd35ed",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6390977443609023,
+        "f1_macro": 0.2826879557455368,
+        "precision_macro": 0.342059123343527,
+        "recall_macro": 0.2852263486039577,
+        "balanced_accuracy": 0.2852263486039577,
+        "roc_auc_macro": 0.6986807508837789,
+        "f1_weighted": 0.5982647403018484
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6880733944954128,
+          "recall": 0.8823529411764706,
+          "f1": 0.7731958762886598,
+          "specificity": 0.2916666666666667
+        },
+        "AD": {
+          "precision": 0.2222222222222222,
+          "recall": 0.2857142857142857,
+          "f1": 0.25,
+          "specificity": 0.9444444444444444
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9612403100775194
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.8,
+          "recall": 0.25806451612903225,
+          "f1": 0.3902439024390244,
+          "specificity": 0.9803921568627451
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.8195488721804511,
+        "AD": 0.06766917293233082,
+        "SMC": 0.03759398496240601,
+        "EMCI": 0.0,
+        "LMCI": 0.07518796992481203
+      },
+      "mean_class_probability": {
+        "CN": 0.5645159482955933,
+        "AD": 0.07304549217224121,
+        "SMC": 0.061473265290260315,
+        "EMCI": 0.07687527686357498,
+        "LMCI": 0.22409002482891083
+      },
+      "classification_collapse": false,
+      "training_parameters": 968311,
+      "trainable_parameters": 968311,
+      "training_seconds": 648.4888758410234,
+      "test_inference_seconds": 0.1963868029997684
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM3v3",
+      "seed": 42,
+      "checkpoint_sha256": "6eee2c705d791f7c0850e11c12145749d96db59b8276ba2bcfda21d63aa17c38",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5714285714285714,
+        "f1_macro": 0.27049989117028217,
+        "precision_macro": 0.3073883563245265,
+        "recall_macro": 0.2599512062889672,
+        "balanced_accuracy": 0.2599512062889672,
+        "roc_auc_macro": 0.6754174148527159,
+        "f1_weighted": 0.5676309870664471
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7127659574468085,
+          "recall": 0.788235294117647,
+          "f1": 0.7486033519553073,
+          "specificity": 0.4375
+        },
+        "AD": {
+          "precision": 0.2857142857142857,
+          "recall": 0.2857142857142857,
+          "f1": 0.2857142857142857,
+          "specificity": 0.9603174603174603
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9147286821705426
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.937007874015748
+        },
+        "LMCI": {
+          "precision": 0.5384615384615384,
+          "recall": 0.22580645161290322,
+          "f1": 0.3181818181818182,
+          "specificity": 0.9411764705882353
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.706766917293233,
+        "AD": 0.05263157894736842,
+        "SMC": 0.08270676691729323,
+        "EMCI": 0.06015037593984962,
+        "LMCI": 0.09774436090225563
+      },
+      "mean_class_probability": {
+        "CN": 0.46778303384780884,
+        "AD": 0.08859781920909882,
+        "SMC": 0.08824127167463303,
+        "EMCI": 0.11300662159919739,
+        "LMCI": 0.2423713505268097
+      },
+      "classification_collapse": false,
+      "training_parameters": 819513,
+      "trainable_parameters": 819513,
+      "training_seconds": 530.6764206149965,
+      "test_inference_seconds": 0.24894463899545372
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM3v3",
+      "seed": 2026,
+      "checkpoint_sha256": "43c52f356d24b27fd47b34286791e1fd2b09d720cbb1ede9535a0522d3c36e50",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6165413533834586,
+        "f1_macro": 0.3062902624051735,
+        "precision_macro": 0.3475490196078431,
+        "recall_macro": 0.3043860124695039,
+        "balanced_accuracy": 0.3043860124695039,
+        "roc_auc_macro": 0.6867659157316262,
+        "f1_weighted": 0.5930852501231938
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.696078431372549,
+          "recall": 0.8352941176470589,
+          "f1": 0.7593582887700535,
+          "specificity": 0.3541666666666667
+        },
+        "AD": {
+          "precision": 0.375,
+          "recall": 0.42857142857142855,
+          "f1": 0.4,
+          "specificity": 0.9603174603174603
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9457364341085271
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.968503937007874
+        },
+        "LMCI": {
+          "precision": 0.6666666666666666,
+          "recall": 0.25806451612903225,
+          "f1": 0.37209302325581395,
+          "specificity": 0.9607843137254902
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7669172932330827,
+        "AD": 0.06015037593984962,
+        "SMC": 0.05263157894736842,
+        "EMCI": 0.03007518796992481,
+        "LMCI": 0.09022556390977443
+      },
+      "mean_class_probability": {
+        "CN": 0.49147549271583557,
+        "AD": 0.0951424241065979,
+        "SMC": 0.06918690353631973,
+        "EMCI": 0.10113469511270523,
+        "LMCI": 0.24306049942970276
+      },
+      "classification_collapse": false,
+      "training_parameters": 819513,
+      "trainable_parameters": 819513,
+      "training_seconds": 521.8689149259881,
+      "test_inference_seconds": 0.20113541599130258
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM3v3",
+      "seed": 3407,
+      "checkpoint_sha256": "c5fe469102c5352447231e1cd8df133b195169bf5dc2d2fbd63cb4aecc5f8932",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5639097744360902,
+        "f1_macro": 0.2645276292335116,
+        "precision_macro": 0.30368024132730015,
+        "recall_macro": 0.2534995933857414,
+        "balanced_accuracy": 0.2534995933857414,
+        "roc_auc_macro": 0.6893495277127849,
+        "f1_weighted": 0.5390749601275916
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6568627450980392,
+          "recall": 0.788235294117647,
+          "f1": 0.7165775401069518,
+          "specificity": 0.2708333333333333
+        },
+        "AD": {
+          "precision": 0.4,
+          "recall": 0.2857142857142857,
+          "f1": 0.3333333333333333,
+          "specificity": 0.9761904761904762
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.937984496124031
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9606299212598425
+        },
+        "LMCI": {
+          "precision": 0.46153846153846156,
+          "recall": 0.1935483870967742,
+          "f1": 0.2727272727272727,
+          "specificity": 0.9313725490196079
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7669172932330827,
+        "AD": 0.03759398496240601,
+        "SMC": 0.06015037593984962,
+        "EMCI": 0.03759398496240601,
+        "LMCI": 0.09774436090225563
+      },
+      "mean_class_probability": {
+        "CN": 0.4906347692012787,
+        "AD": 0.06501283496618271,
+        "SMC": 0.08027654141187668,
+        "EMCI": 0.10785933583974838,
+        "LMCI": 0.25621649622917175
+      },
+      "classification_collapse": false,
+      "training_parameters": 819513,
+      "trainable_parameters": 819513,
+      "training_seconds": 551.5192642140028,
+      "test_inference_seconds": 0.17888571400544606
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM3v3_no_metadata",
+      "seed": 42,
+      "checkpoint_sha256": "4ce0d52356b495385bfef2d863a3fdeff510baf77e2f7951868fab8a4ad6f630",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5864661654135338,
+        "f1_macro": 0.3125873015873016,
+        "precision_macro": 0.3298412698412698,
+        "recall_macro": 0.33852263486039574,
+        "balanced_accuracy": 0.33852263486039574,
+        "roc_auc_macro": 0.6756580162510607,
+        "f1_weighted": 0.5849594223654374
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7444444444444445,
+          "recall": 0.788235294117647,
+          "f1": 0.7657142857142857,
+          "specificity": 0.5208333333333334
+        },
+        "AD": {
+          "precision": 0.3333333333333333,
+          "recall": 0.42857142857142855,
+          "f1": 0.375,
+          "specificity": 0.9523809523809523
+        },
+        "SMC": {
+          "precision": 0.07142857142857142,
+          "recall": 0.25,
+          "f1": 0.1111111111111111,
+          "specificity": 0.8992248062015504
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.952755905511811
+        },
+        "LMCI": {
+          "precision": 0.5,
+          "recall": 0.22580645161290322,
+          "f1": 0.3111111111111111,
+          "specificity": 0.9313725490196079
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6766917293233082,
+        "AD": 0.06766917293233082,
+        "SMC": 0.10526315789473684,
+        "EMCI": 0.045112781954887216,
+        "LMCI": 0.10526315789473684
+      },
+      "mean_class_probability": {
+        "CN": 0.4394358992576599,
+        "AD": 0.08786306530237198,
+        "SMC": 0.12344281375408173,
+        "EMCI": 0.1270367056131363,
+        "LMCI": 0.22222144901752472
+      },
+      "classification_collapse": false,
+      "training_parameters": 819513,
+      "trainable_parameters": 819382,
+      "training_seconds": 529.456399718998,
+      "test_inference_seconds": 0.1853386570001021
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM3v3_no_metadata",
+      "seed": 2026,
+      "checkpoint_sha256": "5b1fd8c94f795ae36240e5be9b8c55b9bd4a4733aca637da87799433a4efbc33",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5488721804511278,
+        "f1_macro": 0.26822001180905664,
+        "precision_macro": 0.310715667311412,
+        "recall_macro": 0.2750121984277582,
+        "balanced_accuracy": 0.2750121984277582,
+        "roc_auc_macro": 0.6990919129582472,
+        "f1_weighted": 0.5427716313538992
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6808510638297872,
+          "recall": 0.7529411764705882,
+          "f1": 0.7150837988826816,
+          "specificity": 0.375
+        },
+        "AD": {
+          "precision": 0.2727272727272727,
+          "recall": 0.42857142857142855,
+          "f1": 0.3333333333333333,
+          "specificity": 0.9365079365079365
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9147286821705426
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9448818897637795
+        },
+        "LMCI": {
+          "precision": 0.6,
+          "recall": 0.1935483870967742,
+          "f1": 0.2926829268292683,
+          "specificity": 0.9607843137254902
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.706766917293233,
+        "AD": 0.08270676691729323,
+        "SMC": 0.08270676691729323,
+        "EMCI": 0.05263157894736842,
+        "LMCI": 0.07518796992481203
+      },
+      "mean_class_probability": {
+        "CN": 0.48896634578704834,
+        "AD": 0.09149852395057678,
+        "SMC": 0.10042033344507217,
+        "EMCI": 0.11165671050548553,
+        "LMCI": 0.20745792984962463
+      },
+      "classification_collapse": false,
+      "training_parameters": 819513,
+      "trainable_parameters": 819382,
+      "training_seconds": 540.4718304919952,
+      "test_inference_seconds": 0.21462872900883667
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM3v3_no_metadata",
+      "seed": 3407,
+      "checkpoint_sha256": "e6bf979f618f5561252eb8aafb303b8d5eeb7a75b5f0dafe046bd4d04744cf59",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6466165413533834,
+        "f1_macro": 0.28431472081218273,
+        "precision_macro": 0.3579365079365079,
+        "recall_macro": 0.2875792897804283,
+        "balanced_accuracy": 0.2875792897804283,
+        "roc_auc_macro": 0.6972893884798722,
+        "f1_weighted": 0.5995019274073509
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6785714285714286,
+          "recall": 0.8941176470588236,
+          "f1": 0.7715736040609137,
+          "specificity": 0.25
+        },
+        "AD": {
+          "precision": 0.2222222222222222,
+          "recall": 0.2857142857142857,
+          "f1": 0.25,
+          "specificity": 0.9444444444444444
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9767441860465116
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.8888888888888888,
+          "recall": 0.25806451612903225,
+          "f1": 0.4,
+          "specificity": 0.9901960784313726
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.8421052631578947,
+        "AD": 0.06766917293233082,
+        "SMC": 0.022556390977443608,
+        "EMCI": 0.0,
+        "LMCI": 0.06766917293233082
+      },
+      "mean_class_probability": {
+        "CN": 0.5437841415405273,
+        "AD": 0.08807425200939178,
+        "SMC": 0.06208142265677452,
+        "EMCI": 0.0912538692355156,
+        "LMCI": 0.2148062288761139
+      },
+      "classification_collapse": false,
+      "training_parameters": 819513,
+      "trainable_parameters": 819382,
+      "training_seconds": 519.1971770790115,
+      "test_inference_seconds": 0.20344931801082566
+    },
+    {
+      "protocol": "sample",
+      "experiment": "LegacyPro",
+      "seed": 42,
+      "checkpoint_sha256": "67cfdc116e67598f1a902646fd504ae2a5c6b87ca4bd8a39638829e1bd8ee43d",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5639097744360902,
+        "f1_macro": 0.2023268112109995,
+        "precision_macro": 0.19275839368005268,
+        "recall_macro": 0.2133586337760911,
+        "balanced_accuracy": 0.2133586337760911,
+        "roc_auc_macro": 0.5986416943434529,
+        "f1_weighted": 0.5286577098483916
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.673469387755102,
+          "recall": 0.7764705882352941,
+          "f1": 0.7213114754098361,
+          "specificity": 0.3333333333333333
+        },
+        "AD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9841269841269841
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.984251968503937
+        },
+        "LMCI": {
+          "precision": 0.2903225806451613,
+          "recall": 0.2903225806451613,
+          "f1": 0.2903225806451613,
+          "specificity": 0.7843137254901961
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7368421052631579,
+        "AD": 0.015037593984962405,
+        "SMC": 0.0,
+        "EMCI": 0.015037593984962405,
+        "LMCI": 0.23308270676691728
+      },
+      "mean_class_probability": {
+        "CN": 0.6145471334457397,
+        "AD": 0.04492418095469475,
+        "SMC": 0.00811434630304575,
+        "EMCI": 0.026491491124033928,
+        "LMCI": 0.30592289566993713
+      },
+      "classification_collapse": false,
+      "training_parameters": 1005374,
+      "trainable_parameters": 1005374,
+      "training_seconds": 485.4814251829812,
+      "test_inference_seconds": 0.0497630899772048
+    },
+    {
+      "protocol": "sample",
+      "experiment": "LegacyPro",
+      "seed": 2026,
+      "checkpoint_sha256": "04c2754c827a144d327e021becc623bc949cc8c5ea729397ccdcaabd41d84f17",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6541353383458647,
+        "f1_macro": 0.22841444270015696,
+        "precision_macro": 0.22625482625482624,
+        "recall_macro": 0.24159392789373815,
+        "balanced_accuracy": 0.24159392789373815,
+        "roc_auc_macro": 0.7293536748509235,
+        "f1_weighted": 0.5893521086861581
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7027027027027027,
+          "recall": 0.9176470588235294,
+          "f1": 0.7959183673469388,
+          "specificity": 0.3125
+        },
+        "AD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9922480620155039
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.42857142857142855,
+          "recall": 0.2903225806451613,
+          "f1": 0.34615384615384615,
+          "specificity": 0.8823529411764706
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.8345864661654135,
+        "AD": 0.0,
+        "SMC": 0.007518796992481203,
+        "EMCI": 0.0,
+        "LMCI": 0.15789473684210525
+      },
+      "mean_class_probability": {
+        "CN": 0.7704995274543762,
+        "AD": 0.0013598342193290591,
+        "SMC": 0.027697164565324783,
+        "EMCI": 0.012339008040726185,
+        "LMCI": 0.18810437619686127
+      },
+      "classification_collapse": false,
+      "training_parameters": 1005374,
+      "trainable_parameters": 1005374,
+      "training_seconds": 484.05952866200823,
+      "test_inference_seconds": 0.05617681398871355
+    },
+    {
+      "protocol": "sample",
+      "experiment": "LegacyPro",
+      "seed": 3407,
+      "checkpoint_sha256": "61048c57cfae4be1557d6c22c111867062ef8bc8d48084e10deac50cec163bb6",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5112781954887218,
+        "f1_macro": 0.2427329192546584,
+        "precision_macro": 0.252390977443609,
+        "recall_macro": 0.2616210355109786,
+        "balanced_accuracy": 0.2616210355109786,
+        "roc_auc_macro": 0.583234865163673,
+        "f1_weighted": 0.5346191565871199
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7105263157894737,
+          "recall": 0.6352941176470588,
+          "f1": 0.6708074534161491,
+          "specificity": 0.5416666666666666
+        },
+        "AD": {
+          "precision": 0.07142857142857142,
+          "recall": 0.2857142857142857,
+          "f1": 0.11428571428571428,
+          "specificity": 0.7936507936507936
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.968503937007874
+        },
+        "LMCI": {
+          "precision": 0.48,
+          "recall": 0.3870967741935484,
+          "f1": 0.42857142857142855,
+          "specificity": 0.8725490196078431
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5714285714285714,
+        "AD": 0.21052631578947367,
+        "SMC": 0.0,
+        "EMCI": 0.03007518796992481,
+        "LMCI": 0.18796992481203006
+      },
+      "mean_class_probability": {
+        "CN": 0.5109772682189941,
+        "AD": 0.19203442335128784,
+        "SMC": 0.0014076812658458948,
+        "EMCI": 0.058037593960762024,
+        "LMCI": 0.2375430166721344
+      },
+      "classification_collapse": false,
+      "training_parameters": 1005374,
+      "trainable_parameters": 1005374,
+      "training_seconds": 488.0895154660102,
+      "test_inference_seconds": 0.06248424999648705
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P2_joint_cons_only",
+      "seed": 42,
+      "checkpoint_sha256": "f797abfa5d3dd88325f9f87f263f36a66d7b2bdf661afea20dee61325ec5d695",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5037593984962406,
+        "f1_macro": 0.27941920327885245,
+        "precision_macro": 0.29395604395604397,
+        "recall_macro": 0.2779524713111051,
+        "balanced_accuracy": 0.2779524713111051,
+        "roc_auc_macro": 0.6672616672138215,
+        "f1_weighted": 0.5334215355452658
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7142857142857143,
+          "recall": 0.6470588235294118,
+          "f1": 0.6790123456790124,
+          "specificity": 0.5416666666666666
+        },
+        "AD": {
+          "precision": 0.25,
+          "recall": 0.2857142857142857,
+          "f1": 0.26666666666666666,
+          "specificity": 0.9523809523809523
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.8914728682170543
+        },
+        "EMCI": {
+          "precision": 0.07692307692307693,
+          "recall": 0.16666666666666666,
+          "f1": 0.10526315789473684,
+          "specificity": 0.905511811023622
+        },
+        "LMCI": {
+          "precision": 0.42857142857142855,
+          "recall": 0.2903225806451613,
+          "f1": 0.34615384615384615,
+          "specificity": 0.8823529411764706
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5789473684210527,
+        "AD": 0.06015037593984962,
+        "SMC": 0.10526315789473684,
+        "EMCI": 0.09774436090225563,
+        "LMCI": 0.15789473684210525
+      },
+      "mean_class_probability": {
+        "CN": 0.3913366198539734,
+        "AD": 0.09235671162605286,
+        "SMC": 0.11248007416725159,
+        "EMCI": 0.13232550024986267,
+        "LMCI": 0.2715010941028595
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 1187.269247964985,
+      "test_inference_seconds": 0.22704941299161874
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P2_joint_cons_only",
+      "seed": 2026,
+      "checkpoint_sha256": "b7f94077897141a7a29e40ca4e7237fa76b43205b31f0e311dfa6fe9cfe14969",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5639097744360902,
+        "f1_macro": 0.2900197628458498,
+        "precision_macro": 0.31399267399267405,
+        "recall_macro": 0.2879154242342098,
+        "balanced_accuracy": 0.2879154242342098,
+        "roc_auc_macro": 0.6828699063076212,
+        "f1_weighted": 0.565607447472436
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7032967032967034,
+          "recall": 0.7529411764705882,
+          "f1": 0.7272727272727273,
+          "specificity": 0.4375
+        },
+        "AD": {
+          "precision": 0.3333333333333333,
+          "recall": 0.42857142857142855,
+          "f1": 0.375,
+          "specificity": 0.9523809523809523
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9224806201550387
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.937007874015748
+        },
+        "LMCI": {
+          "precision": 0.5333333333333333,
+          "recall": 0.25806451612903225,
+          "f1": 0.34782608695652173,
+          "specificity": 0.9313725490196079
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6842105263157895,
+        "AD": 0.06766917293233082,
+        "SMC": 0.07518796992481203,
+        "EMCI": 0.06015037593984962,
+        "LMCI": 0.11278195488721804
+      },
+      "mean_class_probability": {
+        "CN": 0.48425790667533875,
+        "AD": 0.08638487011194229,
+        "SMC": 0.10100341588258743,
+        "EMCI": 0.09861842542886734,
+        "LMCI": 0.22973543405532837
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 1725.5741735179909,
+      "test_inference_seconds": 0.17304839598364197
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P2_joint_cons_only",
+      "seed": 3407,
+      "checkpoint_sha256": "91baa6d0e13b6111868260ed0da9d3889fb0aef8fa8a8e7848fc1ab343dc1d4d",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6240601503759399,
+        "f1_macro": 0.28017707402204917,
+        "precision_macro": 0.3141680960548885,
+        "recall_macro": 0.2985416101924641,
+        "balanced_accuracy": 0.2985416101924641,
+        "roc_auc_macro": 0.691320253412614,
+        "f1_weighted": 0.5809802888014316
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6981132075471698,
+          "recall": 0.8705882352941177,
+          "f1": 0.774869109947644,
+          "specificity": 0.3333333333333333
+        },
+        "AD": {
+          "precision": 0.2727272727272727,
+          "recall": 0.42857142857142855,
+          "f1": 0.3333333333333333,
+          "specificity": 0.9365079365079365
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9534883720930233
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.6,
+          "recall": 0.1935483870967742,
+          "f1": 0.2926829268292683,
+          "specificity": 0.9607843137254902
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7969924812030075,
+        "AD": 0.08270676691729323,
+        "SMC": 0.045112781954887216,
+        "EMCI": 0.0,
+        "LMCI": 0.07518796992481203
+      },
+      "mean_class_probability": {
+        "CN": 0.4721236526966095,
+        "AD": 0.10119638592004776,
+        "SMC": 0.09515931457281113,
+        "EMCI": 0.10587061196565628,
+        "LMCI": 0.2256501466035843
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 973.8430972899951,
+      "test_inference_seconds": 0.21410919798654504
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P2_joint_rec_only",
+      "seed": 42,
+      "checkpoint_sha256": "a29e8c19bb41165ebe1d5fcb824d522b3a6f9cca16fbad48e77432b570253ce8",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.518796992481203,
+        "f1_macro": 0.25766406395240754,
+        "precision_macro": 0.27363499245852185,
+        "recall_macro": 0.26969910544863107,
+        "balanced_accuracy": 0.26969910544863107,
+        "roc_auc_macro": 0.6472314037188044,
+        "f1_weighted": 0.5449962399026008
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7564102564102564,
+          "recall": 0.6941176470588235,
+          "f1": 0.7239263803680982,
+          "specificity": 0.6041666666666666
+        },
+        "AD": {
+          "precision": 0.2,
+          "recall": 0.42857142857142855,
+          "f1": 0.2727272727272727,
+          "specificity": 0.9047619047619048
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.937984496124031
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.8818897637795275
+        },
+        "LMCI": {
+          "precision": 0.4117647058823529,
+          "recall": 0.22580645161290322,
+          "f1": 0.2916666666666667,
+          "specificity": 0.9019607843137255
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5864661654135338,
+        "AD": 0.11278195488721804,
+        "SMC": 0.06015037593984962,
+        "EMCI": 0.11278195488721804,
+        "LMCI": 0.12781954887218044
+      },
+      "mean_class_probability": {
+        "CN": 0.37928226590156555,
+        "AD": 0.12697474658489227,
+        "SMC": 0.08152097463607788,
+        "EMCI": 0.1545884609222412,
+        "LMCI": 0.2576335370540619
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 785.9545983549906,
+      "test_inference_seconds": 0.22429129399824888
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P2_joint_rec_only",
+      "seed": 2026,
+      "checkpoint_sha256": "000185639fb5662f05d5930342dacc10fb3166b4a96ec64752b29a168a04c697",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5488721804511278,
+        "f1_macro": 0.3169958643507031,
+        "precision_macro": 0.32701298701298703,
+        "recall_macro": 0.31599891569531036,
+        "balanced_accuracy": 0.31599891569531036,
+        "roc_auc_macro": 0.6757868380215419,
+        "f1_weighted": 0.5690469349552543
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7714285714285715,
+          "recall": 0.6352941176470588,
+          "f1": 0.6967741935483871,
+          "specificity": 0.6666666666666666
+        },
+        "AD": {
+          "precision": 0.5,
+          "recall": 0.42857142857142855,
+          "f1": 0.46153846153846156,
+          "specificity": 0.9761904761904762
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9534883720930233
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9448818897637795
+        },
+        "LMCI": {
+          "precision": 0.36363636363636365,
+          "recall": 0.5161290322580645,
+          "f1": 0.4266666666666667,
+          "specificity": 0.7254901960784313
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5263157894736842,
+        "AD": 0.045112781954887216,
+        "SMC": 0.045112781954887216,
+        "EMCI": 0.05263157894736842,
+        "LMCI": 0.3308270676691729
+      },
+      "mean_class_probability": {
+        "CN": 0.3796318471431732,
+        "AD": 0.1124873235821724,
+        "SMC": 0.06666316092014313,
+        "EMCI": 0.1389646977186203,
+        "LMCI": 0.30225300788879395
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 675.8542369189963,
+      "test_inference_seconds": 0.17475650098640472
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P2_joint_rec_only",
+      "seed": 3407,
+      "checkpoint_sha256": "bc5809cb5e9db471c0ba826009980fe8f6d049f1218327116fb33ea7b7627259",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.6015037593984962,
+        "f1_macro": 0.2259363424338044,
+        "precision_macro": 0.24682539682539684,
+        "recall_macro": 0.24886961236107347,
+        "balanced_accuracy": 0.24886961236107347,
+        "roc_auc_macro": 0.671265748251521,
+        "f1_weighted": 0.5314669751618724
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6785714285714286,
+          "recall": 0.8941176470588236,
+          "f1": 0.7715736040609137,
+          "specificity": 0.25
+        },
+        "AD": {
+          "precision": 0.2222222222222222,
+          "recall": 0.2857142857142857,
+          "f1": 0.25,
+          "specificity": 0.9444444444444444
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9534883720930233
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.3333333333333333,
+          "recall": 0.06451612903225806,
+          "f1": 0.10810810810810811,
+          "specificity": 0.9607843137254902
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.8421052631578947,
+        "AD": 0.06766917293233082,
+        "SMC": 0.045112781954887216,
+        "EMCI": 0.0,
+        "LMCI": 0.045112781954887216
+      },
+      "mean_class_probability": {
+        "CN": 0.4462724030017853,
+        "AD": 0.1016755998134613,
+        "SMC": 0.09707453101873398,
+        "EMCI": 0.11396832764148712,
+        "LMCI": 0.24100922048091888
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 562.1335779950023,
+      "test_inference_seconds": 0.14435900800162926
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_learned_query",
+      "seed": 42,
+      "checkpoint_sha256": "48bc56b66cef30d420731b208b4dcd064c3951fbf244116e288f8369d2be92c7",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5714285714285714,
+        "f1_macro": 0.2683960370152487,
+        "precision_macro": 0.2568764568764569,
+        "recall_macro": 0.28864190837625375,
+        "balanced_accuracy": 0.28864190837625375,
+        "roc_auc_macro": 0.6596856598579797,
+        "f1_weighted": 0.5715988994813841
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7692307692307693,
+          "recall": 0.7058823529411765,
+          "f1": 0.7361963190184049,
+          "specificity": 0.625
+        },
+        "AD": {
+          "precision": 0.18181818181818182,
+          "recall": 0.2857142857142857,
+          "f1": 0.2222222222222222,
+          "specificity": 0.9285714285714286
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9844961240310077
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.3333333333333333,
+          "recall": 0.45161290322580644,
+          "f1": 0.3835616438356164,
+          "specificity": 0.7254901960784313
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5864661654135338,
+        "AD": 0.08270676691729323,
+        "SMC": 0.015037593984962405,
+        "EMCI": 0.0,
+        "LMCI": 0.3157894736842105
+      },
+      "mean_class_probability": {
+        "CN": 0.3658687174320221,
+        "AD": 0.12943428754806519,
+        "SMC": 0.08956152945756912,
+        "EMCI": 0.11122976243495941,
+        "LMCI": 0.3039056956768036
+      },
+      "classification_collapse": false,
+      "training_parameters": 903520,
+      "trainable_parameters": 903520,
+      "training_seconds": 486.609532278002,
+      "test_inference_seconds": 0.23038662699400447
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_learned_query",
+      "seed": 2026,
+      "checkpoint_sha256": "49d3736c8200f15ce44141094dbd7c484d4a0c56c07c63c3393eaa9efbdd1f37",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.38345864661654133,
+        "f1_macro": 0.2458371040723982,
+        "precision_macro": 0.43983081791626094,
+        "recall_macro": 0.2840363242071022,
+        "balanced_accuracy": 0.2840363242071022,
+        "roc_auc_macro": 0.6530063193482831,
+        "f1_weighted": 0.4048974245568673
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.84375,
+          "recall": 0.3176470588235294,
+          "f1": 0.46153846153846156,
+          "specificity": 0.8958333333333334
+        },
+        "AD": {
+          "precision": 1.0,
+          "recall": 0.14285714285714285,
+          "f1": 0.25,
+          "specificity": 1.0
+        },
+        "SMC": {
+          "precision": 0.07692307692307693,
+          "recall": 0.25,
+          "f1": 0.11764705882352941,
+          "specificity": 0.9069767441860465
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.937007874015748
+        },
+        "LMCI": {
+          "precision": 0.27848101265822783,
+          "recall": 0.7096774193548387,
+          "f1": 0.4,
+          "specificity": 0.4411764705882353
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.24060150375939848,
+        "AD": 0.007518796992481203,
+        "SMC": 0.09774436090225563,
+        "EMCI": 0.06015037593984962,
+        "LMCI": 0.5939849624060151
+      },
+      "mean_class_probability": {
+        "CN": 0.2720983028411865,
+        "AD": 0.0816878229379654,
+        "SMC": 0.11096189171075821,
+        "EMCI": 0.1970035433769226,
+        "LMCI": 0.3382484018802643
+      },
+      "classification_collapse": false,
+      "training_parameters": 903520,
+      "trainable_parameters": 903520,
+      "training_seconds": 369.7115262130101,
+      "test_inference_seconds": 0.16523062801570632
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_learned_query",
+      "seed": 3407,
+      "checkpoint_sha256": "5378ffdce41693984d2dce5c7ec4122588fb69e8bc38dafcc3fb4acd1315b988",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5864661654135338,
+        "f1_macro": 0.2740554683411826,
+        "precision_macro": 0.2881443298969072,
+        "recall_macro": 0.2728544320954188,
+        "balanced_accuracy": 0.2728544320954188,
+        "roc_auc_macro": 0.7044705260523617,
+        "f1_weighted": 0.5702017996325193
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6907216494845361,
+          "recall": 0.788235294117647,
+          "f1": 0.7362637362637363,
+          "specificity": 0.375
+        },
+        "AD": {
+          "precision": 0.25,
+          "recall": 0.2857142857142857,
+          "f1": 0.26666666666666666,
+          "specificity": 0.9523809523809523
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9302325581395349
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9921259842519685
+        },
+        "LMCI": {
+          "precision": 0.5,
+          "recall": 0.2903225806451613,
+          "f1": 0.3673469387755102,
+          "specificity": 0.9117647058823529
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7293233082706767,
+        "AD": 0.06015037593984962,
+        "SMC": 0.06766917293233082,
+        "EMCI": 0.007518796992481203,
+        "LMCI": 0.13533834586466165
+      },
+      "mean_class_probability": {
+        "CN": 0.4775320887565613,
+        "AD": 0.07490815967321396,
+        "SMC": 0.0809784010052681,
+        "EMCI": 0.08799799531698227,
+        "LMCI": 0.2785834074020386
+      },
+      "classification_collapse": false,
+      "training_parameters": 903520,
+      "trainable_parameters": 903520,
+      "training_seconds": 459.7312457560038,
+      "test_inference_seconds": 0.14742107200436294
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_parameter_matched",
+      "seed": 42,
+      "checkpoint_sha256": "406b5765e02883636f24063f5adb86b3bdfc49d5f30f98492d3773617aaf7c9e",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5864661654135338,
+        "f1_macro": 0.2793241313660162,
+        "precision_macro": 0.3654088050314465,
+        "recall_macro": 0.2605584169151532,
+        "balanced_accuracy": 0.2605584169151532,
+        "roc_auc_macro": 0.6757615722588032,
+        "f1_weighted": 0.5575121764430113
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.660377358490566,
+          "recall": 0.8235294117647058,
+          "f1": 0.7329842931937173,
+          "specificity": 0.25
+        },
+        "AD": {
+          "precision": 0.5,
+          "recall": 0.2857142857142857,
+          "f1": 0.36363636363636365,
+          "specificity": 0.9841269841269841
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9224806201550387
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.968503937007874
+        },
+        "LMCI": {
+          "precision": 0.6666666666666666,
+          "recall": 0.1935483870967742,
+          "f1": 0.3,
+          "specificity": 0.9705882352941176
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7969924812030075,
+        "AD": 0.03007518796992481,
+        "SMC": 0.07518796992481203,
+        "EMCI": 0.03007518796992481,
+        "LMCI": 0.06766917293233082
+      },
+      "mean_class_probability": {
+        "CN": 0.46226611733436584,
+        "AD": 0.07155895233154297,
+        "SMC": 0.1302092969417572,
+        "EMCI": 0.10496652126312256,
+        "LMCI": 0.2309991419315338
+      },
+      "classification_collapse": false,
+      "training_parameters": 968870,
+      "trainable_parameters": 968870,
+      "training_seconds": 388.7058408619778,
+      "test_inference_seconds": 0.1845567059936002
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_parameter_matched",
+      "seed": 2026,
+      "checkpoint_sha256": "088e1342f24ff828911dd7f825efc11e16f9607e9d75c75cd81a1547a8013318",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5263157894736842,
+        "f1_macro": 0.3473015085077632,
+        "precision_macro": 0.38973255055446837,
+        "recall_macro": 0.34630884611909274,
+        "balanced_accuracy": 0.34630884611909274,
+        "roc_auc_macro": 0.6586764218380485,
+        "f1_weighted": 0.5693456152169951
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7534246575342466,
+          "recall": 0.6470588235294118,
+          "f1": 0.6962025316455697,
+          "specificity": 0.625
+        },
+        "AD": {
+          "precision": 0.6,
+          "recall": 0.42857142857142855,
+          "f1": 0.5,
+          "specificity": 0.9841269841269841
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.8914728682170543
+        },
+        "EMCI": {
+          "precision": 0.09523809523809523,
+          "recall": 0.3333333333333333,
+          "f1": 0.14814814814814814,
+          "specificity": 0.8503937007874016
+        },
+        "LMCI": {
+          "precision": 0.5,
+          "recall": 0.3225806451612903,
+          "f1": 0.39215686274509803,
+          "specificity": 0.9019607843137255
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5488721804511278,
+        "AD": 0.03759398496240601,
+        "SMC": 0.10526315789473684,
+        "EMCI": 0.15789473684210525,
+        "LMCI": 0.15037593984962405
+      },
+      "mean_class_probability": {
+        "CN": 0.391439825296402,
+        "AD": 0.09216301888227463,
+        "SMC": 0.10064090043306351,
+        "EMCI": 0.16699285805225372,
+        "LMCI": 0.24876341223716736
+      },
+      "classification_collapse": false,
+      "training_parameters": 968870,
+      "trainable_parameters": 968870,
+      "training_seconds": 367.9878097890178,
+      "test_inference_seconds": 0.162923049996607
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_parameter_matched",
+      "seed": 3407,
+      "checkpoint_sha256": "b728a8c2374258787e051ddd0f1933216f3d957f519b4831b8208e1fd7f0a8d6",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.556390977443609,
+        "f1_macro": 0.2639365079365079,
+        "precision_macro": 0.3222910216718266,
+        "recall_macro": 0.2766738953645974,
+        "balanced_accuracy": 0.2766738953645974,
+        "roc_auc_macro": 0.6725681646762073,
+        "f1_weighted": 0.5413939610932093
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6842105263157895,
+          "recall": 0.7647058823529411,
+          "f1": 0.7222222222222222,
+          "specificity": 0.375
+        },
+        "AD": {
+          "precision": 0.5,
+          "recall": 0.14285714285714285,
+          "f1": 0.2222222222222222,
+          "specificity": 0.9920634920634921
+        },
+        "SMC": {
+          "precision": 0.058823529411764705,
+          "recall": 0.25,
+          "f1": 0.09523809523809523,
+          "specificity": 0.875968992248062
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.3684210526315789,
+          "recall": 0.22580645161290322,
+          "f1": 0.28,
+          "specificity": 0.8823529411764706
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7142857142857143,
+        "AD": 0.015037593984962405,
+        "SMC": 0.12781954887218044,
+        "EMCI": 0.0,
+        "LMCI": 0.14285714285714285
+      },
+      "mean_class_probability": {
+        "CN": 0.3720531761646271,
+        "AD": 0.09551587700843811,
+        "SMC": 0.14920194447040558,
+        "EMCI": 0.12521204352378845,
+        "LMCI": 0.258016973733902
+      },
+      "classification_collapse": false,
+      "training_parameters": 968870,
+      "trainable_parameters": 968870,
+      "training_seconds": 419.1677892449952,
+      "test_inference_seconds": 0.1887853880180046
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_random",
+      "seed": 42,
+      "checkpoint_sha256": "0680136eff1096dfa08cd7b9b8c9bc0baf2b84208089bf4bf31205c11d4c6192",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5338345864661654,
+        "f1_macro": 0.328863703346462,
+        "precision_macro": 0.33904488232074437,
+        "recall_macro": 0.349779524713111,
+        "balanced_accuracy": 0.349779524713111,
+        "roc_auc_macro": 0.6875950915066631,
+        "f1_weighted": 0.5612596518222652
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.8448275862068966,
+          "recall": 0.5764705882352941,
+          "f1": 0.6853146853146853,
+          "specificity": 0.8125
+        },
+        "AD": {
+          "precision": 0.2,
+          "recall": 0.14285714285714285,
+          "f1": 0.16666666666666666,
+          "specificity": 0.9682539682539683
+        },
+        "SMC": {
+          "precision": 0.2,
+          "recall": 0.25,
+          "f1": 0.2222222222222222,
+          "specificity": 0.9689922480620154
+        },
+        "EMCI": {
+          "precision": 0.1111111111111111,
+          "recall": 0.16666666666666666,
+          "f1": 0.13333333333333333,
+          "specificity": 0.937007874015748
+        },
+        "LMCI": {
+          "precision": 0.3392857142857143,
+          "recall": 0.6129032258064516,
+          "f1": 0.4367816091954023,
+          "specificity": 0.6372549019607843
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.43609022556390975,
+        "AD": 0.03759398496240601,
+        "SMC": 0.03759398496240601,
+        "EMCI": 0.06766917293233082,
+        "LMCI": 0.42105263157894735
+      },
+      "mean_class_probability": {
+        "CN": 0.35493844747543335,
+        "AD": 0.10600597411394119,
+        "SMC": 0.07103150337934494,
+        "EMCI": 0.1352611631155014,
+        "LMCI": 0.3327629566192627
+      },
+      "classification_collapse": false,
+      "training_parameters": 968896,
+      "trainable_parameters": 968896,
+      "training_seconds": 411.12149361500633,
+      "test_inference_seconds": 0.2022620149946306
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_random",
+      "seed": 2026,
+      "checkpoint_sha256": "25bd9509273640e2ba207c5a50fc47d5a6b01f82527dd98b8d6eb28292e16702",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.631578947368421,
+        "f1_macro": 0.2916897056431941,
+        "precision_macro": 0.353030303030303,
+        "recall_macro": 0.27877473570073186,
+        "balanced_accuracy": 0.27877473570073186,
+        "roc_auc_macro": 0.7193964191619473,
+        "f1_weighted": 0.5866397983901044
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6818181818181818,
+          "recall": 0.8823529411764706,
+          "f1": 0.7692307692307693,
+          "specificity": 0.2708333333333333
+        },
+        "AD": {
+          "precision": 0.5,
+          "recall": 0.2857142857142857,
+          "f1": 0.36363636363636365,
+          "specificity": 0.9841269841269841
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9689922480620154
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9763779527559056
+        },
+        "LMCI": {
+          "precision": 0.5833333333333334,
+          "recall": 0.22580645161290322,
+          "f1": 0.32558139534883723,
+          "specificity": 0.9509803921568627
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.8270676691729323,
+        "AD": 0.03007518796992481,
+        "SMC": 0.03007518796992481,
+        "EMCI": 0.022556390977443608,
+        "LMCI": 0.09022556390977443
+      },
+      "mean_class_probability": {
+        "CN": 0.5592438578605652,
+        "AD": 0.08062617480754852,
+        "SMC": 0.04715060815215111,
+        "EMCI": 0.08151812851428986,
+        "LMCI": 0.2314613312482834
+      },
+      "classification_collapse": false,
+      "training_parameters": 968896,
+      "trainable_parameters": 968896,
+      "training_seconds": 677.3969442259986,
+      "test_inference_seconds": 0.1739217180002015
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_random",
+      "seed": 3407,
+      "checkpoint_sha256": "150fb533721ac792470b91690092a3625f650f9a21e8fabdf2edb3d189b1a464",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.556390977443609,
+        "f1_macro": 0.28488854172925554,
+        "precision_macro": 0.3254838709677419,
+        "recall_macro": 0.2634426673895364,
+        "balanced_accuracy": 0.2634426673895364,
+        "roc_auc_macro": 0.6852619770994682,
+        "f1_weighted": 0.5537982732472593
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6774193548387096,
+          "recall": 0.7411764705882353,
+          "f1": 0.7078651685393258,
+          "specificity": 0.375
+        },
+        "AD": {
+          "precision": 0.5,
+          "recall": 0.2857142857142857,
+          "f1": 0.36363636363636365,
+          "specificity": 0.9841269841269841
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.8914728682170543
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.984251968503937
+        },
+        "LMCI": {
+          "precision": 0.45,
+          "recall": 0.2903225806451613,
+          "f1": 0.35294117647058826,
+          "specificity": 0.8921568627450981
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6992481203007519,
+        "AD": 0.03007518796992481,
+        "SMC": 0.10526315789473684,
+        "EMCI": 0.015037593984962405,
+        "LMCI": 0.15037593984962405
+      },
+      "mean_class_probability": {
+        "CN": 0.46785086393356323,
+        "AD": 0.04297398403286934,
+        "SMC": 0.13168606162071228,
+        "EMCI": 0.07016191631555557,
+        "LMCI": 0.2873271405696869
+      },
+      "classification_collapse": false,
+      "training_parameters": 968896,
+      "trainable_parameters": 968896,
+      "training_seconds": 491.0809541409835,
+      "test_inference_seconds": 0.13759866397595033
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P5_fixed",
+      "seed": 42,
+      "checkpoint_sha256": "f5f8a13ae93ad4ac520767ec2ed32e7b448c27cc598026bbdbbd3ae39bcafbc4",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5338345864661654,
+        "f1_macro": 0.2911950706311809,
+        "precision_macro": 0.31004180602006687,
+        "recall_macro": 0.305385379958435,
+        "balanced_accuracy": 0.305385379958435,
+        "roc_auc_macro": 0.6582701966413482,
+        "f1_weighted": 0.5616173760037465
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7692307692307693,
+          "recall": 0.7058823529411765,
+          "f1": 0.7361963190184049,
+          "specificity": 0.625
+        },
+        "AD": {
+          "precision": 0.3,
+          "recall": 0.42857142857142855,
+          "f1": 0.35294117647058826,
+          "specificity": 0.9444444444444444
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9534883720930233
+        },
+        "EMCI": {
+          "precision": 0.043478260869565216,
+          "recall": 0.16666666666666666,
+          "f1": 0.06896551724137931,
+          "specificity": 0.8267716535433071
+        },
+        "LMCI": {
+          "precision": 0.4375,
+          "recall": 0.22580645161290322,
+          "f1": 0.2978723404255319,
+          "specificity": 0.9117647058823529
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.5864661654135338,
+        "AD": 0.07518796992481203,
+        "SMC": 0.045112781954887216,
+        "EMCI": 0.17293233082706766,
+        "LMCI": 0.12030075187969924
+      },
+      "mean_class_probability": {
+        "CN": 0.37534406781196594,
+        "AD": 0.12425743788480759,
+        "SMC": 0.07981017231941223,
+        "EMCI": 0.17758406698703766,
+        "LMCI": 0.24300415813922882
+      },
+      "classification_collapse": false,
+      "training_parameters": 1649844,
+      "trainable_parameters": 831552,
+      "training_seconds": 1582.3260004109761,
+      "test_inference_seconds": 0.8230464140069671
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P5_fixed",
+      "seed": 2026,
+      "checkpoint_sha256": "69bbbb850ed49402f5ced27401b18419398813d279110a769af6fc659e78c2f2",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5864661654135338,
+        "f1_macro": 0.27498383968972206,
+        "precision_macro": 0.28528718703976436,
+        "recall_macro": 0.2728544320954188,
+        "balanced_accuracy": 0.2728544320954188,
+        "roc_auc_macro": 0.6930323346256906,
+        "f1_weighted": 0.5678465718271113
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6907216494845361,
+          "recall": 0.788235294117647,
+          "f1": 0.7362637362637363,
+          "specificity": 0.375
+        },
+        "AD": {
+          "precision": 0.2857142857142857,
+          "recall": 0.2857142857142857,
+          "f1": 0.2857142857142857,
+          "specificity": 0.9603174603174603
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9534883720930233
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9763779527559056
+        },
+        "LMCI": {
+          "precision": 0.45,
+          "recall": 0.2903225806451613,
+          "f1": 0.35294117647058826,
+          "specificity": 0.8921568627450981
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7293233082706767,
+        "AD": 0.05263157894736842,
+        "SMC": 0.045112781954887216,
+        "EMCI": 0.022556390977443608,
+        "LMCI": 0.15037593984962405
+      },
+      "mean_class_probability": {
+        "CN": 0.48897311091423035,
+        "AD": 0.08285661041736603,
+        "SMC": 0.08649840205907822,
+        "EMCI": 0.08747109770774841,
+        "LMCI": 0.25420066714286804
+      },
+      "classification_collapse": false,
+      "training_parameters": 1649844,
+      "trainable_parameters": 831552,
+      "training_seconds": 1557.4885776120063,
+      "test_inference_seconds": 0.6602954250120092
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P5_fixed",
+      "seed": 3407,
+      "checkpoint_sha256": "db9fdbd3aefa8c6d9196ddf9d7da41c3300d2e4a4d196aa198b5ad76b4d105bf",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5639097744360902,
+        "f1_macro": 0.29395798224918546,
+        "precision_macro": 0.31807881773399016,
+        "recall_macro": 0.3093439956627812,
+        "balanced_accuracy": 0.3093439956627812,
+        "roc_auc_macro": 0.690735590140741,
+        "f1_weighted": 0.5740566448139222
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.735632183908046,
+          "recall": 0.7529411764705882,
+          "f1": 0.7441860465116279,
+          "specificity": 0.5208333333333334
+        },
+        "AD": {
+          "precision": 0.25,
+          "recall": 0.2857142857142857,
+          "f1": 0.26666666666666666,
+          "specificity": 0.9523809523809523
+        },
+        "SMC": {
+          "precision": 0.07142857142857142,
+          "recall": 0.25,
+          "f1": 0.1111111111111111,
+          "specificity": 0.8992248062015504
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9291338582677166
+        },
+        "LMCI": {
+          "precision": 0.5333333333333333,
+          "recall": 0.25806451612903225,
+          "f1": 0.34782608695652173,
+          "specificity": 0.9313725490196079
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6541353383458647,
+        "AD": 0.06015037593984962,
+        "SMC": 0.10526315789473684,
+        "EMCI": 0.06766917293233082,
+        "LMCI": 0.11278195488721804
+      },
+      "mean_class_probability": {
+        "CN": 0.4111301302909851,
+        "AD": 0.085584357380867,
+        "SMC": 0.1153782457113266,
+        "EMCI": 0.14145201444625854,
+        "LMCI": 0.24645531177520752
+      },
+      "classification_collapse": false,
+      "training_parameters": 1649844,
+      "trainable_parameters": 831552,
+      "training_seconds": 2242.740050886001,
+      "test_inference_seconds": 0.8871364849910606
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P5_no_reliability",
+      "seed": 42,
+      "checkpoint_sha256": "8d894edcb1fe8269c76ed7584ccceb0e200d6d69324385834a636f6a805cdbde",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5714285714285714,
+        "f1_macro": 0.29357826851670904,
+        "precision_macro": 0.33777777777777773,
+        "recall_macro": 0.2902683654106804,
+        "balanced_accuracy": 0.2902683654106804,
+        "roc_auc_macro": 0.6674482855246208,
+        "f1_weighted": 0.5800626248051242
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.7222222222222222,
+          "recall": 0.7647058823529411,
+          "f1": 0.7428571428571429,
+          "specificity": 0.4791666666666667
+        },
+        "AD": {
+          "precision": 0.3,
+          "recall": 0.42857142857142855,
+          "f1": 0.35294117647058826,
+          "specificity": 0.9444444444444444
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9302325581395349
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.905511811023622
+        },
+        "LMCI": {
+          "precision": 0.6666666666666666,
+          "recall": 0.25806451612903225,
+          "f1": 0.37209302325581395,
+          "specificity": 0.9607843137254902
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6766917293233082,
+        "AD": 0.07518796992481203,
+        "SMC": 0.06766917293233082,
+        "EMCI": 0.09022556390977443,
+        "LMCI": 0.09022556390977443
+      },
+      "mean_class_probability": {
+        "CN": 0.43090981245040894,
+        "AD": 0.09204471856355667,
+        "SMC": 0.0973917692899704,
+        "EMCI": 0.1367255449295044,
+        "LMCI": 0.24292801320552826
+      },
+      "classification_collapse": false,
+      "training_parameters": 1649844,
+      "trainable_parameters": 831749,
+      "training_seconds": 1681.7057120170211,
+      "test_inference_seconds": 0.9927792949893046
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P5_no_reliability",
+      "seed": 2026,
+      "checkpoint_sha256": "9997e1f8f154ae4f363fce947cd6e225db657cfa4b70309d1142f0cc00dbca00",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5789473684210527,
+        "f1_macro": 0.290378933847142,
+        "precision_macro": 0.3188311688311688,
+        "recall_macro": 0.29262130658715096,
+        "balanced_accuracy": 0.29262130658715096,
+        "roc_auc_macro": 0.675454801894649,
+        "f1_weighted": 0.5880529840980099
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.75,
+          "recall": 0.7764705882352941,
+          "f1": 0.7630057803468208,
+          "specificity": 0.5416666666666666
+        },
+        "AD": {
+          "precision": 0.2727272727272727,
+          "recall": 0.42857142857142855,
+          "f1": 0.3333333333333333,
+          "specificity": 0.9365079365079365
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9302325581395349
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9133858267716536
+        },
+        "LMCI": {
+          "precision": 0.5714285714285714,
+          "recall": 0.25806451612903225,
+          "f1": 0.35555555555555557,
+          "specificity": 0.9411764705882353
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6616541353383458,
+        "AD": 0.08270676691729323,
+        "SMC": 0.06766917293233082,
+        "EMCI": 0.08270676691729323,
+        "LMCI": 0.10526315789473684
+      },
+      "mean_class_probability": {
+        "CN": 0.4331649839878082,
+        "AD": 0.11263050884008408,
+        "SMC": 0.08954661339521408,
+        "EMCI": 0.12676876783370972,
+        "LMCI": 0.2378891259431839
+      },
+      "classification_collapse": false,
+      "training_parameters": 1649844,
+      "trainable_parameters": 831749,
+      "training_seconds": 1830.57033555198,
+      "test_inference_seconds": 0.8614924490102567
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P5_no_reliability",
+      "seed": 3407,
+      "checkpoint_sha256": "c99468af893304e3c9b19da80217f2ead9d6c22a6f701121588891ba3aa71059",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "4c73c0e59329886799cf98edd472dbe5b0ca42b37fcf0e667929dd43fbb5a130",
+      "metrics": {
+        "accuracy": 0.5864661654135338,
+        "f1_macro": 0.26829088224437064,
+        "precision_macro": 0.30650183150183147,
+        "recall_macro": 0.2646570886419084,
+        "balanced_accuracy": 0.2646570886419084,
+        "roc_auc_macro": 0.712080104017081,
+        "f1_weighted": 0.5575677843556843
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6634615384615384,
+          "recall": 0.8117647058823529,
+          "f1": 0.7301587301587301,
+          "specificity": 0.2708333333333333
+        },
+        "AD": {
+          "precision": 0.2857142857142857,
+          "recall": 0.2857142857142857,
+          "f1": 0.2857142857142857,
+          "specificity": 0.9603174603174603
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.937984496124031
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.984251968503937
+        },
+        "LMCI": {
+          "precision": 0.5833333333333334,
+          "recall": 0.22580645161290322,
+          "f1": 0.32558139534883723,
+          "specificity": 0.9509803921568627
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.7819548872180451,
+        "AD": 0.05263157894736842,
+        "SMC": 0.06015037593984962,
+        "EMCI": 0.015037593984962405,
+        "LMCI": 0.09022556390977443
+      },
+      "mean_class_probability": {
+        "CN": 0.5376296043395996,
+        "AD": 0.0669780820608139,
+        "SMC": 0.08326936513185501,
+        "EMCI": 0.07872974872589111,
+        "LMCI": 0.23339322209358215
+      },
+      "classification_collapse": false,
+      "training_parameters": 1649844,
+      "trainable_parameters": 831749,
+      "training_seconds": 1556.9408636000007,
+      "test_inference_seconds": 0.6971209129842464
+    },
+    {
+      "protocol": "subject",
+      "experiment": "A0",
+      "seed": 42,
+      "checkpoint_sha256": "9edb31c8a6b071408df10a5c0a01a114c6f57841ff8ee2aae1e3ee9febb5e3f0",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "9f5b0f0afeaad4c97a6312f8e46fcb54d43626638e908182d65790fef4b1adf7",
+      "metrics": {
+        "accuracy": 0.5447154471544715,
+        "f1_macro": 0.26270311540440505,
+        "precision_macro": 0.25487179487179484,
+        "recall_macro": 0.28929150095743117,
+        "balanced_accuracy": 0.28929150095743117,
+        "roc_auc_macro": 0.5765455523589642,
+        "f1_weighted": 0.5320367628811975
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6794871794871795,
+          "recall": 0.726027397260274,
+          "f1": 0.7019867549668874,
+          "specificity": 0.5
+        },
+        "AD": {
+          "precision": 0.13333333333333333,
+          "recall": 0.3333333333333333,
+          "f1": 0.19047619047619047,
+          "specificity": 0.8888888888888888
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9658119658119658
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.46153846153846156,
+          "recall": 0.3870967741935484,
+          "f1": 0.42105263157894735,
+          "specificity": 0.8478260869565217
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6341463414634146,
+        "AD": 0.12195121951219512,
+        "SMC": 0.032520325203252036,
+        "EMCI": 0.0,
+        "LMCI": 0.21138211382113822
+      },
+      "mean_class_probability": {
+        "CN": 0.46900850534439087,
+        "AD": 0.11654501408338547,
+        "SMC": 0.03373316302895546,
+        "EMCI": 0.08701275289058685,
+        "LMCI": 0.29370060563087463
+      },
+      "classification_collapse": false,
+      "training_parameters": 818095,
+      "trainable_parameters": 818095,
+      "training_seconds": 407.37403096002527,
+      "test_inference_seconds": 0.2216959100042004
+    },
+    {
+      "protocol": "subject",
+      "experiment": "A0",
+      "seed": 2026,
+      "checkpoint_sha256": "98c1c58374e52b0ee8a28121c64fcaa03389437443a15ea6721e75f01a913db6",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "9f5b0f0afeaad4c97a6312f8e46fcb54d43626638e908182d65790fef4b1adf7",
+      "metrics": {
+        "accuracy": 0.21951219512195122,
+        "f1_macro": 0.16717831639352393,
+        "precision_macro": 0.2207792207792208,
+        "recall_macro": 0.18341434673736928,
+        "balanced_accuracy": 0.18341434673736928,
+        "roc_auc_macro": 0.553853677753124,
+        "f1_weighted": 0.25992046600824364
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.5714285714285714,
+          "recall": 0.1643835616438356,
+          "f1": 0.2553191489361702,
+          "specificity": 0.82
+        },
+        "AD": {
+          "precision": 0.14285714285714285,
+          "recall": 0.16666666666666666,
+          "f1": 0.15384615384615385,
+          "specificity": 0.9487179487179487
+        },
+        "SMC": {
+          "precision": 0.01818181818181818,
+          "recall": 0.16666666666666666,
+          "f1": 0.03278688524590164,
+          "specificity": 0.5384615384615384
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9568965517241379
+        },
+        "LMCI": {
+          "precision": 0.37142857142857144,
+          "recall": 0.41935483870967744,
+          "f1": 0.3939393939393939,
+          "specificity": 0.7608695652173914
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.17073170731707318,
+        "AD": 0.056910569105691054,
+        "SMC": 0.44715447154471544,
+        "EMCI": 0.04065040650406504,
+        "LMCI": 0.2845528455284553
+      },
+      "mean_class_probability": {
+        "CN": 0.2169557362794876,
+        "AD": 0.1300245076417923,
+        "SMC": 0.28869301080703735,
+        "EMCI": 0.13260075449943542,
+        "LMCI": 0.23172596096992493
+      },
+      "classification_collapse": false,
+      "training_parameters": 818095,
+      "trainable_parameters": 818095,
+      "training_seconds": 287.1244600089849,
+      "test_inference_seconds": 0.1862626439833548
+    },
+    {
+      "protocol": "subject",
+      "experiment": "A0",
+      "seed": 3407,
+      "checkpoint_sha256": "3d51c165d95ed05e48c316d53ea9bde0b21ff1f47bcb66e9e1d1cd1d679b62a1",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "9f5b0f0afeaad4c97a6312f8e46fcb54d43626638e908182d65790fef4b1adf7",
+      "metrics": {
+        "accuracy": 0.5040650406504065,
+        "f1_macro": 0.2230868642112065,
+        "precision_macro": 0.23079365079365077,
+        "recall_macro": 0.2533215495654736,
+        "balanced_accuracy": 0.2533215495654736,
+        "roc_auc_macro": 0.564609397745342,
+        "f1_weighted": 0.48214241488856313
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6428571428571429,
+          "recall": 0.7397260273972602,
+          "f1": 0.6878980891719745,
+          "specificity": 0.4
+        },
+        "AD": {
+          "precision": 0.1111111111111111,
+          "recall": 0.3333333333333333,
+          "f1": 0.16666666666666666,
+          "specificity": 0.8632478632478633
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9487179487179487
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.4,
+          "recall": 0.1935483870967742,
+          "f1": 0.2608695652173913,
+          "specificity": 0.9021739130434783
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6829268292682927,
+        "AD": 0.14634146341463414,
+        "SMC": 0.04878048780487805,
+        "EMCI": 0.0,
+        "LMCI": 0.12195121951219512
+      },
+      "mean_class_probability": {
+        "CN": 0.45648372173309326,
+        "AD": 0.11593303829431534,
+        "SMC": 0.06587919592857361,
+        "EMCI": 0.10831835120916367,
+        "LMCI": 0.2533857226371765
+      },
+      "classification_collapse": false,
+      "training_parameters": 818095,
+      "trainable_parameters": 818095,
+      "training_seconds": 360.85872555698734,
+      "test_inference_seconds": 0.18171255898778327
+    },
+    {
+      "protocol": "subject",
+      "experiment": "A1",
+      "seed": 42,
+      "checkpoint_sha256": "0f167a29b18ba930a3db3baae8ff8964fc5d4b362ae60aed3f0640618d4ebf00",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "9f5b0f0afeaad4c97a6312f8e46fcb54d43626638e908182d65790fef4b1adf7",
+      "metrics": {
+        "accuracy": 0.5284552845528455,
+        "f1_macro": 0.25367857272102196,
+        "precision_macro": 0.25076923076923074,
+        "recall_macro": 0.2569303284725291,
+        "balanced_accuracy": 0.2569303284725291,
+        "roc_auc_macro": 0.5888902150117238,
+        "f1_weighted": 0.5164583173353176
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6538461538461539,
+          "recall": 0.6986301369863014,
+          "f1": 0.6754966887417219,
+          "specificity": 0.46
+        },
+        "AD": {
+          "precision": 0.16666666666666666,
+          "recall": 0.16666666666666666,
+          "f1": 0.16666666666666666,
+          "specificity": 0.9572649572649573
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9743589743589743
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9482758620689655
+        },
+        "LMCI": {
+          "precision": 0.43333333333333335,
+          "recall": 0.41935483870967744,
+          "f1": 0.4262295081967213,
+          "specificity": 0.8152173913043478
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6341463414634146,
+        "AD": 0.04878048780487805,
+        "SMC": 0.024390243902439025,
+        "EMCI": 0.04878048780487805,
+        "LMCI": 0.24390243902439024
+      },
+      "mean_class_probability": {
+        "CN": 0.4705677330493927,
+        "AD": 0.09436547011137009,
+        "SMC": 0.0408281609416008,
+        "EMCI": 0.11522107571363449,
+        "LMCI": 0.2790175974369049
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 1002.5782267469913,
+      "test_inference_seconds": 0.17365083200274967
+    },
+    {
+      "protocol": "subject",
+      "experiment": "A1",
+      "seed": 2026,
+      "checkpoint_sha256": "58dfdca2c3c853aa1a446a5caeb0aa49ff07ae7a051f1d126b5b559054a31250",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "9f5b0f0afeaad4c97a6312f8e46fcb54d43626638e908182d65790fef4b1adf7",
+      "metrics": {
+        "accuracy": 0.5121951219512195,
+        "f1_macro": 0.22183816922995617,
+        "precision_macro": 0.22290697674418603,
+        "recall_macro": 0.22917955516276328,
+        "balanced_accuracy": 0.22917955516276328,
+        "roc_auc_macro": 0.5842456722277607,
+        "f1_weighted": 0.4867487108357685
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6395348837209303,
+          "recall": 0.7534246575342466,
+          "f1": 0.6918238993710691,
+          "specificity": 0.38
+        },
+        "AD": {
+          "precision": 0.125,
+          "recall": 0.16666666666666666,
+          "f1": 0.14285714285714285,
+          "specificity": 0.9401709401709402
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9658119658119658
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9568965517241379
+        },
+        "LMCI": {
+          "precision": 0.35,
+          "recall": 0.22580645161290322,
+          "f1": 0.27450980392156865,
+          "specificity": 0.8586956521739131
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6991869918699187,
+        "AD": 0.06504065040650407,
+        "SMC": 0.032520325203252036,
+        "EMCI": 0.04065040650406504,
+        "LMCI": 0.16260162601626016
+      },
+      "mean_class_probability": {
+        "CN": 0.5138559937477112,
+        "AD": 0.10328499972820282,
+        "SMC": 0.060840148478746414,
+        "EMCI": 0.07917483150959015,
+        "LMCI": 0.24284391105175018
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 1064.814839291008,
+      "test_inference_seconds": 0.15720200299983844
+    },
+    {
+      "protocol": "subject",
+      "experiment": "A1",
+      "seed": 3407,
+      "checkpoint_sha256": "daf996df3a4c3b56400739d61bbaa11236baa13a94f5cff0788305e4360d1e79",
+      "dataset_hash": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+      "split_hash": "9f5b0f0afeaad4c97a6312f8e46fcb54d43626638e908182d65790fef4b1adf7",
+      "metrics": {
+        "accuracy": 0.4959349593495935,
+        "f1_macro": 0.23702953097857557,
+        "precision_macro": 0.23189775910364147,
+        "recall_macro": 0.28117543084401236,
+        "balanced_accuracy": 0.28117543084401236,
+        "roc_auc_macro": 0.5755872327233809,
+        "f1_weighted": 0.4694557035321366
+      },
+      "per_class": {
+        "CN": {
+          "precision": 0.6190476190476191,
+          "recall": 0.7123287671232876,
+          "f1": 0.6624203821656051,
+          "specificity": 0.36
+        },
+        "AD": {
+          "precision": 0.1875,
+          "recall": 0.5,
+          "f1": 0.2727272727272727,
+          "specificity": 0.8888888888888888
+        },
+        "SMC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.9487179487179487
+        },
+        "EMCI": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0
+        },
+        "LMCI": {
+          "precision": 0.35294117647058826,
+          "recall": 0.1935483870967742,
+          "f1": 0.25,
+          "specificity": 0.8804347826086957
+        }
+      },
+      "prediction_fraction": {
+        "CN": 0.6829268292682927,
+        "AD": 0.13008130081300814,
+        "SMC": 0.04878048780487805,
+        "EMCI": 0.0,
+        "LMCI": 0.13821138211382114
+      },
+      "mean_class_probability": {
+        "CN": 0.4559577405452728,
+        "AD": 0.11809735000133514,
+        "SMC": 0.04782162234187126,
+        "EMCI": 0.10615482181310654,
+        "LMCI": 0.27196842432022095
+      },
+      "classification_collapse": false,
+      "training_parameters": 835264,
+      "trainable_parameters": 835264,
+      "training_seconds": 930.4485648800037,
+      "test_inference_seconds": 0.12882502700085752
+    }
+  ],
+  "groups": [
+    {
+      "protocol": "sample",
+      "experiment": "A0",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5614035087719299,
+          "sample_sd": 0.05840190575303784
+        },
+        "f1_macro": {
+          "mean": 0.28331314495946097,
+          "sample_sd": 0.006494999940535552
+        },
+        "precision_macro": {
+          "mean": 0.31190442125813644,
+          "sample_sd": 0.037011628765994516
+        },
+        "recall_macro": {
+          "mean": 0.29154151983373994,
+          "sample_sd": 0.019784983603999502
+        },
+        "balanced_accuracy": {
+          "mean": 0.29154151983373994,
+          "sample_sd": 0.019784983603999502
+        },
+        "roc_auc_macro": {
+          "mean": 0.6887597707597936,
+          "sample_sd": 0.0154310578538955
+        },
+        "f1_weighted": {
+          "mean": 0.5564495942105363,
+          "sample_sd": 0.030452276969197657
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A1",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.556390977443609,
+          "sample_sd": 0.07172475198623651
+        },
+        "f1_macro": {
+          "mean": 0.28246337919634185,
+          "sample_sd": 0.02112730633143001
+        },
+        "precision_macro": {
+          "mean": 0.3009567743110804,
+          "sample_sd": 0.02990483133375708
+        },
+        "recall_macro": {
+          "mean": 0.29102737869341283,
+          "sample_sd": 0.026757667402400775
+        },
+        "balanced_accuracy": {
+          "mean": 0.29102737869341283,
+          "sample_sd": 0.026757667402400775
+        },
+        "roc_auc_macro": {
+          "mean": 0.6765067797377787,
+          "sample_sd": 0.015792775514801072
+        },
+        "f1_weighted": {
+          "mean": 0.5580477712251828,
+          "sample_sd": 0.03765596341789163
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A2",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.581453634085213,
+          "sample_sd": 0.03858346946952545
+        },
+        "f1_macro": {
+          "mean": 0.2591389997036316,
+          "sample_sd": 0.0743357866613535
+        },
+        "precision_macro": {
+          "mean": 0.2819202100364397,
+          "sample_sd": 0.07427739499474124
+        },
+        "recall_macro": {
+          "mean": 0.2815424234209813,
+          "sample_sd": 0.09474127842457357
+        },
+        "balanced_accuracy": {
+          "mean": 0.2815424234209813,
+          "sample_sd": 0.09474127842457357
+        },
+        "roc_auc_macro": {
+          "mean": 0.6795602587620383,
+          "sample_sd": 0.017954361412252803
+        },
+        "f1_weighted": {
+          "mean": 0.5450183700818155,
+          "sample_sd": 0.01152792000919974
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A3",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5664160401002506,
+          "sample_sd": 0.041410304866812776
+        },
+        "f1_macro": {
+          "mean": 0.27753628592162144,
+          "sample_sd": 0.023015671015183377
+        },
+        "precision_macro": {
+          "mean": 0.31439949626700053,
+          "sample_sd": 0.0022711432727794594
+        },
+        "recall_macro": {
+          "mean": 0.28573687539531945,
+          "sample_sd": 0.038722148362992884
+        },
+        "balanced_accuracy": {
+          "mean": 0.28573687539531945,
+          "sample_sd": 0.038722148362992884
+        },
+        "roc_auc_macro": {
+          "mean": 0.6852520535648612,
+          "sample_sd": 0.01432162135664928
+        },
+        "f1_weighted": {
+          "mean": 0.5634785316902744,
+          "sample_sd": 0.004873929876525183
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A4",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5814536340852131,
+          "sample_sd": 0.03858346946952545
+        },
+        "f1_macro": {
+          "mean": 0.3049036618420034,
+          "sample_sd": 0.02395953601343279
+        },
+        "precision_macro": {
+          "mean": 0.32769599197703775,
+          "sample_sd": 0.037642109174505535
+        },
+        "recall_macro": {
+          "mean": 0.31055420017469354,
+          "sample_sd": 0.04498659390857483
+        },
+        "balanced_accuracy": {
+          "mean": 0.31055420017469354,
+          "sample_sd": 0.04498659390857483
+        },
+        "roc_auc_macro": {
+          "mean": 0.6836127364489141,
+          "sample_sd": 0.003491968333171084
+        },
+        "f1_weighted": {
+          "mean": 0.5777381875035648,
+          "sample_sd": 0.011852598347467408
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A5",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5263157894736842,
+          "sample_sd": 0.052091753611094055
+        },
+        "f1_macro": {
+          "mean": 0.27496522579446175,
+          "sample_sd": 0.024577241348760225
+        },
+        "precision_macro": {
+          "mean": 0.29549433740388126,
+          "sample_sd": 0.02377825758373258
+        },
+        "recall_macro": {
+          "mean": 0.2986337760910816,
+          "sample_sd": 0.029904369835710678
+        },
+        "balanced_accuracy": {
+          "mean": 0.2986337760910816,
+          "sample_sd": 0.029904369835710678
+        },
+        "roc_auc_macro": {
+          "mean": 0.6687297939510941,
+          "sample_sd": 0.006280388537592825
+        },
+        "f1_weighted": {
+          "mean": 0.5433001342575584,
+          "sample_sd": 0.02255237421763841
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A6",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5538847117794486,
+          "sample_sd": 0.05542191575813528
+        },
+        "f1_macro": {
+          "mean": 0.27224055874419095,
+          "sample_sd": 0.0049335674720309905
+        },
+        "precision_macro": {
+          "mean": 0.28205552969013753,
+          "sample_sd": 0.003164826529317778
+        },
+        "recall_macro": {
+          "mean": 0.2749543688443119,
+          "sample_sd": 0.004494444028438132
+        },
+        "balanced_accuracy": {
+          "mean": 0.2749543688443119,
+          "sample_sd": 0.004494444028438132
+        },
+        "roc_auc_macro": {
+          "mean": 0.6689037445829745,
+          "sample_sd": 0.014307867457972743
+        },
+        "f1_weighted": {
+          "mean": 0.5634637435262299,
+          "sample_sd": 0.00895278280741996
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "A7",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5764411027568923,
+          "sample_sd": 0.01892189081521494
+        },
+        "f1_macro": {
+          "mean": 0.27842132936367303,
+          "sample_sd": 0.04432020355027809
+        },
+        "precision_macro": {
+          "mean": 0.28614754009068477,
+          "sample_sd": 0.030990600490077107
+        },
+        "recall_macro": {
+          "mean": 0.29570524984187224,
+          "sample_sd": 0.05830645771080662
+        },
+        "balanced_accuracy": {
+          "mean": 0.29570524984187224,
+          "sample_sd": 0.05830645771080662
+        },
+        "roc_auc_macro": {
+          "mean": 0.6626509648055966,
+          "sample_sd": 0.00970865970119485
+        },
+        "f1_weighted": {
+          "mean": 0.5687725266661697,
+          "sample_sd": 0.02089380383802121
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM2",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.6315789473684211,
+          "sample_sd": 0.0344554563530514
+        },
+        "f1_macro": {
+          "mean": 0.30573656161142254,
+          "sample_sd": 0.020589006362797462
+        },
+        "precision_macro": {
+          "mean": 0.36087998044683595,
+          "sample_sd": 0.02779965974294788
+        },
+        "recall_macro": {
+          "mean": 0.30057347670250895,
+          "sample_sd": 0.01956336170214838
+        },
+        "balanced_accuracy": {
+          "mean": 0.30057347670250895,
+          "sample_sd": 0.01956336170214838
+        },
+        "roc_auc_macro": {
+          "mean": 0.688022773257558,
+          "sample_sd": 0.01620593865974978
+        },
+        "f1_weighted": {
+          "mean": 0.596187564753089,
+          "sample_sd": 0.024631846525018
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM3v3",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5839598997493733,
+          "sample_sd": 0.028465705993986314
+        },
+        "f1_macro": {
+          "mean": 0.2804392609363224,
+          "sample_sd": 0.02258589572868995
+        },
+        "precision_macro": {
+          "mean": 0.3195392057532232,
+          "sample_sd": 0.0243279629919154
+        },
+        "recall_macro": {
+          "mean": 0.27261227071473754,
+          "sample_sd": 0.027705303212331167
+        },
+        "balanced_accuracy": {
+          "mean": 0.27261227071473754,
+          "sample_sd": 0.027705303212331167
+        },
+        "roc_auc_macro": {
+          "mean": 0.6838442860990424,
+          "sample_sd": 0.00741133469551329
+        },
+        "f1_weighted": {
+          "mean": 0.5665970657724109,
+          "sample_sd": 0.027019985219906357
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "HistoricalM3v3_no_metadata",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5939849624060151,
+          "sample_sd": 0.04930404905490223
+        },
+        "f1_macro": {
+          "mean": 0.288374011402847,
+          "sample_sd": 0.022460464835823882
+        },
+        "precision_macro": {
+          "mean": 0.3328311483630632,
+          "sample_sd": 0.023751978391630624
+        },
+        "recall_macro": {
+          "mean": 0.30037137435619404,
+          "sample_sd": 0.03363215655903115
+        },
+        "balanced_accuracy": {
+          "mean": 0.30037137435619404,
+          "sample_sd": 0.03363215655903115
+        },
+        "roc_auc_macro": {
+          "mean": 0.69067977256306,
+          "sample_sd": 0.013040404351346032
+        },
+        "f1_weighted": {
+          "mean": 0.5757443270422291,
+          "sample_sd": 0.029466423416151653
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "LegacyPro",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5764411027568922,
+          "sample_sd": 0.07224829727017332
+        },
+        "f1_macro": {
+          "mean": 0.22449139105527163,
+          "sample_sd": 0.020486730887706008
+        },
+        "precision_macro": {
+          "mean": 0.22380139912616262,
+          "sample_sd": 0.02989190091121903
+        },
+        "recall_macro": {
+          "mean": 0.23885786572693593,
+          "sample_sd": 0.024247255152704865
+        },
+        "balanced_accuracy": {
+          "mean": 0.23885786572693593,
+          "sample_sd": 0.024247255152704865
+        },
+        "roc_auc_macro": {
+          "mean": 0.6370767447860165,
+          "sample_sd": 0.08028459667331299
+        },
+        "f1_weighted": {
+          "mean": 0.5508763250405565,
+          "sample_sd": 0.0334540603987323
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P2_joint_cons_only",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5639097744360902,
+          "sample_sd": 0.06015037593984962
+        },
+        "f1_macro": {
+          "mean": 0.2832053467155838,
+          "sample_sd": 0.005913610776266087
+        },
+        "precision_macro": {
+          "mean": 0.3073722713345355,
+          "sample_sd": 0.011619124796150411
+        },
+        "recall_macro": {
+          "mean": 0.288136501912593,
+          "sample_sd": 0.010296349667424938
+        },
+        "balanced_accuracy": {
+          "mean": 0.288136501912593,
+          "sample_sd": 0.010296349667424938
+        },
+        "roc_auc_macro": {
+          "mean": 0.6804839423113522,
+          "sample_sd": 0.0122054705200087
+        },
+        "f1_weighted": {
+          "mean": 0.5600030906063779,
+          "sample_sd": 0.024269638743331438
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P2_joint_rec_only",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.556390977443609,
+          "sample_sd": 0.04186288994609036
+        },
+        "f1_macro": {
+          "mean": 0.26686542357897164,
+          "sample_sd": 0.04622183355478839
+        },
+        "precision_macro": {
+          "mean": 0.2824911254323019,
+          "sample_sd": 0.04082077563521036
+        },
+        "recall_macro": {
+          "mean": 0.27818921116833834,
+          "sample_sd": 0.034360548058548934
+        },
+        "balanced_accuracy": {
+          "mean": 0.27818921116833834,
+          "sample_sd": 0.034360548058548934
+        },
+        "roc_auc_macro": {
+          "mean": 0.6647613299972891,
+          "sample_sd": 0.015348739351294575
+        },
+        "f1_weighted": {
+          "mean": 0.5485033833399091,
+          "sample_sd": 0.019033874693173785
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_learned_query",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5137844611528822,
+          "sample_sd": 0.11311563003906523
+        },
+        "f1_macro": {
+          "mean": 0.26276286980960983,
+          "sample_sd": 0.014928779256070007
+        },
+        "precision_macro": {
+          "mean": 0.32828386822987504,
+          "sample_sd": 0.09785939637591573
+        },
+        "recall_macro": {
+          "mean": 0.2818442215595916,
+          "sample_sd": 0.00811881070985145
+        },
+        "balanced_accuracy": {
+          "mean": 0.2818442215595916,
+          "sample_sd": 0.00811881070985145
+        },
+        "roc_auc_macro": {
+          "mean": 0.6723875017528749,
+          "sample_sd": 0.027984705350641396
+        },
+        "f1_weighted": {
+          "mean": 0.5155660412235902,
+          "sample_sd": 0.09584437911631268
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_parameter_matched",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.556390977443609,
+          "sample_sd": 0.03007518796992481
+        },
+        "f1_macro": {
+          "mean": 0.2968540492700958,
+          "sample_sd": 0.04436106791268867
+        },
+        "precision_macro": {
+          "mean": 0.3591441257525805,
+          "sample_sd": 0.03415442298381486
+        },
+        "recall_macro": {
+          "mean": 0.29451371946628113,
+          "sample_sd": 0.04557387980136455
+        },
+        "balanced_accuracy": {
+          "mean": 0.29451371946628113,
+          "sample_sd": 0.04557387980136455
+        },
+        "roc_auc_macro": {
+          "mean": 0.6690020529243531,
+          "sample_sd": 0.00908369176023648
+        },
+        "f1_weighted": {
+          "mean": 0.5560839175844052,
+          "sample_sd": 0.014030455608758003
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P3_random",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5739348370927319,
+          "sample_sd": 0.05117939312446648
+        },
+        "f1_macro": {
+          "mean": 0.3018139835729705,
+          "sample_sd": 0.02367127927498587
+        },
+        "precision_macro": {
+          "mean": 0.3391863521062631,
+          "sample_sd": 0.013773760928645634
+        },
+        "recall_macro": {
+          "mean": 0.2973323092677931,
+          "sample_sd": 0.04606300994996405
+        },
+        "balanced_accuracy": {
+          "mean": 0.2973323092677931,
+          "sample_sd": 0.04606300994996405
+        },
+        "roc_auc_macro": {
+          "mean": 0.6974178292560262,
+          "sample_sd": 0.019069731681351926
+        },
+        "f1_weighted": {
+          "mean": 0.567232574486543,
+          "sample_sd": 0.01721622192271329
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P5_fixed",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5614035087719298,
+          "sample_sd": 0.02640514725025746
+        },
+        "f1_macro": {
+          "mean": 0.2867122975233628,
+          "sample_sd": 0.010250656687200228
+        },
+        "precision_macro": {
+          "mean": 0.30446927026460713,
+          "sample_sd": 0.017091302669955583
+        },
+        "recall_macro": {
+          "mean": 0.2958612692388784,
+          "sample_sd": 0.02002257665943436
+        },
+        "balanced_accuracy": {
+          "mean": 0.2958612692388784,
+          "sample_sd": 0.02002257665943436
+        },
+        "roc_auc_macro": {
+          "mean": 0.6806793738025932,
+          "sample_sd": 0.01944086352481126
+        },
+        "f1_weighted": {
+          "mean": 0.56784019754826,
+          "sample_sd": 0.00621963685487548
+        }
+      }
+    },
+    {
+      "protocol": "sample",
+      "experiment": "P5_no_reliability",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5789473684210527,
+          "sample_sd": 0.007518796992481203
+        },
+        "f1_macro": {
+          "mean": 0.28408269486940724,
+          "sample_sd": 0.013769348026329058
+        },
+        "precision_macro": {
+          "mean": 0.32103692603692596,
+          "sample_sd": 0.01575421300801889
+        },
+        "recall_macro": {
+          "mean": 0.28251558687991324,
+          "sample_sd": 0.015510594847799989
+        },
+        "balanced_accuracy": {
+          "mean": 0.28251558687991324,
+          "sample_sd": 0.015510594847799989
+        },
+        "roc_auc_macro": {
+          "mean": 0.6849943971454503,
+          "sample_sd": 0.023796065087484757
+        },
+        "f1_weighted": {
+          "mean": 0.5752277977529394,
+          "sample_sd": 0.015807229842726214
+        }
+      }
+    },
+    {
+      "protocol": "subject",
+      "experiment": "A0",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.42276422764227634,
+          "sample_sd": 0.177191013965068
+        },
+        "f1_macro": {
+          "mean": 0.2176560986697118,
+          "sample_sd": 0.0479934028517704
+        },
+        "precision_macro": {
+          "mean": 0.23548155548155547,
+          "sample_sd": 0.017523077350641694
+        },
+        "recall_macro": {
+          "mean": 0.24200913242009134,
+          "sample_sd": 0.05383745009459536
+        },
+        "balanced_accuracy": {
+          "mean": 0.24200913242009134,
+          "sample_sd": 0.05383745009459536
+        },
+        "roc_auc_macro": {
+          "mean": 0.5650028759524767,
+          "sample_sd": 0.011351053347879721
+        },
+        "f1_weighted": {
+          "mean": 0.4246998812593348,
+          "sample_sd": 0.14486736436572303
+        }
+      }
+    },
+    {
+      "protocol": "subject",
+      "experiment": "A1",
+      "metrics": {
+        "accuracy": {
+          "mean": 0.5121951219512194,
+          "sample_sd": 0.01626016260162602
+        },
+        "f1_macro": {
+          "mean": 0.23751542430985126,
+          "sample_sd": 0.015925761924175
+        },
+        "precision_macro": {
+          "mean": 0.23519132220568606,
+          "sample_sd": 0.014220125466021475
+        },
+        "recall_macro": {
+          "mean": 0.2557617714931016,
+          "sample_sd": 0.02601762702526124
+        },
+        "balanced_accuracy": {
+          "mean": 0.2557617714931016,
+          "sample_sd": 0.02601762702526124
+        },
+        "roc_auc_macro": {
+          "mean": 0.5829077066542884,
+          "sample_sd": 0.006751662635813424
+        },
+        "f1_weighted": {
+          "mean": 0.4908875772344075,
+          "sample_sd": 0.023773074840711738
+        }
+      }
+    }
+  ]
+}

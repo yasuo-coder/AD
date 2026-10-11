@@ -1,23 +1,26 @@
 # 当前状态
-核对时间：2026-10-10T08:37:13+08:00
+核对：2026-10-11T11:27:30.526404+00:00（UTC）。先核实Git和真实产物；以下为七批研究最终状态。
 
-## 当前任务
-先将真实服务器研究接入公开仓库，再完成已有限定范围的最终选型、冻结、测试与报告。活跃计划：[000 接入](plans/000_existing_work_integration.md)，后续 [003 最终验证](plans/003_experiment_validation.md)。
+## 当前任务与完成范围
+ADNI_1–7/P2P3P5独立研究，计划004的训练、验证、消融、冻结测试和最终报告已完成。主协议61份分类验证（19方法×3seed+4项单seed探索）、10项预训练、subject A0/A1各3seed均已核验。63项固定TEST（主57+补充6）于2026-10-11T11:21:28Z全部成功；独立复算逐份对齐冻结标签/成员与七项指标、混淆矩阵和聚合，63/63通过。最终报告已发布至PR1分支；本地dfb6c81与公开24121414文件树均为050ba6304e41d5a8fee8efac1859020fb30bb0a0，已核验一致。
 
-## 已核验事实
-- 克隆默认分支 main，接入起点 `ed766de4749a66449948a08cbda9730c66032316`；原 BrainPrompt dirty 修改保留，原 Pro 无Git历史。
-- 阶段1有12次正式训练（共同加权9次、未加权探索3次），阶段2有72次正式训练（24配置×3seed），另6次两轮smoke。数值只从 result.json 汇总。
-- 最后队列 `last_triples_20261009` 六项全部退出0，运行中0、待启动0；队列主进程历史PID210880（不可仅凭旧PID判断活性）。未终止其他GPU作业，审计时 docker ps 无运行容器。
-- 阶段2正式实验72/72独立核验PASSED；另6个实际smoke通过。--scope all中18项未计划smoke标pending，不是正式实验缺项。
-- 公共副本保留nets/layers布局，CLI --split 和自定义路径；3项隐私/标签/布局检查通过；两项目CLI help与V3 runner help通过。合成图/梯度等22项回归全部通过（见docs/provenance/integration_validation.json）。
-- 最后M1_M2_M5验证五项均值超过主BP；但M2四背景平均F1边际为负，不满足三个独立有效模块的预定标准。不能据此宣称Top-3已达成。
+## 结果与结论
+主TEST三seed均值：A0 Accuracy56.14/Macro-F1 28.33/AUC68.88%；旧Pro57.64/22.45/63.71%；A1(P2、VAL预先选定候选)55.64/28.25/67.65%；A7(完整新版)57.64/27.84/66.27%。A7未全面超过BrainPrompt；A1主TEST五项均值也未超过A0。subject A1 F1=23.75%，A0=21.77%，但不稳定且Precision未提高，不能声称全面泛化收益。
+P2/P3/P5验证四背景F1边际−0.28/−1.31/−0.48pp；不成立三个稳定有效创新。63项无全单类塌缩，SMC/EMCI识别仍差；A0/A1/A7主TEST的EMCI Recall均0。保留失败证据，不根据TEST改选A4/历史M2等。
+[最终报告](docs/research/adni_1to7/Final_Report.md) · [主测试全19方法](docs/research/adni_1to7/final_test/Test_Results_sample.md) · [subject补充](docs/research/adni_1to7/final_test/Test_Results_subject.md) · [逐类/配对/成本](docs/research/adni_1to7/final_test/Final_Analysis.md) · [验证消融](docs/research/adni_1to7/validation_complete/Ablation_Effects.md)。
 
-## 下一步
-1. 公开暂存区审查、22项合成回归与文档引用核验已完成，提交并推送本次接入。
-2. 72正式结果独立核验与完整消融/M1机制审查已完成；按已固定Final_Selection_Rule冻结M1保守配置和M1_M2_M5展示消融组，才创建两个selection_lock。
-3. 使用冻结checkpoint对同一100例test各seed评估一次，核验导出、更新最终报告和仓库。当前没有最终test结果，勿填写目标值。
+## 数据与隔离
+1323 FC/895人，CN850/AD65/SMC39/EMCI61/LMCI308，AD65是FC数；MCI→LMCI、统一经验Pearson。split seed1729，训练seed42/3407/2026。本轮是固定holdout+验证选checkpoint，不是历史十折末轮。sample存在同人跨split和历史开发暴露，两协议之间另有样本角色交叉；只在各协议内部定义TRAIN/VAL/TEST隔离，非全新外部验证。site真实含义未独立确认。完整成员/FC/权重/私有锁不公开。
 
-## 阻碍与边界
-没有数据/GPU路径阻碍。公开克隆不包含受限数据/权重/历史split，直接在新机器训练需要合法恢复私有工件；冻结历史工作继续从原工程执行。没有实现部分epoch的自动恢复，队列仅跳过已完成且哈希通过的项，遇到未完成输出会拒绝覆盖。
+## 作业、故障和恢复
+N=/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010。Phase1–7训练均结束，当前无本研究在跑作业。Phase7 PID1432091三项退出0。首次Phase8 PID1433530在写锁前遇到队列schema KeyError running，零TEST访问；日志保留N/queues/phase8_frozen_test，未改fe8bf25快照。
+D023修复区分训练队列/控制器，3新回归+3统计+4锁测试通过。新快照N/code/39ee2f2在GPU0/3/6恢复，controller1629946于11:18:42Z开始，11:21:28Z完成并退出；launcher/state/log在queues/phase8_frozen_test_recovery_20261011。没有重训，也没有重复TEST。
+selection_lock SHA256=fb71040c47d235b382dac5f487b01ff9f925d262f305f134254a67250bc63031。固定63输出N/final_test；完整汇总N/reports/frozen_test_complete_20261011；逐身份/标签/公式复核N/reports/final_analysis_20261011。不可删除锁或重跑finalize_study；报告重建只读已有预测，用report_final写新目录。候选A1与范围已冻结，不再用TEST调参。
 
-本文件不预写本次提交SHA；接入提交以Git历史为准。历史实验不能归属于接入后提交。详细证据：[现有工作审计](docs/EXISTING_WORK_AUDIT.md)。
+## Git与下一行动
+本地分支research/adni1to7-p2p3p5，[PR1](https://github.com/yasuo-coder/AD-/pull/1)。原工程保留；五批12+72训练及锁完整，旧TEST未运行。已发布历史本地fe8bf25/公开dacbef3具有相同tree bcb68a619bf3159ade77f0e99197849665daa026。此次修复本地39ee2f2已作为实际评估快照；最终报告提交不能预写自身SHA，请读git log与PR，API同步按tree校验，不做force/reset。
+当前无需继续训练。下一明确行动：审阅最终报告/PR；如开展新研究，先定义与本轮已使用TEST隔离的新评估范围。缺少外部验证和稳定增益属于科学限制，不能以继续重复失败配方或测试选型来补齐。旧五批任务边界保持不变。
+
+最终报告校验：3项独立公式回归（完美分类、全CN、无效输入）与3队列schema、3配对统计、4锁契约共13项测试通过；最终匿名JSON字段白名单与新增Markdown链接检查通过。
+
+发布验收：代码修复、最终报告、匿名63项结果及图表已同步公开24121414d9926d84b7485ea5188dbb7759f331c7；与本地dfb6c8123262675c08977c282e0142a0a14a98a7树一致。计划004 M0–M12完成；此条交接记录作为后续提交，不预写自身SHA。
