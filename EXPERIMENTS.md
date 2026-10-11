@@ -41,3 +41,5 @@ subject A1三seed均退出0（best/stopped：42=154/195，3407=83/183，2026=188
 恢复命令与逐任务checkpoint路径见各queues/launcher.json、jobs.private.json、run/config.json与result.json；训练来源主要29f34f9，不将报告提交当训练来源。report_final只读现有预测生成新私有报告，模型测试不可重跑。当前本研究运行作业0个。
 
 最终报告校验：3项独立公式回归（完美分类、全CN、无效输入）与3队列schema、3配对统计、4锁契约共13项测试通过；最终匿名JSON字段白名单与新增Markdown链接检查通过。
+
+公开发布核验：最终结果与修复已接入research/adni1to7-p2p3p5；本地dfb6c81/公开24121414的tree一致（050ba6304e41d5a8fee8efac1859020fb30bb0a0）。源码快照、原私有实验与失败日志未改。
