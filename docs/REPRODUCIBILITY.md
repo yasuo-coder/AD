@@ -25,3 +25,5 @@ Adam lr5e-5 wd.005，batch20 dropout.5 clip5；400max、至少120且100轮验证
 
 ## 独立七批研究入口
 新入口 `python -m BrainPromptPro.scripts.adni_1to7.train --config BrainPromptPro/configs/adni_1to7/study_v1.json --experiment A0 --seed 42 --split 0 --device cuda:0 --output <N/new-output>`。`--split 0`为新sample-level协议，`--split 1`为独立subject-disjoint补充协议；不代表历史十折。恢复使用相同不可变代码目录、config、依赖checkpoint和输出，加`--resume`；完整保存optimizer/scheduler/模型/Python/NumPy/Torch/CUDA/loader/mask RNG，拒绝源码或配置hash改变。CPU两轮恢复已验证，旧五批runner的恢复限制不适用于此新入口。队列入口 `python -m BrainPromptPro.scripts.adni_1to7.run_queue --jobs <private-jobs.json> --state <private-state.json> --gpus 0,3,5,7`；启动前核实PID、输出和checkpoint，使用独立会话保活。新训练代码使用Git不可变副本，避免后续修改影响在跑源码封存。完整私有协议不复制到公开仓库。
+
+当前七批作业、版本及恢复以[RUNBOOK](research/adni_1to7/RUNBOOK.md)为准。七批共同分类目标为两项TRAIN计数加权CE；旧config遗留graph sparse项在新runner未使用。P2按登记spec附加损失。elapsed_seconds包括训练循环和逐轮验证，不含初始数据准备/P5参考库构造，预训练40轮另计；共享GPU耗时不作严格速度benchmark。

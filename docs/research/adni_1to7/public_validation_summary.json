@@ -9,10 +9,18 @@
   "formal_model_performance": "A0_THREE_SEED_VALIDATION_VERIFIED_TEST_NOT_EVALUATED",
   "smoke_runs_completed": 8,
   "cpu_two_epoch_resume_model_and_rng_exact": true,
-  "formal_results": "PHASE1_COMPLETE_OTHER_METHODS_PENDING",
+  "formal_results": "EXPLORATION_VERIFIED_THREE_SEED_MATRIX_RUNNING",
   "module_unit_tests": 20,
   "revision2_cpu_combinations": 8,
   "revision2_cpu_smoke_runs": 5,
   "initial_cpu_unit_tests": 16,
-  "a0_checkpoint_forward_verified": true
+  "a0_checkpoint_forward_verified": true,
+  "formal_classifier_results_verified": 56,
+  "pretraining_runs_completed": 10,
+  "dependency_queue_contracts": "PASSED",
+  "finetune_entry_smoke": "PASSED",
+  "checkpoint_mechanism_probes_passed": 25,
+  "ablation_statistical_tests_passed": 3,
+  "metric_rejection_contracts_passed": 4,
+  "subject_baseline": "RUNNING"
 }

@@ -69,3 +69,11 @@ STATE 用最新快照，详细决策/实验按 ID 追加，避免无限追加聊
 
 ## D018 / 2026-10-10 / 预训练checkpoint敏感性对照
 no-dropout normalized-pair的验证重建：best_training MSE .036301，固定第40轮last MSE .028170，TRAIN边均值 .035461；last相关性 .75434，高于均值 .61381。两checkpoint均由既有探针预先计算，未使用test。不能只报告较好last并隐去best失败；登记best/last两个下游微调对照，原best规则的在跑任务不改。分类益处尚未证明。新增排队依赖，仅在Phase3全部正常退出后使用GPU4/6运行此两项，防止与既有队列争用或重复启动。
+
+## D019 / 2026-10-11 / 固定三seed完整消融配方
+Phase1–4的21分类/10预训练全部结束，21分类独立复算通过。P2最佳重建候选的两种checkpoint均未改善下游分类，停止预训练扩搜。原A1 joint full、A2 semantic class token、A3 learned reliability单seedF1均未超过A0，不能宣布成功。为完成用户指定八组合及交互判断，保持原登记完整配方：P2 mask.10/dot、rec.1+cons.1、监督dropout.5；P3语义逐类token；P5同seed冻结A0/TRAIN-only/top16/tau.05。固定图或rec-only单列对照，不改名替代完整模块。
+A0–A7和LegacyPro/HistoricalM2/HistoricalM3v3/HistoricalM3v3_no_metadata/P3_parameter_matched/P3_random/P3_learned_query/P5_fixed/P5_no_reliability/P2_joint_rec_only/P2_joint_cons_only各3seed，共57项，17项已有且40项补齐。使用现存已验证不可变29f34f9源码；不改数据/划分/训练预算/停训条件。recipe_freeze.private.json在Phase5启动前写入，不是最终selection_lock。全部仅TRAIN/VAL；待完整配对结果再决定保留模块，失败方向保留。
+
+## D020 / 2026-10-11 / 机制复核与受试者隔离补充
+25个checkpoint机制探针（7方法三seed及4项seed42）复核完成；P2全面鲁棒性/P3相对参数对照/P5连续边权收益均未证明。CPU重载P5_no_reliability偏差保留；原CUDA复核通过，未降低阈值。主配置仍按D019，不根据诊断中途修改在跑实验。
+冻结subject-disjoint划分在dataset_v1既有文件，启动A0三seed补充基线，GPU1/2/5、独立subject_experiments、--split1，避免闲置资源；不重划分、不混合指标、不改变主模型选型口径。主矩阵完成后决定有证据的候选补充比较。主study尚无selection_lock，仍不评估test。

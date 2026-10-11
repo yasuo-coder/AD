@@ -20,3 +20,10 @@ R/S定义见复现文档。bundle和split标识见数据协议。最后队列las
 队列 N/queues/phase1_baseline_p2，PID1153238；A0三seed和7个P2 seed42/40轮TRAIN-only探索，GPU0/3/5/7。不可变运行commit074d2e0，公开等价tree commit4ad8ec1，PR1。具体完成进度以queue/result为准；尚未汇总完整三seed，不提前填性能均值。P2首个mask.05验证重建MSE .056895、TRAIN边均值 .035413、相关性 .063031，未证明重建有效；probes/P2_pretrain_rec_05.json。新增P3三对照/P2两数值候选的5个CPU单轮smoke均通过，20单测和修订CPU8组合通过；这些单独归类为验证入口。
 
 Phase1后续核对：10项训练均退出0，无残留running/pending。A0三seed原始payload指标独立复算通过，公开白名单汇总位于docs/research/adni_1to7/phase1；只含匿名标量/哈希，不含私有预测和split明细。其他模型正式结果仍未运行，不填写比较收益。
+
+## 七批探索完成及Phase5 / 2026-10-11
+Phase1/2/3/4分别10/14/5/2任务全部退出0，共21正式分类和10预训练。21份分类checkpoint/source/共同配置及概率指标独立核验通过，匿名[完整表](docs/research/adni_1to7/exploration_20261011/Validation_Results.md)；各次运行commit、checkpoint哈希、seed、最佳/停止epoch和训练耗时在同目录JSON。私人证据N/reports/exploration_complete_20261011。全部为validation，test NOT_EVALUATED。
+Phase5：本地29f34f9/公开等价251dd6c8，config SHA cd5a2194a5f03f5ba51a20108c03e2ca8589eb76c044e0cec28b9009fc93f0da。controller1408894，启动2026-10-11T01:45:32Z，GPU0/3/4/5/6/7；40项新任务补齐A0–A7与11关键对照的三seed。使用已完成同seed A0为P5参考；数据与split哈希沿用DATA_AUDIT。命令与逐任务输出见N/queues/phase5_three_seed/launcher.json、jobs.private.json及RUNBOOK。不是已完成的三seed性能结论。
+
+### 2026-10-11 后续实证
+主协议已独立复算56分类结果，最新phase5_progress_20261011；25机制探针完成，三seed机制表与单seed对照分别公开。分析3单测与4项指标核验拒绝契约通过。Phase6受试者隔离A0三seed独立运行，controller1425910，GPU1/2/5，输出N/subject_experiments，命令见queues/phase6_subject_baseline/launcher.json；主协议结果不能与之合并。待Phase5完成生成完整配对消融，测试未运行。
