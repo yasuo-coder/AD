@@ -17,3 +17,5 @@
 - 元数据编码、类别权重、M3参考库及V3 PCA仅训练集拟合。M3参考798 TRAIN样本、当前样本自环屏蔽；不传播query-query。所有疾病query同时使用，无真实标签选择prompt。
 
 私有bundle：`/home/panyao/AD/BrainPromptPro/outputs/data/adni12345_download_mci_to_lmci_v1_20261007/cohort.pt`；划分：研究目录`splits/ADNI_Combined`。这些文件不上传；只保存哈希、分布和恢复规则。
+
+七批跨协议边界：sample与subject两份独立划分之间存在样本TRAIN/VAL/TEST角色交叉。主模型选择仅用sample VAL，补充结果单独报告；协议内holdout不等于整个项目历史上完全未使用。交叉计数与成员审计仅保存在N/reports/cross_protocol_exposure_20261011.private.json；不以“test未评估”暗示全研究从未用过这些FC。

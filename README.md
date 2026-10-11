@@ -13,3 +13,5 @@
 当前七批：[验证探索](docs/research/adni_1to7/exploration_20261011/Validation_Results.md) · [P2诊断](docs/research/adni_1to7/P2_Reconstruction_Diagnostics.md) · [运行恢复](docs/research/adni_1to7/RUNBOOK.md)。
 
 七批最新：[三seed进展](docs/research/adni_1to7/phase5_progress_20261011/Validation_Results.md) · [三seed机制诊断](docs/research/adni_1to7/Mechanism_ThreeSeed.md)。
+
+已完成：[七批三seed完整验证](docs/research/adni_1to7/validation_complete/Validation_Results.md) · [配对消融](docs/research/adni_1to7/validation_complete/Ablation_Effects.md) · [实际技术报告](docs/research/adni_1to7/Technical_Report.md)。

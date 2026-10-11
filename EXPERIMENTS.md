@@ -27,3 +27,7 @@ Phase5：本地29f34f9/公开等价251dd6c8，config SHA cd5a2194a5f03f5ba51a201
 
 ### 2026-10-11 后续实证
 主协议已独立复算56分类结果，最新phase5_progress_20261011；25机制探针完成，三seed机制表与单seed对照分别公开。分析3单测与4项指标核验拒绝契约通过。Phase6受试者隔离A0三seed独立运行，controller1425910，GPU1/2/5，输出N/subject_experiments，命令见queues/phase6_subject_baseline/launcher.json；主协议结果不能与之合并。待Phase5完成生成完整配对消融，测试未运行。
+
+### 主消融完成 / 2026-10-11
+Phase5 40/40成功结束，主观察器1428866独立复核61分类结果，生成validation_complete与完整三seed配对消融。19正式方法各3seed完整；四项失败预训练微调只作为单seed探索保留，并非尚在排队的缺失正式组。Phase6的subject A0三seed完成及重载通过；Phase7 A1三个seed运行中，controller1432091，GPU1/2/5，训练代码29f34f9。
+新最终评估入口20种代表性正式checkpoint仅VAL重载通过；4项锁合约测试通过。TEST还未评估；候选在任何TEST访问前按D021由主VAL选定。两协议开发角色交叉的限制及私有证据见D022。

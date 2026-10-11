@@ -26,6 +26,7 @@ def main():
     p.add_argument('--run', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--device', default='cpu')
+    p.add_argument('--protocol', choices=['sample','subject'], default='sample')
     p.add_argument('--mask-robustness', action='store_true')
     a = p.parse_args()
     if a.output.exists():
@@ -63,9 +64,9 @@ def main():
     cfg, spec = ck['config'], ck['spec']
     if spec.get('architecture'):
         raise ValueError('This probe is for A0/P2/P3/P5; historical controls use separate diagnostics')
-    split_path = Path(cfg['study']['sample_split'])
+    split_path = Path(cfg['study'][a.protocol+'_split'])
     if digest(split_path) != result['split_hash']:
-        raise ValueError('Probe currently supports only the registered sample split')
+        raise ValueError('Probe requires its explicitly selected frozen split')
     split = json.loads(split_path.read_text())
     dataset = PreparedCohortDataset(cfg['data'])
     if ck['dataset_hash'] != result['dataset_hash'] or ck['signature'] != json.loads((a.run/'signature.json').read_text()):
@@ -85,7 +86,7 @@ def main():
                     reference_ids=ids, train_ids=ids, encoder_version=extra['encoder_version'])
     model = ConnectomeBrainPrompt(cfg, dataset.roi_prompt, dataset.disease_prompt, options, bank, teacher).to(device).eval()
     model.load_state_dict(ck['model'])
-    report = dict(experiment=result['experiment'], seed=result['seed'], evaluation='TRAIN gradients; VAL diagnostics only',
+    report = dict(experiment=result['experiment'], seed=result['seed'], protocol=a.protocol, evaluation='TRAIN gradients; VAL diagnostics only',
                   test_accessed=False, checkpoint_sha256=digest(cp), dataset_hash=result['dataset_hash'], split_hash=result['split_hash'],
                   training_source_verified=True, device=str(device), probe_source_sha256=digest(__file__), counterfactual_warning='No retraining; not a causal efficacy estimate')
     def stats(value):

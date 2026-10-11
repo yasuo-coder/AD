@@ -32,3 +32,7 @@ P2无Dropout只针对预训练候选，监督阶段仍.5；best_training和固�
 Phase6 controller1425910，GPU1/2/5，仍用N/code/29f34f9的训练入口和--split1；输出N/subject_experiments。汇总入口显式--protocol subject；主协议用默认sample，不能混合。
 队列结束后可用新版summarize_validation与analyze_ablation。后者要求A0–A7各3seed完整且共同训练/划分hash相同；配对差先在每个seed内四背景平均，SD只跨3seed。observe_queue在不可变分析源码副本中等待指定state完成，然后生成新私有报告；不启动训练或test。恢复观察器须检查原PID，指定新的output/status，不覆盖已有报告。
 机制探针直接运行脚本文件：`python -B BrainPromptPro/scripts/adni_1to7/mechanism_probe.py --run <正式实验seed目录> --output <新的私有JSON> --device cpu`，P2另加--mask-robustness。脚本自动使用该checkpoint原始训练源码；不要用-m绕过源码验证。重载偏差保存failure私有记录，需原CUDA复核时明确换设备，不调宽阈值。
+
+## 当前后续链
+主Phase5与subject基线Phase6均已完成。Phase7 controller1432091，GPU1/2/5，A1 subject三seed，仍用29f34f9。finalize_study从其自身不可变代码副本运行，等待Phase7正常结束，独立汇总，按D021创建selection_lock并执行63项固定TEST（主19×3，加subject A0/A1×3）。只允许首次启动；现有锁/部分TEST不得自动重跑。查看phase8_frozen_test的state和launcher判断实际启动状态，不根据此文推测。
+若最终评估失败，保留access_started/result/payload及锁，先定位发生于VAL重载还是TEST访问；禁止删除输出或改模型。尚未执行的固定条目可在审计后按原锁、原evaluator SHA、原checkpoint继续；完成项只复核不重新评估。公开报告由summarize_frozen独立复算，不含患者行。主/补充数据之间的角色交叉必须在最终解释中披露。

@@ -77,3 +77,12 @@ A0–A7和LegacyPro/HistoricalM2/HistoricalM3v3/HistoricalM3v3_no_metadata/P3_pa
 ## D020 / 2026-10-11 / 机制复核与受试者隔离补充
 25个checkpoint机制探针（7方法三seed及4项seed42）复核完成；P2全面鲁棒性/P3相对参数对照/P5连续边权收益均未证明。CPU重载P5_no_reliability偏差保留；原CUDA复核通过，未降低阈值。主配置仍按D019，不根据诊断中途修改在跑实验。
 冻结subject-disjoint划分在dataset_v1既有文件，启动A0三seed补充基线，GPU1/2/5、独立subject_experiments、--split1，避免闲置资源；不重划分、不混合指标、不改变主模型选型口径。主矩阵完成后决定有证据的候选补充比较。主study尚无selection_lock，仍不评估test。
+
+## D021 / 2026-10-11 / 验证集选型与冻结测试范围
+在TEST尚未访问时明确最终比较规则：完整A0–A7各三seed均完成并独立复核后，按三seed平均Macro-F1选择主实验候选；严格平局依次用平均Balanced Accuracy、平均AUC、更少参数。此规则属于观察验证结果后的模型选型，不能倒称训练前预注册。候选仅是待holdout核验对象，不因少量或部分指标提升就宣布有效创新。
+主候选补充运行既有subject-disjoint协议三seed，与已完成A0单独比较；该补充不用于改变主候选。所有TRAIN/VAL开发结束后封存精确checkpoint/source/dataset/split/evaluator hash。冻结测试范围为登记的主协议19方法各三seed（A0–A7+11关键对照），及subject协议A0与主候选；这些比较对象在test前固定，不按test高低换冠军。保留P2四项单seed微调为验证探索，不混入三seed正式test矩阵。
+测试入口默认validation，真实test需要完整selection_lock和显式锁SHA，先复核VAL预测；拒绝覆盖输出。所有后续test结果只能用于固定比较和报告，不继续本研究调参或用test选模型。历史五批测试锁不变。
+
+## D022 / 2026-10-11 / 主矩阵完成与隔离范围审计
+61份分类主协议结果独立核验完成，其中57项为19方法各3seed。A1按D021入选研究候选，F1仅较A0高约0.60个百分点且三项主指标较低；A7 F1约33.00%，P2/P3/P5平均边际均为负，拒绝“三个稳定有效方向”的结论。Phase7仅训练冻结subject协议下A1三个seed，不更改主要候选。
+交叉角色审计确认sample测试样本有部分处于subject协议的TRAIN/VAL，反向亦然。因此test封存及TRAIN-only等声明限定各自协议；不能宣称七批全部数据在项目开发中未被使用。完整私有交叉表留N/reports，最终锁绑定其hash；公开只写清边界，不上传成员明细。该审计不改变已冻结划分，也不使subject结果参与主选型。

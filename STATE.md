@@ -1,35 +1,23 @@
 # 当前状态
-核对时间：2026-10-11T04:28:44.074324+00:00（UTC），2026-10-11。动态作业必须重新核对PID、command、日志和result。
+核对时间：2026-10-11T04:54:18.678748+00:00（UTC）。续接须重新核实队列、PID和产物。
 
-## 活跃任务与完成边界
-ADNI_1–7 / P2 Masked Connectome、P3 Task Token、P5 Reliability Population独立研究；[计划004](plans/004_adni1to7_p2p3p5.md)，分支`research/adni1to7-p2p3p5`，[草稿PR1](https://github.com/yasuo-coder/AD-/pull/1)。M0–M7实现与基础验证完成；M8/M9三seed比较正在运行；subject-disjoint基线已启动，最终选型和test未完成。
+## 当前阶段
+ADNI_1–7独立研究，活跃计划004。主协议57项三seed比较已全部完成，另4项单seed微调探索与10项预训练保留；61份主协议分类指标已独立复算。subject-disjoint A0三seed也已完成并重载核验。M8/M9完成；正在补齐验证选定A1的subject补充，完成后按D021冻结并一次评估固定清单。当前尚无新七批selection_lock，尚未进行TEST角色评估。
 
-## 已核验
-- 数据1323 FC/895人；CN850、AD65、SMC39、EMCI61、LMCI308。MCI→LMCI。统一经验Pearson，不与Nilearn收缩相关混用。
-- 新sample-level冻结协议，split seed1729，训练seed42/3407/2026；存在同人跨划分与历史开发暴露，不能声称外部独立验证。完整协议/成员/关联审计保留N/dataset_v1。
-- 20单测、CPU/CUDA八开关、真实TRAIN梯度、CPU断点恢复一致性通过；新增对照和微调入口共16份短程smoke；队列依赖等待、失败拒绝与签名检查通过。smoke不是性能证据。
-- Phase1–4全部正常结束，31正式任务=21分类+10预训练；21分类的checkpoint/source/common-config/hash及私有概率指标独立复算通过。表见[探索结果](docs/research/adni_1to7/exploration_20261011/Validation_Results.md)。均为验证集选checkpoint；test未评估。
-- A0三seed均值±样本SD：Accuracy57.89±6.51%、Macro-F1 35.63±1.59%、Macro-P38.28±2.03%、Macro-R/BalAcc39.00±2.95%、AUC67.71±1.45%。其他探索仅seed42。
-- 同seed42：A0 F1 35.86%，A1/P2 35.31%，A2/P3 33.01%，A3/P5 35.59%；P5_fixed 38.86%，P3参数匹配37.63%、历史M2 37.32%。目前不支持三个完整模块均有效；不能用单seed宣布统计显著。
-- no-dropout pair第40轮重建改善，但best/last微调F1 31.57/32.33%均低于A0；停止该预训练扩搜。[完整重建诊断](docs/research/adni_1to7/P2_Reconstruction_Diagnostics.md)保留全部十项。
+## 真实结论
+A0/A1/A2/A3/A4/A5/A6/A7的三seed验证Macro-F1均值依次35.63/36.24/34.34/34.80/34.25/35.47/35.29/33.00%。[完整指标及配对消融](docs/research/adni_1to7/validation_complete/Validation_Results.md)。
+P2/P3/P5四背景平均F1边际分别−0.28/−1.31/−0.48个百分点，均未证明稳定正贡献。A7不优于A0；不能宣称三个有效创新。A1仅F1/Recall比A0较高，Accuracy/Precision/AUC较低，按D021作为实验候选继续holdout核验，不视为已证实改善。候选已由主验证集锁定，不因补充或测试结果换模型。
+25项机制探针及另外3项subject A0重载通过。P5边权近均匀、残差比例约0.29%；P3 token有梯度/差异但无稳定比较优势；P2预训练重建改善未转成下游提升。技术细节见[Technical_Report](docs/research/adni_1to7/Technical_Report.md)。
+subject A0 Macro-F1 26.82%，与主协议35.63%分开报告；划分/人群差异不能全归因同人重叠。[补充基线](docs/research/adni_1to7/subject_baseline/Validation_Results.md)。
 
-## 实际运行
-N=`/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010`。
-Phase1–4为已完成记录，旧controller1153238/1165476/1173253/1180291已退出，不重启。
-Phase5 `N/queues/phase5_three_seed`，controller PID1408894，启动2026-10-11T01:45:32Z；GPU0/3/4/5/6/7共享运行（其他作业未停止）。本次40项缺失实验，快照完成36、运行4、待启动0、failed=False。
-目标A0–A7和11种关键对照各三seed，共57分类结果，其中17项已存在，复用且不覆盖；四项单seed预训练微调额外保留，不混入57项计数。
-不可变源码`N/code/29f34f9`，本地训练commit29f34f9322d4b797329c8bd405fa64ea1bbbd582，公开等价tree commit251dd6c81ea44c116dfc3cdc92c349a086ef87cb；config SHA cd5a2194a5f03f5ba51a20108c03e2ca8589eb76c044e0cec28b9009fc93f0da。运行副本不可修改。
-队列目录包含jobs.private.json、recipe_freeze.private.json、state.private.json、launcher.json、master.log和逐任务日志；checkpoint在N/experiments/实验名/seed种子。恢复见[RUNBOOK](docs/research/adni_1to7/RUNBOOK.md)。
+## 数据与隔离
+1323 FC/895人，CN850/AD65/SMC39/EMCI61/LMCI308，MCI→LMCI；统一经验Pearson。split seed1729，训练seed42/3407/2026。主协议存在同人跨split及历史开发暴露。两套协议之间另有样本角色交叉，隔离只在各自协议内成立；不能称为全研究从未使用或外部独立测试。私有交叉审计N/reports/cross_protocol_exposure_20261011.private.json，完整成员/标签/FC不公开。
 
-## 下一步与限制
-1. 继续检查Phase5，独立复算新完成结果；不重复训练已完成配置。故障只按原不可变代码/config/split/依赖/RNG恢复。
-2. 已完成25项机制探针（7个方法三seed+4项seed42对照）；完整A0–A7三seed后计算四背景配对边际，不能把相关的12个差值当12位受试者。
-3. 等待独立subject-disjoint A0基线，主验证矩阵完成后确定有证据的候选及补充比较；验证集决策冻结后才一次test。当前没有七批selection_lock，不运行test。
-原五批12+72训练和selection_lock保留，旧test仍未运行。源码和匿名汇总可公开；身份、完整split、概率明细、权重不可公开。此前审批额度造成的文档滞后已在本次修复；新运行状态以实际队列为准。
+## 作业与路径
+N=`/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_p2p3p5_20261010`。Phase1–6训练均完成；Phase5的40项全部退出0，controller1408894已退出，主观察器1428866已完成；生成N/reports/phase5_complete_host_20261011及ablation。Phase6 controller1425910已退出；subject基线报告N/reports/subject_baseline_complete_20261011。
+Phase7 controller1432091，2026-10-11T04:49:10Z启动，GPU1/2/5，A1三个seed的--split1；输出N/subject_experiments/A1/seed*。训练源码仍N/code/29f34f9，不可修改；配置和恢复命令在queues/phase7_subject_candidate/launcher.json、jobs.private.json及各日志。主候选证据N/candidate_selection.private.json。
+新finalize_study仅等待Phase7成功、复核完整开发结果，再建立锁并运行D021固定测试范围。实际是否启动Phase8及其PID必须查看N/queues/phase8_frozen_test；不能因脚本存在就认为任务已运行。测试入口默认VAL，20代表性checkpoint的CUDA重载通过；4项锁契约、3项配对分析测试、4项指标篡改拒绝和后续队列失败拒绝检查通过。
 
-## 本次新核验与后续作业
-56份完成的主协议分类结果已独立复算（包含历史21项探索），最新[验证表](docs/research/adni_1to7/phase5_progress_20261011/Validation_Results.md)。完整矩阵仍有运行项，不补造缺失结果。25次checkpoint机制探针通过，详见[单seed](docs/research/adni_1to7/Mechanism_Diagnostics.md)与[三seed](docs/research/adni_1to7/Mechanism_ThreeSeed.md)。P5_no_reliability CPU概率差3.73e-5未通过，类别相同；原CUDA路径误差1.79e-7通过，失败记录保留，未调宽容差。
-A0/A1/A2/A3已各3seed：Macro-F1均值35.63/36.24/34.34/34.80%。A1仅部分指标更好，不能宣称全面提升；P3/P5未证明比A0有效。P2 rec-only单seed表现未在三seed重复，clean Macro-F1均值33.57%。P5分支三seed残差比例约0.29%，边权接近均匀；细节见机制报告。
-Phase6 `N/queues/phase6_subject_baseline`，controller1425910，2026-10-11T04:22:31Z启动，GPU1/2/5；冻结subject split、A0三seed，代码同29f34f9，独立输出N/subject_experiments。不混入主协议汇总、不用于改变主协议。
-新增分析3单测及4项指标篡改拒绝检查通过；summarize_validation新增--protocol sample/subject明确分开两条协议。analyze_ablation只在24份完整A0–A7结果存在时计算配对贡献。observe_queue用于队列结束后的自动只读验证和报告，实际观察器启动情况以N/queues对应launcher与status为准。
-审批额度已由用户恢复，报告接入继续进行；本次修改尚待提交时以git status为准。远程上一已核验提交251dd6c8，本次提交由后续Git历史定位，不能把未提交代码当训练版本。
+## Git与下一步
+独立分支research/adni1to7-p2p3p5，[PR1](https://github.com/yasuo-coder/AD-/pull/1)。上一已发布本地49f8eff/公开def6eff的tree均158b446f3911af56dca275ee39a9a5aa8fef2d93；本次新改动以git status和后续提交为准。旧五批12+72训练及锁保留，旧test未运行。
+下一步：完成Phase7并独立汇总subject A0/A1；冻结source/checkpoint/data/split/evaluator后执行固定test清单；独立复算、报告真实正负结果，之后不再依据test调参。最终报告需要明确当前协议局限，不能因测试某对照较高就重新挑选主模型。运行恢复与不可变副本规则见RUNBOOK。
