@@ -76,6 +76,27 @@ def verify(run, protocol="sample"):
                 code=json.loads((run / 'git_version.json').read_text()))
 
 
+
+def queue_activity(queue_root, protocol):
+    """Read training queues only; evaluation controllers have a different schema."""
+    activity, waiting = {}, {}
+    for queue in sorted(queue_root.glob('*/state.private.json')):
+        state = json.loads(queue.read_text())
+        if 'queue_pid' not in state:
+            if 'pid' in state and 'phase' in state:
+                continue  # Observer/finalization state, never a training queue.
+            raise ValueError(f'Unrecognized queue state: {queue}')
+        for field, target in [('running', activity), ('pending', waiting)]:
+            jobs = state.get(field)
+            if not isinstance(jobs, list):
+                raise ValueError(f'Malformed training queue {field}: {queue}')
+            for job in jobs:
+                if str(job.get('split', '0')) != ('0' if protocol == 'sample' else '1'):
+                    continue
+                target.setdefault(job['experiment'], set()).add(job['seed'])
+    return activity, waiting
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--root', type=Path, required=True)
@@ -88,13 +109,7 @@ def main():
     rows = [verify(path.parent,a.protocol) for path in sorted(experiment_root.glob('*/seed*/result.json'))]
     if len({row['common_training_hash'] for row in rows}) > 1:
         raise ValueError('Different data/split/common training configuration; do not mix summaries')
-    activity, waiting = {}, {}
-    for queue in (a.root / 'queues').glob('*/state.private.json'):
-        state=json.loads(queue.read_text())
-        for field,target in [('running',activity),('pending',waiting)]:
-            for job in state[field]:
-                if str(job.get('split','0')) != ('0' if a.protocol=='sample' else '1'): continue
-                target.setdefault(job['experiment'],set()).add(job['seed'])
+    activity, waiting = queue_activity(a.root / 'queues', a.protocol)
     grouped = []
     planned = PLANNED if a.protocol=='sample' else sorted(set(row['experiment'] for row in rows)|set(activity)|set(waiting))
     for name in planned:

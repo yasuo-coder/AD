@@ -31,3 +31,13 @@ Phase5：本地29f34f9/公开等价251dd6c8，config SHA cd5a2194a5f03f5ba51a201
 ### 主消融完成 / 2026-10-11
 Phase5 40/40成功结束，主观察器1428866独立复核61分类结果，生成validation_complete与完整三seed配对消融。19正式方法各3seed完整；四项失败预训练微调只作为单seed探索保留，并非尚在排队的缺失正式组。Phase6的subject A0三seed完成及重载通过；Phase7 A1三个seed运行中，controller1432091，GPU1/2/5，训练代码29f34f9。
 新最终评估入口20种代表性正式checkpoint仅VAL重载通过；4项锁合约测试通过。TEST还未评估；候选在任何TEST访问前按D021由主VAL选定。两协议开发角色交叉的限制及私有证据见D022。
+
+### Phase7完成与Phase8前置失败 / 2026-10-11
+subject A1三seed均退出0（best/stopped：42=154/195，3407=83/183，2026=188/211）。Phase8 controller1433530于05:07:13Z在subject汇总阶段失败：KeyError running，未生成lock且无TEST访问。错误源为控制器与训练队列状态schema混读。3项新回归+3分析+4锁测试通过，准备按D023使用独立queue目录恢复，原产物保留。
+
+### 七批最终评估 / 2026-10-11
+修复版本39ee2f2，仅改变队列schema汇总和独立恢复目录；原evaluator SHA不变。controller1629946、GPU0/3/6，11:18:42–11:21:28Z，63/63成功。Phase8旧失败与日志保留，未覆盖。锁SHA fb71040c47d235b382dac5f487b01ff9f925d262f305f134254a67250bc63031；N/reports/frozen_test_complete_20261011为自动核验结果，N/reports/final_analysis_20261011另按冻结成员/标签和直接计数公式复算，63/63通过，不再次执行模型。
+主协议19×3、subject A0/A1×3；[最终全表](docs/research/adni_1to7/final_test/Test_Results_sample.md)、[补充](docs/research/adni_1to7/final_test/Test_Results_subject.md)、[逐类/成本/配对](docs/research/adni_1to7/final_test/Final_Analysis.md)、[最终结论](docs/research/adni_1to7/Final_Report.md)。本轮67份分类验证（主61+subject6）及10预训练完成，4项微调明确为单seed探索。没有全单类塌缩，但EMCI/SMC识别失败保留；最终负面结果不改写为成功。旧五批TEST仍未运行。
+恢复命令与逐任务checkpoint路径见各queues/launcher.json、jobs.private.json、run/config.json与result.json；训练来源主要29f34f9，不将报告提交当训练来源。report_final只读现有预测生成新私有报告，模型测试不可重跑。当前本研究运行作业0个。
+
+最终报告校验：3项独立公式回归（完美分类、全CN、无效输入）与3队列schema、3配对统计、4锁契约共13项测试通过；最终匿名JSON字段白名单与新增Markdown链接检查通过。

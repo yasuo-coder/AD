@@ -20,8 +20,9 @@ def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,required=True);p.add_argument('--gpus',default='0,3,6');a=p.parse_args()
-    root=a.root.resolve();code=Path(__file__).resolve().parents[3];q=root/'queues/phase8_frozen_test';q.mkdir(parents=True,exist_ok=True)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,required=True);p.add_argument('--gpus',default='0,3,6');p.add_argument('--queue-name',default='phase8_frozen_test',help='New controller directory after a reviewed pre-lock failure; never overwrite earlier evidence');a=p.parse_args()
+    if not a.queue_name or Path(a.queue_name).name != a.queue_name or a.queue_name in {'.','..'}:raise ValueError('Queue name must be one directory component')
+    root=a.root.resolve();code=Path(__file__).resolve().parents[3];q=root/'queues'/a.queue_name;q.mkdir(parents=True,exist_ok=True)
     lockstream=(q/'controller.lock').open('a');fcntl.flock(lockstream,fcntl.LOCK_EX|fcntl.LOCK_NB)
     if (q/'state.private.json').exists() or (root/'selection_lock.json').exists():raise FileExistsError('Existing finalization needs a reviewed recovery, never automatic replay')
     script=Path(__file__).with_name('evaluate_frozen.py');scripts=[Path(__file__),script,Path(__file__).with_name('summarize_validation.py'),Path(__file__).with_name('summarize_frozen.py')];hashes={str(p):sha(p) for p in scripts}

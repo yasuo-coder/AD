@@ -8,10 +8,12 @@
 - [BrainPrompt来源](BrainPrompt/UPSTREAM.md)、[BrainPromptPro源码](BrainPromptPro/README.md)、[Plus排重](docs/research/BrainPromptPlus_Novelty_Exclusion_List.md)
 - [三seed验证汇总](docs/experiments/final_optimization_20261007/Validation_Results.md)
 
-当前活跃研究使用独立ADNI_1–7版本（1323 FC、895人），固定holdout及三训练seed；P2/P3/P5实现和基础验证已完成，21分类/10预训练探索核验完成，完整三seed消融正在运行，最终测试未运行。历史998 FC五批研究和冻结选择完整保留。研究收益和Top-3资格按实际验证/消融判定，未宣称已经达到60%目标。公开树不含ADNI影像、FC、受试者信息、私有划分、密钥和checkpoint。
+当前七批研究（1323 FC、895人）已完成完整三seed消融、subject补充及63项冻结测试，逐预测标签和指标核验通过。新版三模块没有稳定超过BrainPrompt；不宣称三个有效创新或达成60%目标。历史五批与原工程保留，公开树不含ADNI影像/FC/身份/私有划分/权重。
 
-当前七批：[验证探索](docs/research/adni_1to7/exploration_20261011/Validation_Results.md) · [P2诊断](docs/research/adni_1to7/P2_Reconstruction_Diagnostics.md) · [运行恢复](docs/research/adni_1to7/RUNBOOK.md)。
+- [最终研究报告与完整比较](docs/research/adni_1to7/Final_Report.md)
+- [主测试19方法](docs/research/adni_1to7/final_test/Test_Results_sample.md)、[受试者隔离补充](docs/research/adni_1to7/final_test/Test_Results_subject.md)
+- [完整验证](docs/research/adni_1to7/validation_complete/Validation_Results.md)、[配对消融](docs/research/adni_1to7/validation_complete/Ablation_Effects.md)
+- [技术说明](docs/research/adni_1to7/Technical_Report.md)、[三seed机制](docs/research/adni_1to7/Mechanism_ThreeSeed.md)、[P2负面证据](docs/research/adni_1to7/P2_Reconstruction_Diagnostics.md)
+- [作业证据与恢复约束](docs/research/adni_1to7/RUNBOOK.md)
 
-七批最新：[三seed进展](docs/research/adni_1to7/phase5_progress_20261011/Validation_Results.md) · [三seed机制诊断](docs/research/adni_1to7/Mechanism_ThreeSeed.md)。
-
-已完成：[七批三seed完整验证](docs/research/adni_1to7/validation_complete/Validation_Results.md) · [配对消融](docs/research/adni_1to7/validation_complete/Ablation_Effects.md) · [实际技术报告](docs/research/adni_1to7/Technical_Report.md)。
+本轮是固定holdout/验证选checkpoint，不是历史十折末轮。TEST已使用，禁止继续据其选型或调参；sample同人跨split、协议间角色交叉和历史开发暴露限制外部泛化解释。
