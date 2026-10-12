@@ -1,5 +1,5 @@
 # 当前状态
-核验UTC：2026-10-12T11:22:05.566133+00:00。用户任务005（BrainPrompt在ADNI_1–7合并队列上的官方十折、停止末轮测试）已完成训练与独立结果核验；十折全部退出0，无正在运行的005训练。报告与交接待本次提交/远程同步，不能用旧holdout替代本表。
+核验UTC：2026-10-12T11:22:05.566133+00:00。用户任务005（BrainPrompt在ADNI_1–7合并队列上的官方十折、停止末轮测试）已完成训练与独立结果核验；十折全部退出0，无正在运行的005训练。报告与交接已公开同步并核验，不能用旧holdout替代本表。
 
 ## 005结果与验证
 1323 FC/895人，seed41，扫描分层十折，CN/AD/SMC/EMCI/LMCI、MCI→LMCI。实际停训last.pt，不恢复best。十折等权均值±population SD：Accuracy=63.41±3.66%；Macro-F1=24.74±4.72%；Macro-Precision=25.19±6.38%；Macro-Recall/Balanced Accuracy=25.46±3.87%；ROC-AUC=70.87±3.23%。全CN 0/10、单类塌缩 0/10；OOF逐类Recall：CN 86.82%，AD 4.62%，SMC 5.13%，EMCI 0.00%，LMCI 31.17%。
@@ -7,7 +7,7 @@
 
 ## 005版本、产物与下一步
 C=/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_brainprompt_cv10_last_20261012；C/results链接至C/code/8e5d8c3/BrainPromptPro/outputs/comparisons/adni1to7_brainprompt_cv10_last_seed41。训练本地commit8e5d8c35810bc6f8e5d4bfdffe2b54cf61a8c1c6、公开等树归档f628bcda06d9abe7bcb62351aa988e934ae283ef（tree d0fdfb4fd333938bd158c4d556b8b2a93456d07f）。controller2830424于10:54:39Z启动，GPU0/3/4/5/6/7；launcher/master/queue_status及逐折结果均保留。报告在C/reports/verified_cv10_20261012；输入SHA=217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273，新split SHA=f44a16439d0d5f651532ca571673b4588ecdf1f5874fbe64a4b09467ff5aa26a。3协议契约、TRAIN反向、报告合成输入检查通过；正式10/10输入/来源/锁/成员/标签/编码器、scheduler首次停止、last.pt、指标/混淆/OOF及CUDA重载通过。
-[PR2](https://github.com/yasuo-coder/AD-/pull/2)叠加PR1；main的discussion.md协作设置已合入保留。原003/004研究及锁不变。无缺失折/失败折；无需继续或恢复训练。旧worker没有任意epoch完整RNG恢复入口，禁止覆盖已完成目录。下一步提交并核验公开树，再审阅结果；后续新优化应定义独立研究范围，不据此TEST调参。公开副本只含源码/配置规则与匿名聚合报告。
+[PR2](https://github.com/yasuo-coder/AD-/pull/2)叠加PR1；main的discussion.md协作设置已合入保留。原003/004研究及锁不变。无缺失折/失败折；无需继续或恢复训练。旧worker没有任意epoch完整RNG恢复入口，禁止覆盖已完成目录。公开结果本地d783b30fb216205eb3db1e9aba0d4850f917bda4与远程3352a5c64ec663441bc605ffaa255d3af858ac7e文件树相同（9b70023f6bd26e0c95cb71640ea009c073300b3d），训练归档文件树也已远程复核一致；发布勾选为后续交接提交，不预写自身SHA。下一步审阅结果；后续新优化应定义独立研究范围，不据此TEST调参。公开副本只含源码/配置规则与匿名聚合报告。
 
 ## 已完成的004历史研究（保留证据）
 核对：2026-10-11T11:27:30.526404+00:00（UTC）。先核实Git和真实产物；以下为七批研究最终状态。

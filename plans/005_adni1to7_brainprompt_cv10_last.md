@@ -7,7 +7,7 @@
 - [x] 现有官方协议测试及仅TRAIN反向smoke通过；不可变源码独立作业。
 - [x] BrainPrompt十折从头训练；每折磁盘last.pt重新加载后评估。
 - [x] 独立复算逐折五项指标、Balanced Accuracy、每类Recall与OOF；重放scheduler/首次停止规则，核验checkpoint/source/data/split。
-- [ ] 匿名表与交接同步GitHub，不上传受试者身份、划分、权重或逐例预测。
+- [x] 匿名表与交接同步GitHub，不上传受试者身份、划分、权重或逐例预测。
 
 复用BrainPromptPro.merged_cv.worker/official_cv.epoch_pass，无模型/优化代码修改；新cv10_baseline只提供七批prepare、来源核验与队列。扫描分层十折seed41，剩余数据按.111分验证；各折同seed41独立初始化与loader RNG。原baseline hidden116/L4/dropout.5，batch20、Adam5e-5/wd.005、两个无类别权重CE，无clip/平滑。最多1000轮、每折6小时、val-loss ReduceLROnPlateau(.5,25)，lr严格<1e-6停止，不恢复best。按旧官方worker每轮两次test监测，测试不参与任何决策。十折等权mean±SD(ddof0)，OOF另表，不混用近期三seed SD。
 
@@ -20,3 +20,5 @@
 2026-10-12T11:08:44Z：6折退出0、4折运行中、无排队/失败；独立report入口和运行交接已同步PR2（当前不含最终数据）。main共享讨论设置已合入保留。具体复现与只读末轮核验命令见docs/REPRODUCIBILITY.md的005节。
 
 完成核验UTC 2026-10-12T11:22:05.566133+00:00：10/10退出0，正式核验及CUDA末轮重载全部通过。Accuracy=63.41±3.66%；Macro-F1=24.74±4.72%；Macro-Precision=25.19±6.38%；Macro-Recall/Balanced Accuracy=25.46±3.87%；ROC-AUC=70.87±3.23%。报告docs/experiments/adni1to7_brainprompt_cv10_last_20261012/CV10_Test_Results.md，受控审计C/reports/verified_cv10_20261012；原004锁不变，无缺失/待恢复折，公开同步待提交后核验。
+
+公开同步验收：PR2已包含完整结果。结果本地d783b30/公开3352a5c的tree均为9b70023f6bd26e0c95cb71640ea009c073300b3d；训练本地8e5d8c3/公开f628bcda的tree均为d0fdfb4fd333938bd158c4d556b8b2a93456d07f。远程commit API重读通过，匿名JSON白名单/敏感扫描/新增Markdown链接检查通过。M0–M5全部完成；当前无005训练。
