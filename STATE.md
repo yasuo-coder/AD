@@ -1,4 +1,15 @@
 # 当前状态
+核验UTC：2026-10-12T11:22:05.566133+00:00。用户任务005（BrainPrompt在ADNI_1–7合并队列上的官方十折、停止末轮测试）已完成训练与独立结果核验；十折全部退出0，无正在运行的005训练。报告与交接已公开同步并核验，不能用旧holdout替代本表。
+
+## 005结果与验证
+1323 FC/895人，seed41，扫描分层十折，CN/AD/SMC/EMCI/LMCI、MCI→LMCI。实际停训last.pt，不恢复best。十折等权均值±population SD：Accuracy=63.41±3.66%；Macro-F1=24.74±4.72%；Macro-Precision=25.19±6.38%；Macro-Recall/Balanced Accuracy=25.46±3.87%；ROC-AUC=70.87±3.23%。全CN 0/10、单类塌缩 0/10；OOF逐类Recall：CN 86.82%，AD 4.62%，SMC 5.13%，EMCI 0.00%，LMCI 31.17%。
+全部逐折与OOF结果见[十折结果](docs/experiments/adni1to7_brainprompt_cv10_last_20261012/CV10_Test_Results.md)、[匿名JSON](docs/experiments/adni1to7_brainprompt_cv10_last_20261012/cv10_summary.public.json)、[证据/命令](docs/experiments/adni1to7_brainprompt_cv10_last_20261012/RUNBOOK.md)。624个OOF测试扫描存在对应TRAIN同人关联，队列有历史开发暴露；不能声称未见受试者/外部泛化，也不能与004三seed holdout混用。
+
+## 005版本、产物与下一步
+C=/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_brainprompt_cv10_last_20261012；C/results链接至C/code/8e5d8c3/BrainPromptPro/outputs/comparisons/adni1to7_brainprompt_cv10_last_seed41。训练本地commit8e5d8c35810bc6f8e5d4bfdffe2b54cf61a8c1c6、公开等树归档f628bcda06d9abe7bcb62351aa988e934ae283ef（tree d0fdfb4fd333938bd158c4d556b8b2a93456d07f）。controller2830424于10:54:39Z启动，GPU0/3/4/5/6/7；launcher/master/queue_status及逐折结果均保留。报告在C/reports/verified_cv10_20261012；输入SHA=217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273，新split SHA=f44a16439d0d5f651532ca571673b4588ecdf1f5874fbe64a4b09467ff5aa26a。3协议契约、TRAIN反向、报告合成输入检查通过；正式10/10输入/来源/锁/成员/标签/编码器、scheduler首次停止、last.pt、指标/混淆/OOF及CUDA重载通过。
+[PR2](https://github.com/yasuo-coder/AD-/pull/2)叠加PR1；main的discussion.md协作设置已合入保留。原003/004研究及锁不变。无缺失折/失败折；无需继续或恢复训练。旧worker没有任意epoch完整RNG恢复入口，禁止覆盖已完成目录。公开结果本地d783b30fb216205eb3db1e9aba0d4850f917bda4与远程3352a5c64ec663441bc605ffaa255d3af858ac7e文件树相同（9b70023f6bd26e0c95cb71640ea009c073300b3d），训练归档文件树也已远程复核一致；发布勾选为后续交接提交，不预写自身SHA。下一步审阅结果；后续新优化应定义独立研究范围，不据此TEST调参。公开副本只含源码/配置规则与匿名聚合报告。
+
+## 已完成的004历史研究（保留证据）
 核对：2026-10-11T11:27:30.526404+00:00（UTC）。先核实Git和真实产物；以下为七批研究最终状态。
 
 ## 当前任务与完成范围
@@ -24,3 +35,9 @@ selection_lock SHA256=fb71040c47d235b382dac5f487b01ff9f925d262f305f134254a67250b
 最终报告校验：3项独立公式回归（完美分类、全CN、无效输入）与3队列schema、3配对统计、4锁契约共13项测试通过；最终匿名JSON字段白名单与新增Markdown链接检查通过。
 
 发布验收：代码修复、最终报告、匿名63项结果及图表已同步公开24121414d9926d84b7485ea5188dbb7759f331c7；与本地dfb6c8123262675c08977c282e0142a0a14a98a7树一致。计划004 M0–M12完成；此条交接记录作为后续提交，不预写自身SHA。
+
+## 2026-10-12 共享讨论文件（从 main 保留的历史协作记录）
+
+用户本次任务：建立 Codex 与 Kimi Code 的共享讨论文件。新增根目录 [discussion.md](discussion.md)，约定在 main 同步、轮流追加、标注代码分支与提交，附发言模板和 Codex 初始化记录。已核对默认分支、文件不存在及仓库指令，文档内容已审阅；未运行实验，Kimi 往返尚未验证。上文为 main 的历史研究快照，服务器 research/adni1to7-p2p3p5 分支的更新状态应在对应版本单独核对。既有研究计划本轮未推进。
+
+下一步：用户指定讨论议题，或 Kimi Code 读取 discussion.md 并追加接入确认；对方回复后由 Codex 继续回应。讨论文件没有后台监听能力。

@@ -1,5 +1,7 @@
 # 数据协议
 
+2026-10-12新增[005七批BrainPrompt十折末轮](../plans/005_adni1to7_brainprompt_cv10_last.md)：复用下述已审计七批1323FC/895人及固定标签，不改样本/标签。新seed41扫描分层十折，每扫描恰测试一次；训练1057或1058、验证133、测试133或132。新split SHA=f44a16439d0d5f651532ca571673b4588ecdf1f5874fbe64a4b09467ff5aa26a。624/1323个OOF测试扫描的受试者也在其对应TRAIN出现；允许纵向关联的描述性复现，非未见受试者或新外部验证。与004 holdout划分及测试锁分开，原004不修改。
+
 当前七批独立研究见[ADNI_1–7审计](research/adni_1to7/DATA_AUDIT.md)、[方法与隔离](research/adni_1to7/METHOD_AUDIT.md)及计划004。1323FC/895人，固定新sample-level协议及独立subject-disjoint补充协议；私有成员和完整协议仅在服务器dataset_v1。以下998FC内容是历史五批协议，不能作为七批配置。
 
 ## 已核验的五批历史协议
