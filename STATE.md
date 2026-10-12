@@ -1,4 +1,10 @@
 # 当前状态
+2026-10-12：活跃计划005，BrainPrompt七批扫描分层十折、停止最后一轮。原1323FC已冻结，新十折seed41/source/config/旧004锁封存。3项官方协议检查和40个TRAIN扫描反向检查通过；metadata仅TRAIN，未用测试选型。
+正式队列controller2830424，2026-10-12T10:54:39Z（北京时间18:54:39）启动，GPU0/3/4/5/6/7。不可变代码C/code/8e5d8c3，C=/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_brainprompt_cv10_last_20261012。实际status/log/launcher和输出通过C/results、C/master.log、C/launcher.json定位。当前训练运行中，完整十折结果尚未生成。
+输入SHA217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273；十折split SHAf44a16439d0d5f651532ca571673b4588ecdf1f5874fbe64a4b09467ff5aa26a。准备步骤已在被中断会话完成；本次重复prepare被FileExistsError拒绝，没有覆盖。保留existing配置，核查无作业后启动一次正式队列。
+下一步等待十折全部结束，再使用独立report_cv10_baseline复算每折/OOF并重放scheduler/首次停止、核对last checkpoint。禁止将旧holdout填为十折结果；不能宣称旧worker支持完整RNG任意epoch恢复。003/004结果及锁保留。
+
+## 已完成的004历史研究（保留证据）
 核对：2026-10-11T11:27:30.526404+00:00（UTC）。先核实Git和真实产物；以下为七批研究最终状态。
 
 ## 当前任务与完成范围
@@ -24,3 +30,9 @@ selection_lock SHA256=fb71040c47d235b382dac5f487b01ff9f925d262f305f134254a67250b
 最终报告校验：3项独立公式回归（完美分类、全CN、无效输入）与3队列schema、3配对统计、4锁契约共13项测试通过；最终匿名JSON字段白名单与新增Markdown链接检查通过。
 
 发布验收：代码修复、最终报告、匿名63项结果及图表已同步公开24121414d9926d84b7485ea5188dbb7759f331c7；与本地dfb6c8123262675c08977c282e0142a0a14a98a7树一致。计划004 M0–M12完成；此条交接记录作为后续提交，不预写自身SHA。
+
+## 2026-10-12 共享讨论文件（从 main 保留的历史协作记录）
+
+用户本次任务：建立 Codex 与 Kimi Code 的共享讨论文件。新增根目录 [discussion.md](discussion.md)，约定在 main 同步、轮流追加、标注代码分支与提交，附发言模板和 Codex 初始化记录。已核对默认分支、文件不存在及仓库指令，文档内容已审阅；未运行实验，Kimi 往返尚未验证。上文为 main 的历史研究快照，服务器 research/adni1to7-p2p3p5 分支的更新状态应在对应版本单独核对。既有研究计划本轮未推进。
+
+下一步：用户指定讨论议题，或 Kimi Code 读取 discussion.md 并追加接入确认；对方回复后由 Codex 继续回应。讨论文件没有后台监听能力。
