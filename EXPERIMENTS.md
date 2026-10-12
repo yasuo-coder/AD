@@ -43,3 +43,6 @@ subject A1三seed均退出0（best/stopped：42=154/195，3407=83/183，2026=188
 最终报告校验：3项独立公式回归（完美分类、全CN、无效输入）与3队列schema、3配对统计、4锁契约共13项测试通过；最终匿名JSON字段白名单与新增Markdown链接检查通过。
 
 公开发布核验：最终结果与修复已接入research/adni1to7-p2p3p5；本地dfb6c81/公开24121414的tree一致（050ba6304e41d5a8fee8efac1859020fb30bb0a0）。源码快照、原私有实验与失败日志未改。
+
+## ADNI1–7 BrainPrompt CV10-last / 2026-10-12
+用户确认官方末轮规则。状态PREPARING，正式十折未运行；新配置BrainPromptPro/configs/adni_1to7/brainprompt_cv10_last_v1.json，计划005。新受控根/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_brainprompt_cv10_last_20261012；输入沿用217b662f...数据版本，不覆盖004。
