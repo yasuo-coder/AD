@@ -48,3 +48,7 @@ subject A1三seed均退出0（best/stopped：42=154/195，3407=83/183，2026=188
 用户确认官方末轮规则。状态PREPARING，正式十折未运行；新配置BrainPromptPro/configs/adni_1to7/brainprompt_cv10_last_v1.json，计划005。新受控根/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_brainprompt_cv10_last_20261012；输入沿用217b662f...数据版本，不覆盖004。
 
 005实际启动：本地训练源码8e5d8c3，controller2830424，六卡0/3/4/5/6/7，10:54:39Z开始。新split SHA f44a16439d0d5f651532ca571673b4588ecdf1f5874fbe64a4b09467ff5aa26a；原数据及旧锁hash封存。3项官方协议检查通过，TRAIN-only 40扫描检查通过；正式10折运行中，未填写最终指标。
+
+005中间核验：2026-10-12T11:08:44Z，6/10已退出0、剩余4折全运行、失败0；尚无完整十折汇总。仅源码/配置规则/状态已同步PR2，训练快照未改。
+
+005完成核验 / 2026-10-12T11:22:05.566133+00:00：十折10/10退出0，最后一轮checkpoint按首次官方停止重新加载，逐折源/标签/指标/scheduler/OOF与CUDA重载通过。训练本地8e5d8c3、公开等树归档f628bcda06d9abe7bcb62351aa988e934ae283ef；C/reports/verified_cv10_20261012为审计产物。Accuracy=63.41±3.66%；Macro-F1=24.74±4.72%；Macro-Precision=25.19±6.38%；Macro-Recall/Balanced Accuracy=25.46±3.87%；ROC-AUC=70.87±3.23%。全CN0/10；逐折/OOF/每类表见docs/experiments/adni1to7_brainprompt_cv10_last_20261012/CV10_Test_Results.md。004锁不变；本次不是三seed holdout或独立受试者泛化。

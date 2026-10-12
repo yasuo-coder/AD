@@ -29,3 +29,23 @@ Adam lr5e-5 wd.005，batch20 dropout.5 clip5；400max、至少120且100轮验证
 当前七批作业、版本及恢复以[RUNBOOK](research/adni_1to7/RUNBOOK.md)为准。七批共同分类目标为两项TRAIN计数加权CE；旧config遗留graph sparse项在新runner未使用。P2按登记spec附加损失。elapsed_seconds包括训练循环和逐轮验证，不含初始数据准备/P5参考库构造，预训练40轮另计；共享GPU耗时不作严格速度benchmark。
 
 七批最终：63项固定TEST已完成且两层复核通过；锁后不再运行模型测试。report_final从现有预测对齐冻结标签并直接计数复算，需新输出目录，命令及失败恢复历史见RUNBOOK。主/subject两套协议分开，三个seed不是患者置信区间。
+
+## 005 七批 BrainPrompt 扫描十折末轮（独立于004 holdout）
+
+计划[005](../plans/005_adni1to7_brainprompt_cv10_last.md)。C=/data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_brainprompt_cv10_last_20261012，训练不可变代码C/code/8e5d8c3，版本见C/source_version.json；结果C/results为已核验源码输出目录的链接。1323FC、895人，扫描分层十折seed41；同人关联不隔离，624个OOF扫描的受试者也出现在对应TRAIN。官方末轮规则与配置见BrainPromptPro/configs/adni_1to7/brainprompt_cv10_last_v1.json。
+
+正式命令在C/code/8e5d8c3工作目录执行：
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 /home/panyao/miniconda3/envs/brainprompt/bin/python -B -m BrainPromptPro.scripts.adni_1to7.cv10_baseline queue --run-id adni1to7_brainprompt_cv10_last_seed41 --gpus 0,3,4,5,6,7
+```
+
+已有队列时不能重复执行：先检查C/launcher.json、C/master.log、C/results/queue_status.json及实际PID。单折worker --run-id ... --split 0..9保留，但拒绝既有输出；旧worker并未实现完整RNG恢复，不得删目录后盲目重跑。原004锁不可修改。
+
+完整十折成功后，独立报告入口直接运行文件，以C/source_version.json定位训练包；不从当前工作树导入可变模型，也不重做选型：
+
+```bash
+CUDA_VISIBLE_DEVICES=0 PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 /home/panyao/miniconda3/envs/brainprompt/bin/python -B /home/panyao/AD/AD-/BrainPromptPro/scripts/adni_1to7/report_cv10_baseline.py --study-root /data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_brainprompt_cv10_last_20261012 --output /data2/panyao_data/ADNI/BrainPromptPro_runs/adni_1to7_brainprompt_cv10_last_20261012/reports/verified_cv10_20261012 --device cuda:0
+```
+
+报告目录已存在时应使用新的报告目录，不覆盖旧证据。该入口要求10/10成功，核验输入/来源/封存锁、逐fold预测标签、TRAIN编码器、scheduler首次停止、last.pt与概率指标、OOF一次覆盖；--device额外重载同一末轮模型复核预测，属于结果审计，不是重新选择checkpoint。仅公开CV10_Test_Results.md和cv10_summary.public.json；private预测/混淆计数、完整划分及权重留服务器。十折mean±population SD(ddof0)与合并OOF分别报告，不能与004三seed holdout混用。

@@ -1,7 +1,7 @@
 # AD- / BrainPromptPro
 基于ADNI rs-fMRI功能连接和语义提示的多类别分类研究。已接入服务器实际BrainPrompt、BrainPromptPro、固定协议、候选实现及匿名验证汇总；受控数据和权重不公开。
 
-先读[STATE](STATE.md)、[现有工作审计](docs/EXISTING_WORK_AUDIT.md)和[活跃七批研究计划](plans/004_adni1to7_p2p3p5.md)，不能从初始化骨架重新开始实验。
+先读[STATE](STATE.md)、[现有工作审计](docs/EXISTING_WORK_AUDIT.md)和[最新十折复现计划](plans/005_adni1to7_brainprompt_cv10_last.md)，不能从初始化骨架重新开始实验。
 
 - [背景](CONTEXT.md)、[路线](ROADMAP.md)、[决策](DECISIONS.md)、[实验索引](EXPERIMENTS.md)
 - [数据协议](docs/DATA_PROTOCOL.md)、[实际架构](docs/ARCHITECTURE.md)、[复现与恢复](docs/REPRODUCIBILITY.md)
@@ -17,3 +17,5 @@
 - [作业证据与恢复约束](docs/research/adni_1to7/RUNBOOK.md)
 
 本轮是固定holdout/验证选checkpoint，不是历史十折末轮。TEST已使用，禁止继续据其选型或调参；sample同人跨split、协议间角色交叉和历史开发暴露限制外部泛化解释。
+
+2026-10-12新增：BrainPrompt七批合并队列十折官方末轮已完成并逐折独立核验，见[十折测试结果](docs/experiments/adni1to7_brainprompt_cv10_last_20261012/CV10_Test_Results.md)及[复现证据](docs/experiments/adni1to7_brainprompt_cv10_last_20261012/RUNBOOK.md)。与上文004 holdout分开报告，不据TEST优化模型。
