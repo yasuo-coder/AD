@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "namespace": {
+    "denied": {
+      "/home/panyao/AD/BrainPromptNComms2025/out/adni7_ncomms_subject10_20261021/cohort.private.pt": true,
+      "/home/panyao/AD/BrainPromptNComms2025/out/adni7_ncomms_subject10_20261021/units/seed_42/fold_00/predictions.private.pt": true,
+      "/data2": true,
+      "/home/panyao/AD/BrainPromptR2/private": true,
+      "/proc/1/root/home/panyao/AD/BrainPromptNComms2025/out": true
+    },
+    "fit_scans": 1051,
+    "fit_subjects": 715,
+    "cuda": true,
+    "network_blocked": true
+  },
+  "smoke": [
+    {
+      "task": {
+        "stage": "A",
+        "name": "A_original",
+        "kind": "original",
+        "plan": 0,
+        "condition": "no_prompt"
+      },
+      "status": "SMOKE_COMPLETE",
+      "parameters": 818095
+    },
+    {
+      "task": {
+        "stage": "A",
+        "name": "A_soft_topk",
+        "kind": "soft_topk",
+        "plan": 0,
+        "condition": "no_prompt"
+      },
+      "status": "SMOKE_COMPLETE",
+      "parameters": 818095
+    },
+    {
+      "task": {
+        "stage": "B",
+        "name": "B_g_off",
+        "kind": "g_off",
+        "plan": 0,
+        "condition": "no_prompt"
+      },
+      "status": "SMOKE_COMPLETE",
+      "parameters": 289605
+    },
+    {
+      "task": {
+        "stage": "B",
+        "name": "B_mlp",
+        "kind": "mlp",
+        "plan": 0,
+        "condition": "no_prompt"
+      },
+      "status": "SMOKE_COMPLETE",
+      "parameters": 427269
+    },
+    {
+      "task": {
+        "stage": "B",
+        "name": "B_logistic",
+        "kind": "logistic",
+        "plan": 0,
+        "condition": "no_prompt",
+        "C": 0.1
+      },
+      "status": "SMOKE_COMPLETE",
+      "parameters": 33355
+    },
+    {
+      "task": {
+        "stage": "D",
+        "name": "D_g_off",
+        "kind": "g_off",
+        "plan": 0,
+        "condition": "roi_age_sex"
+      },
+      "status": "SMOKE_COMPLETE",
+      "parameters": 420741
+    },
+    {
+      "task": {
+        "stage": "D",
+        "name": "D_logistic",
+        "kind": "logistic",
+        "plan": 0,
+        "condition": "full",
+        "C": 0.1
+      },
+      "status": "SMOKE_COMPLETE",
+      "parameters": 33835
+    }
+  ],
+  "resume_terminal_checkpoint": "PASS; same epoch and subject probabilities within 1e-6 (DGL GPU reductions)",
+  "resume_max_probability_delta": 2.3723515496509862e-07,
+  "smoke_weights_reused": false
+}

@@ -1,0 +1,385 @@
+{
+  "status": "PREPARED",
+  "outer_seed": 42,
+  "outer_fold": 0,
+  "development_source": "outer FIT only; original VAL and TEST excluded",
+  "subjects": 715,
+  "scans": 1051,
+  "subject_class_counts": [
+    401,
+    52,
+    16,
+    223,
+    23
+  ],
+  "data_sha256": "c0f57af8525c242b3426916000affc7f1fda9a030ddc88a1cb1d76fa1a6b740f",
+  "plans_sha256": "fa36015b0b6d094b83554f6576aa3d8429286d5bcfbf939dd903554197f204ed",
+  "original_source_sha256": "a5c7df3f484ae462a22d9f8841f3705ecb1b53d3d36ff2f1c3cac931b31d19da",
+  "original_split_sha256": "b497ef68b15478a66ea7568e63acf168945c3fca866ecad2b5e8e426fcb0e0d9",
+  "partition_audit": [
+    {
+      "repeat": 0,
+      "seed": 42,
+      "fold": 0,
+      "partitions": {
+        "train": {
+          "subjects": 404,
+          "scans": 597,
+          "class_subject_counts": [
+            227,
+            29,
+            9,
+            126,
+            13
+          ]
+        },
+        "stop": {
+          "subjects": 72,
+          "scans": 115,
+          "class_subject_counts": [
+            40,
+            5,
+            2,
+            23,
+            2
+          ]
+        },
+        "validation": {
+          "subjects": 239,
+          "scans": 339,
+          "class_subject_counts": [
+            134,
+            18,
+            5,
+            74,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 0,
+      "seed": 42,
+      "fold": 1,
+      "partitions": {
+        "train": {
+          "subjects": 405,
+          "scans": 590,
+          "class_subject_counts": [
+            227,
+            30,
+            9,
+            126,
+            13
+          ]
+        },
+        "stop": {
+          "subjects": 72,
+          "scans": 99,
+          "class_subject_counts": [
+            40,
+            5,
+            2,
+            23,
+            2
+          ]
+        },
+        "validation": {
+          "subjects": 238,
+          "scans": 362,
+          "class_subject_counts": [
+            134,
+            17,
+            5,
+            74,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 0,
+      "seed": 42,
+      "fold": 2,
+      "partitions": {
+        "train": {
+          "subjects": 405,
+          "scans": 593,
+          "class_subject_counts": [
+            227,
+            30,
+            8,
+            126,
+            14
+          ]
+        },
+        "stop": {
+          "subjects": 72,
+          "scans": 108,
+          "class_subject_counts": [
+            41,
+            5,
+            2,
+            22,
+            2
+          ]
+        },
+        "validation": {
+          "subjects": 238,
+          "scans": 350,
+          "class_subject_counts": [
+            133,
+            17,
+            6,
+            75,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 1,
+      "seed": 2024,
+      "fold": 0,
+      "partitions": {
+        "train": {
+          "subjects": 404,
+          "scans": 617,
+          "class_subject_counts": [
+            227,
+            29,
+            9,
+            126,
+            13
+          ]
+        },
+        "stop": {
+          "subjects": 72,
+          "scans": 99,
+          "class_subject_counts": [
+            40,
+            5,
+            2,
+            23,
+            2
+          ]
+        },
+        "validation": {
+          "subjects": 239,
+          "scans": 335,
+          "class_subject_counts": [
+            134,
+            18,
+            5,
+            74,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 1,
+      "seed": 2024,
+      "fold": 1,
+      "partitions": {
+        "train": {
+          "subjects": 405,
+          "scans": 580,
+          "class_subject_counts": [
+            227,
+            30,
+            9,
+            126,
+            13
+          ]
+        },
+        "stop": {
+          "subjects": 72,
+          "scans": 97,
+          "class_subject_counts": [
+            40,
+            5,
+            2,
+            23,
+            2
+          ]
+        },
+        "validation": {
+          "subjects": 238,
+          "scans": 374,
+          "class_subject_counts": [
+            134,
+            17,
+            5,
+            74,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 1,
+      "seed": 2024,
+      "fold": 2,
+      "partitions": {
+        "train": {
+          "subjects": 405,
+          "scans": 599,
+          "class_subject_counts": [
+            227,
+            30,
+            8,
+            126,
+            14
+          ]
+        },
+        "stop": {
+          "subjects": 72,
+          "scans": 110,
+          "class_subject_counts": [
+            41,
+            5,
+            2,
+            22,
+            2
+          ]
+        },
+        "validation": {
+          "subjects": 238,
+          "scans": 342,
+          "class_subject_counts": [
+            133,
+            17,
+            6,
+            75,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 2,
+      "seed": 3407,
+      "fold": 0,
+      "partitions": {
+        "train": {
+          "subjects": 404,
+          "scans": 610,
+          "class_subject_counts": [
+            227,
+            29,
+            9,
+            126,
+            13
+          ]
+        },
+        "stop": {
+          "subjects": 72,
+          "scans": 106,
+          "class_subject_counts": [
+            40,
+            5,
+            2,
+            23,
+            2
+          ]
+        },
+        "validation": {
+          "subjects": 239,
+          "scans": 335,
+          "class_subject_counts": [
+            134,
+            18,
+            5,
+            74,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 2,
+      "seed": 3407,
+      "fold": 1,
+      "partitions": {
+        "train": {
+          "subjects": 405,
+          "scans": 590,
+          "class_subject_counts": [
+            227,
+            30,
+            9,
+            126,
+            13
+          ]
+        },
+        "stop": {
+          "subjects": 72,
+          "scans": 104,
+          "class_subject_counts": [
+            40,
+            5,
+            2,
+            23,
+            2
+          ]
+        },
+        "validation": {
+          "subjects": 238,
+          "scans": 357,
+          "class_subject_counts": [
+            134,
+            17,
+            5,
+            74,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 2,
+      "seed": 3407,
+      "fold": 2,
+      "partitions": {
+        "train": {
+          "subjects": 405,
+          "scans": 575,
+          "class_subject_counts": [
+            227,
+            30,
+            8,
+            126,
+            14
+          ]
+        },
+        "stop": {
+          "subjects": 72,
+          "scans": 117,
+          "class_subject_counts": [
+            41,
+            5,
+            2,
+            22,
+            2
+          ]
+        },
+        "validation": {
+          "subjects": 238,
+          "scans": 359,
+          "class_subject_counts": [
+            133,
+            17,
+            6,
+            75,
+            7
+          ]
+        }
+      }
+    }
+  ],
+  "label_policy": "original_diagnosis MCI -> EMCI; true LMCI preserved",
+  "patient_metadata": "structured age/sex/site; no diagnostic label used as input",
+  "outer_val_usage": "none; held aside",
+  "outer_test_usage": "none; evaluator absent"
+}

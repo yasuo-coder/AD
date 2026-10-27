@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+prepared/
+private/
+runs/
+*.pt
+*.npz
+*.pkl

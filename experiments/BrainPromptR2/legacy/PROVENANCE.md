@@ -1,0 +1,1 @@
+Unmodified model dependency snapshot from BrainPromptNComms2025, local master 69411e8d614110d929afa263c1fc0184dcc819fd. Training source seal: 82bdfafee09d5a97f4d2a32bd282d57819b123f4. Only Python model dependencies copied; no data, checkpoints, or outputs. Original vendor implementation remains attributed in source and the parent study.
