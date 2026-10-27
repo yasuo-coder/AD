@@ -1,0 +1,168 @@
+{
+  "status": "PASSED",
+  "checked_at_utc": "2026-10-27T03:07:13.442172+00:00",
+  "audit_scope": "read-only existing artifacts; no model inference, training or new test selection",
+  "current_code_commit": "69411e8d614110d929afa263c1fc0184dcc819fd",
+  "training_source_equivalent_commit": "82bdfafee09d5a97f4d2a32bd282d57819b123f4",
+  "source_seal_id": "e066e317bc38cde1f7aa5d7fecc04e83ce2ab485b930030aeb313b2e68023f54",
+  "source_files_checked": 41,
+  "source_bundle_sha256": "217b662f09aa3c359b71b1d49cb51e1b77a37334c67f59663bed5aae5c6bd273",
+  "prepared_cohort_sha256": "a5c7df3f484ae462a22d9f8841f3705ecb1b53d3d36ff2f1c3cac931b31d19da",
+  "split_sha256": "b497ef68b15478a66ea7568e63acf168945c3fca866ecad2b5e8e426fcb0e0d9",
+  "config_sha256": "2b049183e3dd436f3697073a0c4f76e478d0f195b6c6c5a599717f7ccdcaa986",
+  "completed_units": 30,
+  "components": 630,
+  "prediction_sets": 780,
+  "stopped_epoch_range": [
+    84,
+    555
+  ],
+  "formal_epoch_caps_absent": true,
+  "checkpoint_best_last_and_immutable_hashes_verified": true,
+  "first_stop_and_best_epoch_replayed": true,
+  "selection_and_calibration_replayed": true,
+  "fit_stop_test_subject_overlap": 0,
+  "complete_oof_coverage": true,
+  "independent_metric_max_abs_difference": 8.881784197001252e-16,
+  "acceptance": {
+    "status": "PASSED",
+    "seal_id": "e066e317bc38cde1f7aa5d7fecc04e83ce2ab485b930030aeb313b2e68023f54",
+    "unit_tests": 37,
+    "unit_test_log_sha256": "2b86bbd3197218c40a84c17b932e1e2373fc042c424d7ec6155cd51cea482b98",
+    "cpu_acceptance_sha256": "d57056d70c08efb5785e5101baa45dbb12f6f93ef117193a8beccf4d152718d8",
+    "gpu_acceptance_sha256": "df629e6dae80f306920cea2f32f280959c315e71bb2065f5815da36c0a4d8a3b",
+    "real_data_components_per_device": 21,
+    "real_data_prediction_sets_per_device": 26,
+    "formal_weights_reused": false,
+    "gpu_checkpoint_replay_max_abs": 2.851749020260641e-08,
+    "gpu_test_batch_invariance_max_abs": 3.4215931449255166e-08
+  },
+  "controller": {
+    "status": "COMPLETE",
+    "pid": 2748876,
+    "completed_utc": "2026-10-23T07:17:41Z"
+  },
+  "variant_counts": {
+    "E0_best": 30,
+    "E0": 30,
+    "E0_missing_subject": 30,
+    "E0p": 30,
+    "E1_calibrated": 30,
+    "E1_youden": 30,
+    "E1_tta": 30,
+    "E1_combined": 30,
+    "E2_focal": 30,
+    "E2_cb_focal": 30,
+    "E2_adjacent": 30,
+    "E2_ordinal": 30,
+    "E2_soft": 30,
+    "E2_all": 30,
+    "E2_selected": 30,
+    "E3_fisher": 30,
+    "E3_multiscale": 30,
+    "E3_signed": 30,
+    "E3_all": 30,
+    "E3_selected": 30,
+    "E4": 30,
+    "E5": 30,
+    "E5_missing_subject": 30,
+    "E5_no_prompt_dropout": 30,
+    "E5_no_fc_bias": 30,
+    "E5_no_ordinal": 30
+  },
+  "component_stop_ranges": {
+    "E0": [
+      123,
+      295
+    ],
+    "E0p": [
+      123,
+      256
+    ],
+    "E2_focal": [
+      128,
+      234
+    ],
+    "E2_cb_focal": [
+      128,
+      243
+    ],
+    "E2_adjacent": [
+      135,
+      238
+    ],
+    "E2_ordinal": [
+      121,
+      212
+    ],
+    "E2_soft": [
+      121,
+      234
+    ],
+    "E2_all": [
+      121,
+      274
+    ],
+    "E3_fisher": [
+      133,
+      309
+    ],
+    "E3_multiscale": [
+      139,
+      555
+    ],
+    "E3_signed": [
+      131,
+      235
+    ],
+    "E3_all": [
+      145,
+      201
+    ],
+    "E4": [
+      84,
+      84
+    ],
+    "E5_stage1": [
+      84,
+      84
+    ],
+    "E5_stage2": [
+      99,
+      361
+    ],
+    "E5_no_prompt_dropout_stage1": [
+      84,
+      511
+    ],
+    "E5_no_prompt_dropout_stage2": [
+      99,
+      323
+    ],
+    "E5_no_fc_bias_stage1": [
+      84,
+      84
+    ],
+    "E5_no_fc_bias_stage2": [
+      99,
+      362
+    ],
+    "E5_no_ordinal_stage1": [
+      84,
+      84
+    ],
+    "E5_no_ordinal_stage2": [
+      99,
+      351
+    ]
+  },
+  "ablation_no_ordinal_ineffective": 25,
+  "source_artifact_hashes": {
+    "/home/panyao/AD/BrainPromptNComms2025/out/adni7_ncomms_subject10_20261021/results/summary.json": "612a0f8b0d4e0f60081163d780be422057044d61428864f4efdd737e0150abf0",
+    "/home/panyao/AD/BrainPromptNComms2025/out/adni7_ncomms_subject10_20261021/results/verification.json": "297c8793860b76f8053f6b17b50374cbb6df2638869643e5ee72fdcb71cfe813",
+    "/home/panyao/AD/BrainPromptNComms2025/out/adni7_ncomms_subject10_20261021/data_audit.json": "7d8c98b5709e97e98c7d53ad328f70ab87a167dc9e4aeb5e9e6dcff265ef729b",
+    "/home/panyao/AD/BrainPromptNComms2025/out/adni7_ncomms_subject10_20261021/split_audit.json": "e9c864a936693979298fa31a61eeb41092774d6915cc8253969f018e6ffe5767",
+    "/home/panyao/AD/BrainPromptNComms2025/out/adni7_ncomms_subject10_20261021/seal.json": "c25402d297d07c20e39585abda0d73e2cb7eb09459a32ed674ee5a773f442dd7",
+    "/home/panyao/AD/BrainPromptNComms2025/out/adni7_ncomms_subject10_20261021/acceptance.json": "90392a8e5e7c14fb3d1993c6e7e0af473697e61ae5d89b4c2af61a250ec0562d"
+  }
+}
