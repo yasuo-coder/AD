@@ -8,7 +8,9 @@ def command(task,output,gpu='4',extra=None,code=None):
     cmd=['/usr/bin/bwrap','--die-with-parent','--new-session','--unshare-pid','--unshare-net']
     for system in ['/usr','/lib','/lib64','/bin','/etc','/sys']:
         if Path(system).exists():cmd+=['--ro-bind',system,system]
-    cmd+=['--proc','/proc','--dev-bind','/dev','/dev','--tmpfs','/tmp','--tmpfs','/run',
+    # OpenMP registers by PID+UID in /dev/shm. Private PID namespaces reuse PID 2;
+    # sharing host shm makes independent workers collide during initialization.
+    cmd+=['--proc','/proc','--dev-bind','/dev','/dev','--tmpfs','/dev/shm','--tmpfs','/tmp','--tmpfs','/run',
       '--ro-bind',str(PYTHON.parents[2]),str(PYTHON.parents[2]),
       '--ro-bind',str(ROOT/'r2'),'/work/code/r2','--ro-bind',str(ROOT/'configs'),'/work/code/configs',
       '--ro-bind',str(ROOT/'legacy'),'/work/code/legacy',

@@ -1,0 +1,43 @@
+{
+  "files": {
+    "r2/__init__.py": "cd599c98ea5b84f23c9b5219b93d7f67d11d3cb6cce65a2075a7b80bc54156bb",
+    "r2/common.py": "235df67af6f4650b46b3c9af79f5c40d1127acfbd6e51095380d961805372f4b",
+    "r2/controller.py": "76ecedabdf6967dfe4ca2cc6bee2e9af18b945bb791a292d226dfc3e950bf161",
+    "r2/features.py": "afe99c8c97c340c69fd8d638ec7d4d56782a63d5dd46babc851c24a7efe83576",
+    "r2/historical.py": "f672b34adaff7704fa17e6fac4584a4bf2e69447ef6e5a90d1fa0d6f074ab12f",
+    "r2/isolation.py": "129039978085faeeb40c0291fb9a05604bf08ba91512e0df125e9637890edd22",
+    "r2/models.py": "5a79775d12105f04b7196fd94eaea808ac3de789cfaa0735b76126e887274dc1",
+    "r2/prepare.py": "649367c0240aa8eb5b20ca9bebddc1332feb9bc35ae6ac41227994efadc09aaa",
+    "r2/seal.py": "8efe40de3723dd2ceacf852ebf5050343a12e81e258149bb8e82ee82f0db35dc",
+    "r2/t_gate.py": "575dc0f0c2f7f88e667314561190a9f3220ed9c61b005332e2f551390b7b2da0",
+    "r2/train.py": "756073cbbf31ec31ff0ad740615a645f955dbdffd18048e10aeb013b3a3cae32",
+    "r2/verify_launch.py": "df193e11a486a00b673fc44fee62dd73dd0622c5601d1665b2fc0787765bf668",
+    "configs/study.json": "70c19899a701f119ce7e26ed59af435217872bc05d86f1345068c35a45683064",
+    "tests/test_contract.py": "91295aaedc27b039d5379989d52e01ef29b1b5a20a152f1090e0fcdc7b5a8781",
+    "legacy/PROVENANCE.md": "b00facec01f17ecd46711aad0d705e1b63e9ebbf188195d13d4b40743cbca45c",
+    "legacy/bpstudy/__init__.py": "f7c8a853da9cb3da586229cb473d876ea6b367f05e6ae881b1b980f3a911e590",
+    "legacy/bpstudy/models.py": "b6a62d8b7248ba037aa633ca42a69720707f841abf96cd2a5be52934dcbec43c",
+    "legacy/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legacy/vendor/brainprompt/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legacy/vendor/brainprompt/layers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legacy/vendor/brainprompt/layers/attention_layer.py": "7d074446083bd607a1c883a9d9c76d3b6045943e99c94b501019e48c04ef2ab1",
+    "legacy/vendor/brainprompt/layers/gcn_layer.py": "f8a16709a347d2a7e3432a1afdd5e5c68c7dfd491e6d97afb529412c3bfe6069",
+    "legacy/vendor/brainprompt/layers/mlp_readout_layer.py": "a39af6b5b43e4dbf45bbeee20804cf38b67159920727922007ac861dca3214a0",
+    "legacy/vendor/brainprompt/nets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legacy/vendor/brainprompt/nets/brainpromptc_net.py": "3a5216f22714efd62e231338de4455212a999416a6d7ff6bdce869fcc47525f8",
+    "legacy/vendor/brainprompt/nets/brainpromptg_net.py": "2eccc7a94de20108c45ca69caf285c97fbf8512101407ee83df03b5a5c254159",
+    "legacy/vendor/brainprompt/norm/GraphNorm.py": "c57d4da7daf7f7be9db077c3c0d545bd038d0433e9ae6c0b76c29dbc8590d29e",
+    "legacy/vendor/brainprompt/norm/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_sha256": "1834d18571c79d3865b212f73b92be306f7d1fbc6ecdcee98d1f22f78e905074",
+  "environment": {
+    "python": "3.10.21",
+    "torch": "2.4.0+cu121",
+    "cuda_build": "12.1",
+    "numpy": "2.2.5",
+    "sklearn": "1.7.2",
+    "scipy": "1.15.3"
+  },
+  "protocol_sha256": "70c19899a701f119ce7e26ed59af435217872bc05d86f1345068c35a45683064",
+  "data_manifest_sha256": "58e88ede1095ffdadad32b0d9b37cf482dc4626718dfae171f28025f101b94c1"
+}

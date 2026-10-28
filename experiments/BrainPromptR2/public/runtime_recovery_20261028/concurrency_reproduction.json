@@ -1,0 +1,291 @@
+{
+  "method": "Same Python/torch/sklearn imports and synthetic multinomial Logistic; 4 rounds x 3 simultaneous processes; only shared versus private /dev/shm changed; shared control uses a dedicated empty directory, not host unrelated jobs",
+  "summary": [
+    {
+      "mode": "shared_control",
+      "attempts": 12,
+      "exit_codes": {
+        "0": 9,
+        "134": 1,
+        "135": 2
+      },
+      "failure_count": 3
+    },
+    {
+      "mode": "private",
+      "attempts": 12,
+      "exit_codes": {
+        "0": 12
+      },
+      "failure_count": 0
+    }
+  ],
+  "records": [
+    {
+      "mode": "shared_control",
+      "round": 0,
+      "worker": 0,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 0,
+      "worker": 1,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 0,
+      "worker": 2,
+      "exit_code": 134,
+      "namespace_pid": 2,
+      "registration_names": [],
+      "omp_error_15": true
+    },
+    {
+      "mode": "shared_control",
+      "round": 1,
+      "worker": 0,
+      "exit_code": 135,
+      "namespace_pid": 2,
+      "registration_names": [],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 1,
+      "worker": 1,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 1,
+      "worker": 2,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 2,
+      "worker": 0,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 2,
+      "worker": 1,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 2,
+      "worker": 2,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 3,
+      "worker": 0,
+      "exit_code": 135,
+      "namespace_pid": 2,
+      "registration_names": [],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 3,
+      "worker": 1,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "shared_control",
+      "round": 3,
+      "worker": 2,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 0,
+      "worker": 0,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 0,
+      "worker": 1,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 0,
+      "worker": 2,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 1,
+      "worker": 0,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 1,
+      "worker": 1,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 1,
+      "worker": 2,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 2,
+      "worker": 0,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 2,
+      "worker": 1,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 2,
+      "worker": 2,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 3,
+      "worker": 0,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 3,
+      "worker": 1,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    },
+    {
+      "mode": "private",
+      "round": 3,
+      "worker": 2,
+      "exit_code": 0,
+      "namespace_pid": 2,
+      "registration_names": [
+        "__KMP_REGISTERED_LIB_2_1025"
+      ],
+      "omp_error_15": false
+    }
+  ],
+  "synthetic_data_only": true,
+  "original_failure": {
+    "unit": "B_logistic_C1_p00",
+    "exit_code": 134,
+    "message": "OMP: Error #15: Initializing libiomp5.so, but found unknown library already initialized.",
+    "started_utc": "2026-10-27T07:03:25Z"
+  },
+  "runtime_reference": "https://openmp.llvm.org/doxygen/kmp__runtime_8cpp_source.html"
+}

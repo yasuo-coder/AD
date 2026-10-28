@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "changed_source_files": [
+    "r2/isolation.py"
+  ],
+  "old_source_sha256": "1834d18571c79d3865b212f73b92be306f7d1fbc6ecdcee98d1f22f78e905074",
+  "new_source_sha256": "203601b240d11f162f43cb4f9e15cc499ae6c032e66f3b4d6682862515ceb599",
+  "protocol_unchanged": true,
+  "full_parallel_logistic_checks": [
+    {
+      "name": "logistic_C0.1",
+      "status": "COMPLETE",
+      "stop_reason": "lbfgs_converged"
+    },
+    {
+      "name": "logistic_C1",
+      "status": "COMPLETE",
+      "stop_reason": "lbfgs_converged"
+    },
+    {
+      "name": "logistic_C10",
+      "status": "COMPLETE",
+      "stop_reason": "lbfgs_converged"
+    }
+  ],
+  "previous_success_probability_max_abs_difference": {
+    "0.1": 0.0,
+    "10": 0.0
+  },
+  "torch_smokes": [
+    {
+      "name": "smoke_mlp",
+      "status": "SMOKE_COMPLETE",
+      "stop_reason": "SMOKE_ONLY"
+    },
+    {
+      "name": "smoke_g_off",
+      "status": "SMOKE_COMPLETE",
+      "stop_reason": "SMOKE_ONLY"
+    }
+  ],
+  "namespace": {
+    "private_shm": true,
+    "test_unmounted": true,
+    "network_blocked": true,
+    "gpu": true,
+    "kmp_duplicate_override": false
+  },
+  "completed_units_preserved": 48,
+  "unchanged_completed_files": 300,
+  "diagnostic_fits_reused": false
+}
